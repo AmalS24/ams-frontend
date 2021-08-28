@@ -1,5 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import NriRegistration from "../components/NriRegistration";
+import MgmtRegistration from "../components/MgmtRegistration";
+import MeritRegistration from "../components/MeritRegistration";
 
 export const Header = () => {
   return (
@@ -11,6 +19,7 @@ export const Header = () => {
       />
       <div className="absolute inset-0 bg-gray-900 bg-opacity-75"></div>
       <div className="px-8 py-4 text-xl text-white flex items-center justify-start relative bg-transparent">
+      <Router>
       <Link to="/" className=" flex font-bold px-6 hover:text-red-600">
         <svg
           class="w-6 h-6"
@@ -44,6 +53,23 @@ export const Header = () => {
         <Link to="/merit" className="px-6 hover:text-red-600">
           MERIT
         </Link>
+
+        <Switch>
+          <Route exact path="/">
+            
+          </Route>
+          <Route path="/nri">
+            <NriRegistration />
+          </Route>
+          <Route path="/mgmt">
+
+          </Route>
+          <Route exact path="/merit">
+            
+          </Route>
+        </Switch>
+        
+    </Router>
       </div>
       <div className=" flex flex-col h-96 items-center  justify-center relative ">
          <h1 className="py-5 text-5xl sm:text-6xl md:text-7xl text-white tracking-wider">WELCOME TO AMS</h1> 
