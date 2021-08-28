@@ -6,8 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import NriRegistration from "../components/NriRegistration";
-import MgmtRegistration from "../components/MgmtRegistration";
-import MeritRegistration from "../components/MeritRegistration";
+
 
 export const Header = () => {
   return (
@@ -73,7 +72,7 @@ export const Header = () => {
       </div>
       <div className=" flex flex-col h-96 items-center  justify-center relative ">
          <h1 className="py-5 text-5xl sm:text-6xl md:text-7xl text-white tracking-wider">WELCOME TO AMS</h1> 
-         <h3 className="text-red-600 text-3xl sm:text-4xl md:text-4xl tracking-wide font-mono">powered by MITS®</h3>
+         <h3 className="text-red-400 text-3xl sm:text-4xl md:text-4xl tracking-wide font-mono">powered by MITS®</h3>
       </div>
     </div>
   );
