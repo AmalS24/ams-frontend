@@ -4,8 +4,8 @@ import "../index.css";
 
 function NriRegistration() {
   return (
-    <div className="flex items-center justify-center w-screen h-screen ">
-      <div className="grid grid-cols-3 overflow-hidden card bg-gray-300 ">
+     <div className="flex items-center justify-center w-screen h-screen ">
+       <div className="grid grid-cols-3 overflow-hidden card bg-gray-300 ">
         <div className="relative flex items-center justify-center w-full h-full bg-red-600">
           <div
             className="absolute flex mx-auto items-center
@@ -77,8 +77,8 @@ function NriRegistration() {
             </form>
           </div>
         </div>
-      </div>
-    </div>
+       </div>
+     </div>
   );
 }
 
