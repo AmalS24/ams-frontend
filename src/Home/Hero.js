@@ -1,12 +1,13 @@
 import React from "react";
 
+
 function Hero() {
   return (
     <div className="w-full h-full flex lg:flex-row  flex-col items-center justify-between mt-20  bg-white">
 
       <div className="lg:ml-10  lg:h-screen bg-transparent rounded-xl relative flex justify-center">
         {/* <div className="absolute h-8 w-8 ml-70 rounded-full bg-red-600  animate-pulse"></div> */}
-        <div className="mb-40 rounded-xl bg-gray-200 h-72 w-72  flex items-center justify-center shadow-xl">
+        <div className="mb-40 rounded-full bg-gray-200 h-72 w-72  flex items-center justify-center shadow-xl">
           <svg
             class="w-40 h-40"
             fill="none"
@@ -35,7 +36,7 @@ function Hero() {
 
       <div className="lg:ml-10  lg:h-screen bg-transparent rounded-xl relative flex justify-center">
         {/* <div className="absolute h-6 w-6 ml-70 rounded-full bg-green-600 animate-ping"></div> */}
-        <div className="mb-40 rounded-xl bg-gray-200 h-72 w-72  flex items-center justify-center shadow-xl">
+        <div className="mb-40 rounded-full bg-gray-200 h-72 w-72  flex items-center justify-center shadow-xl">
           <svg
             class="w-40 h-40"
             fill="none"
@@ -64,7 +65,7 @@ function Hero() {
 
       <div className="lg:ml-10  lg:h-screen bg-transparent rounded-xl relative flex justify-center">
         {/* <div className="absolute h-6 w-6 ml-70 rounded-full bg-green-600 animate-ping"></div> */}
-        <div className="mb-40 rounded-xl bg-gray-200 h-72 w-72  flex items-center justify-center shadow-xl">
+        <div className="mb-40 rounded-full bg-gray-200 h-72 w-72  flex items-center justify-center shadow-xl">
           <svg
             class="w-40 h-40 "
             fill="none"
@@ -92,7 +93,7 @@ function Hero() {
 
       <div className="lg:ml-10 lg:mr-10    lg:h-screen bg-transparent rounded-xl relative flex justify-center">
         {/* <div className="absolute h-6 w-6 ml-70 rounded-full bg-green-600 animate-ping"></div> */}
-        <div className="mb-40 rounded-xl bg-gray-200 h-72 w-72  flex items-center justify-center shadow-xl">
+        <div className="mb-40 rounded-full bg-gray-200 h-72 w-72  flex items-center justify-center shadow-xl">
           <svg
             class="w-40 h-40"
             fill="none"
