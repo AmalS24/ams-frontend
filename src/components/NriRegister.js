@@ -7,39 +7,38 @@ function NriRegister() {
       <div className="bg-transparent w-full flex items-center justify-between px-20 py-10 h-14">
         <Link to="/">
           <svg
-            class="w-8 h-8"
-            fill="none"
-            stroke="white"
-            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="white"
+            class="bi bi-house-fill"
+            viewBox="0 0 16 16"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-            ></path>
+              fill-rule="evenodd"
+              d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
+            />
           </svg>
         </Link>
         <button>
           <svg
-            class="w-8 h-8"
-            fill="none"
-            stroke="white"
-            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="white"
+            class="bi bi-question-circle-fill"
+            viewBox="0 0 16 16"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            ></path>
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
           </svg>
         </button>
       </div>
-      <div className="w-97 lg:flex lg:w-150 h-98 mx-auto mt-10 bg-white  shadow-md">
-        <div className="bg-gray-400 lg:flex flex-col lg:w-3/5 items-center  justify-center h-full hidden">
+      <div className="w-97 lg:flex lg:w-150 h-98 mx-auto mt-10 bg-white shadow-2xl">
+        <div className="bg-gray-300 lg:flex flex-col lg:w-3/5 items-center justify-center h-full hidden">
           <svg
             id="b2385a1c-fc0e-4751-8962-4bb7a3b80a9d"
             data-name="Layer 1"
@@ -190,7 +189,7 @@ function NriRegister() {
             />
             <polygon
               points="562.421 327.072 570.043 319.186 525.965 278.363 481.602 238.751 469.315 256.113 515.804 299.507 562.421 327.072"
-              fill="#e4e4e4"
+              fill="#fff"
             />
             <path
               d="M771.16255,692.15579c0-9.91059.1962-16.97938.35372-22.65975.46114-16.62345.585-21.09175-5.77636-49.71884l-1.63393-7.35177-9.63462,28.90366a90.54051,90.54051,0,0,0-4.65708,28.59583l14.85545,89.1319H734.3073L712.07022,662.6966l-.01042-29.47522a10.87342,10.87342,0,0,1,0-15.11238l7.38785-44.15872,7.47782-59.51319h81.90719s14.45524,29.96182.09,59.68234l-.0016,118.07323-7.42191,81.63984H778.58607Z"
@@ -200,7 +199,7 @@ function NriRegister() {
             <path
               d="M803.82486,521.64056l-76.613-6.3842-.39781-.03286,6.11405-110.05371a34.61141,34.61141,0,0,1,23.45877-30.98589v-7.70169a7.198,7.198,0,0,1,7.19-7.18984h11.194a7.15113,7.15113,0,0,1,6.4309,3.9745l5.47374,10.94749,20.69855,16.55892c10.223,8.17865,1.99506,90.17642,1.55276,94.50283l5.006,25.031a9.50513,9.50513,0,0,1-9.29653,11.368Q804.2329,521.67383,803.82486,521.64056Z"
               transform="translate(-235.82471 -97.18208)"
-              fill="#e4e4e4"
+              fill="#f6f6f6"
             />
             <path
               d="M722.6923,550.69888a10.69629,10.69629,0,0,0,.20244-16.40029l7.60124-23.231-12.99078-8.06246-10.27365,32.95742a10.7543,10.7543,0,0,0,15.46075,14.73632Z"
@@ -209,7 +208,7 @@ function NriRegister() {
             />
             <polygon
               points="513.585 295.588 503.038 292.072 487.804 360.04 473.773 427.634 494.876 430.739 511.241 358.868 513.585 295.588"
-              fill="#e4e4e4"
+              fill="#fff"
             />
             <circle cx="525.10302" cy="229.91361" r="25.16214" fill="#ffb6b6" />
             <path
@@ -244,24 +243,27 @@ function NriRegister() {
               <input
                 type="email"
                 id="email"
-                className="w-full lg:w-82 lg:h-14 text-xl h-12 px-5  rounded-full focus:outline-none border-2 border-black"
+                placeholder="Email-ID"
+                className="w-full italic lg:w-82 lg:h-14 text-xl h-12 px-5  rounded-full focus:outline-none border-2 border-black"
               />
               <button>
-                <svg
-                  class="w-14 h-15 lg:hidden"
-                  fill="none"
-                  stroke="red"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-                <div className="lg:flex w-28 h-14 justify-center hidden text-2xl bg-red-600 text-white hover:bg-red-500 ml-3 py-3 px-4 rounded-full">
+                <div className="w-14 h-full py-2.5 ml-2 flex justify-center items-center hover:bg-red-500 lg:hidden rounded-full bg-red-600">
+                  <svg
+                    class="w-8 h-8"
+                    fill="none"
+                    stroke="white"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                </div>
+                <div className="lg:flex w-28 h-14 shadow-2xl justify-center hidden text-2xl bg-red-600 text-white hover:bg-red-500 ml-3 py-3 px-4 rounded-full">
                   Verify
                 </div>
               </button>
@@ -279,7 +281,8 @@ function NriRegister() {
                   <input
                     type="text"
                     id="text"
-                    className="w-full lg:mr-4 lg:h-14 lg:w-64 h-12 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
+                    placeholder="Full Name"
+                    className="w-full italic lg:mr-4 lg:h-14 lg:w-64 h-12 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
                   />
                 </div>
               </div>
@@ -291,26 +294,32 @@ function NriRegister() {
                 >
                   Phone
                 </label>
-                <div className="flex items-center mt-2   flex-row">
+                <div className="flex items-center mt-2  flex-row">
                   <input
                     type="text"
                     id="phone"
-                    className="w-full lg:h-14 lg:w-46  h-12 px-5 text-xl  rounded-full focus:outline-none border-2 border-black"
+                    placeholder="Optional"
+                    className="w-full italic lg:h-14 lg:w-46  h-12 px-5 text-xl  rounded-full focus:outline-none border-2 border-black"
                   />
                 </div>
               </div>
             </div>
 
             <div className="mt-10 lg:mt-14 flex justify-between w-full h-14">
-              <button className="items-center justify-center w-36 rounded-full h-16 bg-red-600 hover:bg-red-500 text-white text-2xl">
+              <button className="items-center justify-center w-36 shadow-2xl rounded-full h-16 bg-red-600 hover:bg-red-500 text-white text-2xl">
                 Register
               </button>
-              <button className="items-center justify-center w-36 rounded-full h-16 border-2 border-red-600 text-red-600 text-2xl hover:text-white hover:bg-red-600">
-                SignIn
-              </button>
+              <Link
+                to="/"
+                className="flex items-center justify-center w-36 shadow-2xl rounded-full h-16 border-2 border-red-600 text-red-600 text-2xl hover:text-white hover:bg-red-600"
+              >
+                Sign In
+              </Link>
             </div>
           </form>
-          <p className="text-lg lg:text-xl lg:mb-8 mt-4 font-light">Already Registered ? Try SignIn</p>
+          <p className="text-lg lg:text-xl lg:mb-8 mt-4 font-light">
+            Already Registered ? Try Sign In
+          </p>
         </div>
       </div>
     </div>
