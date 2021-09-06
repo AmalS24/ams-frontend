@@ -10,7 +10,7 @@ export const Header = () => {
         alt="cover"
       />
       <div className="absolute inset-0 bg-gray-900 bg-opacity-75"></div>
-      <div className="px-8 py-4 text-xl text-white flex items-center justify-start relative bg-transparent ">
+      <div className="px-4 py-4 text-lg  text-white flex items-center justify-start relative bg-transparent ">
         <Link to="/" className=" flex font-bold px-6 hover:text-red-600">
           <svg
             class="w-6 h-6"

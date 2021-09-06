@@ -37,7 +37,7 @@ function NriRegister() {
           </svg>
         </button>
       </div>
-      <div className="w-97 lg:flex lg:w-150 h-98 mx-auto mt-10 bg-white shadow-2xl">
+      <div className="w-97 lg:flex lg:w-150 h-98 mx-auto mt-4 bg-white shadow-2xl">
         <div className="bg-gray-400 lg:flex flex-col lg:w-3/5 items-center justify-center h-full hidden">
           <svg
             id="b2385a1c-fc0e-4751-8962-4bb7a3b80a9d"
@@ -225,13 +225,13 @@ function NriRegister() {
             Verification
           </h1>
         </div>
-        <div className="bg-white flex flex-col items-center w-full h-full">
+        <div className="bg-white flex flex-col items-center w-full h-full ">
           <h1 className="text-3xl lg:text-5xl lg:mt-14 mt-10 lg:font-semibold font-bold tracking-wider">
             NRI
           </h1>
           <form
             action=""
-            className="lg:w-97 w-96 h-97 lg:mt-8 mt-2 flex flex-col lg:px-0 px-4"
+            className="lg:w-97.5 w-96 h-97 lg:mt-8 mt-2 flex flex-col lg:px-0 px-4"
           >
             <label
               htmlFor="email"
@@ -269,7 +269,7 @@ function NriRegister() {
               </button>
             </div>
 
-            <div className="lg:mt-6 lg:flex flex-row ">
+            <div className="lg:mt-4 lg:flex flex-row ">
               <div className=" mt-8">
                 <label
                   htmlFor="name"
@@ -305,7 +305,7 @@ function NriRegister() {
               </div>
             </div>
 
-            <div className="mt-10 lg:mt-14 flex justify-between w-full h-14">
+            <div className="mt-6 lg:mt-12 flex justify-between w-full h-14">
               <button className="items-center justify-center w-36 shadow-2xl rounded-full h-16 bg-red-600 hover:bg-red-500 text-white text-2xl">
                 Register
               </button>
@@ -317,7 +317,7 @@ function NriRegister() {
               </Link>
             </div>
           </form>
-          <p className="text-lg lg:text-xl lg:mb-8 mt-4 font-light">
+          <p className="text-lg lg:mb-8 mt-6 font-light">
             Already Registered ? Try Sign In
           </p>
         </div>
