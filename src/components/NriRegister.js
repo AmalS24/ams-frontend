@@ -38,7 +38,7 @@ function NriRegister() {
         </button>
       </div>
       <div className="w-97 lg:flex lg:w-150 h-98 mx-auto mt-10 bg-white shadow-2xl">
-        <div className="bg-gray-300 lg:flex flex-col lg:w-3/5 items-center justify-center h-full hidden">
+        <div className="bg-gray-400 lg:flex flex-col lg:w-3/5 items-center justify-center h-full hidden">
           <svg
             id="b2385a1c-fc0e-4751-8962-4bb7a3b80a9d"
             data-name="Layer 1"
