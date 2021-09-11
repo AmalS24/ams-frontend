@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function NriRegister() {
   return (
-    <div className="bg-trout-500  w-screen h-screen relative ">
-      <div className="bg-transparent w-full flex items-center  justify-between px-20 py-10 h-14">
+    <div className="bg-trout-500 w-screen h-screen relative ">
+      <div className=" w-full flex items-center  justify-between px-20 py-10 h-14">
         <Link to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -24,19 +24,85 @@ function NriRegister() {
             />
           </svg>
         </Link>
+
+        {/* statub-bar */}
+        <div className="flex items-center mr-52">
+        <div className="flex absolute w-64  h-14 items-center ">
+          <hr className="border-4 border-white lg:flex hidden ml-9 w-8 " />
+          <hr className="border-4 border-white ml-10 lg:flex hidden w-10 " />
+          <hr className="border-4 border-white ml-6 lg:flex hidden w-10 " />
+          <div className="lg:justify-between justify-center items-center absolute flex w-full ">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="#3debbf"
+              class="bi mr-8 lg:mr-0 w-10 h-10 bi-check-circle-fill "
+              viewBox="0 0 16 16"
+            >
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="white"
+              class="bi hidden lg:flex  w-10 h-10 bi-person-circle"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+              <path
+                fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="white"
+              class="bi hidden lg:flex w-10 h-10 bi-person-circle"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+            </svg>
+            <svg
+              class=" hidden mt-0 lg:flex  w-12 h-12 "
+              fill="none"
+              stroke="white"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-width="1.2"
+                d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        </div>
+
         <button>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"
             height="30"
             fill="white"
-            class="bi bi-question-circle-fill"
+            class="bi bi-question-circle-fill transition duration-100 ease-in-out transform hover:-translate-y-1 hover:scale-110"
             viewBox="0 0 16 16"
           >
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
           </svg>
         </button>
       </div>
+
+
+
+
+
+
       <div className="w-97 lg:flex lg:w-150 h-98 mx-auto mt-4 bg-white shadow-2xl">
         <div className="bg-gray-400 lg:flex flex-col lg:w-3/5 items-center  justify-center h-full hidden">
           <svg
