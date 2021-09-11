@@ -7,7 +7,7 @@ function Hero() {
 
       <div className="lg:ml-10  lg:h-screen bg-transparent rounded-xl relative flex justify-center">
         {/* <div className="absolute h-8 w-8 ml-70 rounded-full bg-red-600  animate-pulse"></div> */}
-        <div className="mb-40 rounded-full bg-gray-200 h-72 w-72  flex items-center justify-center shadow-xl">
+        <div className="mb-40 rounded-full bg-gray-200 h-64 w-64  flex items-center justify-center shadow-xl">
           <svg
             class="w-40 h-40"
             fill="none"
@@ -24,7 +24,7 @@ function Hero() {
           </svg>
         </div>
         <div className="absolute h-full lg:flex flex-col justify-center items-center ">
-          <p className="text-4xl lg:mt-20 mt-74 p-5 flex  justify-center uppercase">
+          <p className="text-4xl lg:mt-16 mt-74 p-5 flex  justify-center uppercase">
             Verification
           </p>
           <p className="mx-10 text-center lg:flex text-xl font-light text-gray-600 hidden">
@@ -36,7 +36,7 @@ function Hero() {
 
       <div className="lg:ml-10  lg:h-screen bg-transparent rounded-xl relative flex justify-center">
         {/* <div className="absolute h-6 w-6 ml-70 rounded-full bg-green-600 animate-ping"></div> */}
-        <div className="mb-40 rounded-full bg-gray-200 h-72 w-72  flex items-center justify-center shadow-xl">
+        <div className="mb-40 rounded-full bg-gray-200 h-64 w-64  flex items-center justify-center shadow-xl">
           <svg
             class="w-40 h-40"
             fill="none"
@@ -53,7 +53,7 @@ function Hero() {
           </svg>
         </div>
         <div className="absolute h-full lg:flex flex-col justify-center items-center ">
-          <p className="text-4xl lg:mt-20 mt-74 p-5 flex  justify-center uppercase">
+          <p className="text-4xl lg:mt-21 mt-74 p-5 flex  justify-center uppercase">
             SIgn-UP
           </p>
           <p className="mx-10 text-center lg:flex text-xl font-light text-gray-600 hidden">
@@ -65,7 +65,7 @@ function Hero() {
 
       <div className="lg:ml-10  lg:h-screen bg-transparent rounded-xl relative flex justify-center">
         {/* <div className="absolute h-6 w-6 ml-70 rounded-full bg-green-600 animate-ping"></div> */}
-        <div className="mb-40 rounded-full bg-gray-200 h-72 w-72  flex items-center justify-center shadow-xl">
+        <div className="mb-40 rounded-full bg-gray-200 h-64 w-64  flex items-center justify-center shadow-xl">
           <svg
             class="w-40 h-40 "
             fill="none"
@@ -82,7 +82,7 @@ function Hero() {
           </svg>
         </div>
         <div className="absolute h-full lg:flex flex-col justify-center items-center ">
-          <p className="text-4xl lg:mt-20 mt-74 p-5 flex  justify-center uppercase">
+          <p className="text-4xl lg:mt-10 mt-72 p-5 flex  justify-center uppercase">
             details
           </p>
           <p className="mx-14 text-center lg:flex text-xl font-light text-gray-600 hidden">
@@ -93,7 +93,7 @@ function Hero() {
 
       <div className="lg:ml-10 lg:mr-10    lg:h-screen bg-transparent rounded-xl relative flex justify-center">
         {/* <div className="absolute h-6 w-6 ml-70 rounded-full bg-green-600 animate-ping"></div> */}
-        <div className="mb-40 rounded-full bg-gray-200 h-72 w-72  flex items-center justify-center shadow-xl">
+        <div className="mb-40 rounded-full bg-gray-200 h-64 w-64  flex items-center justify-center shadow-xl">
           <svg
             class="w-40 h-40"
             fill="none"
@@ -110,7 +110,7 @@ function Hero() {
           </svg>
         </div>
         <div className="absolute h-full lg:flex flex-col justify-center items-center ">
-          <p className="text-4xl lg:mt-20 mt-74 p-5 flex  justify-center uppercase">
+          <p className="text-4xl lg:mt-16 mt-74 p-5 flex  justify-center uppercase">
             payment
           </p>
           <p className="mx-10 text-center lg:flex text-xl font-light text-gray-600 hidden">

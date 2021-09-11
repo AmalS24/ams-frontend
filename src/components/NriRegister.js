@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function NriRegister() {
   return (
-    <div className="bg-trout-500  w-screen h-screen ">
-      <div className="bg-transparent w-full flex items-center justify-between px-20 py-10 h-14">
+    <div className="bg-trout-500  w-screen h-screen relative ">
+      <div className="bg-transparent w-full flex items-center  justify-between px-20 py-10 h-14">
         <Link to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@ function NriRegister() {
         </button>
       </div>
       <div className="w-97 lg:flex lg:w-150 h-98 mx-auto mt-4 bg-white shadow-2xl">
-        <div className="bg-gray-400 lg:flex flex-col lg:w-3/5 items-center justify-center h-full hidden">
+        <div className="bg-gray-400 lg:flex flex-col lg:w-3/5 items-center  justify-center h-full hidden">
           <svg
             id="b2385a1c-fc0e-4751-8962-4bb7a3b80a9d"
             data-name="Layer 1"
@@ -225,7 +225,7 @@ function NriRegister() {
             Verification
           </h1>
         </div>
-        <div className="bg-white flex flex-col items-center w-full h-full ">
+        <div className="bg-white flex flex-col items-center w-full h-full  ">
           <h1 className="text-3xl lg:text-5xl lg:mt-14 mt-10 lg:font-semibold font-bold tracking-wider">
             NRI
           </h1>
