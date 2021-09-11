@@ -28,9 +28,9 @@ function NriRegister() {
         {/* statub-bar */}
         <div className="flex items-center mr-52">
         <div className="flex absolute w-64  h-14 items-center ">
-          <hr className="border-4 border-white lg:flex hidden ml-9 w-8 " />
-          <hr className="border-4 border-white ml-10 lg:flex hidden w-10 " />
-          <hr className="border-4 border-white ml-6 lg:flex hidden w-10 " />
+          <div className="bg-white lg:flex h-2 hidden ml-9 w-8 "></div>
+          <div className="bg-white ml-10 h-2 lg:flex hidden w-10"></div>
+          <div className="bg-white ml-6 h-2 lg:flex hidden w-10 "></div>
           <div className="lg:justify-between justify-center items-center absolute flex w-full ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
