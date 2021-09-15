@@ -3,7 +3,7 @@ import React from "react";
 function Content() {
   return (
     //   what-section
-    <div className="max-w-screen  h-full">
+    <div className="w-full  h-full">
       <div className=" flex flex-col items-center justify-center bg-gray-200">
         <h1 className="text-4xl sm:text-5xl md:text-6xl text-gray-900 mt-20 ">
           What is AMS ?
@@ -13,7 +13,7 @@ function Content() {
           to complete the initial stages of Admission process via online ,Kindly select your preferred quota to proceed.
         </p>
         </div>
-        <div className="w-screen flex justify-center mb-10 ">
+        <div className="w-full flex justify-center mb-10 ">
           <h1 className="text-4xl sm:text-5xl md:text-6xl tracking-wider  mt-20 ">
             How AMS Works ?
           </h1>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const NriRegister = () => {
   return (
-    <div className="w-screen min-h-screen h-full bg-trout-500">
+    <div className="w-full min-h-screen h-full bg-trout-500 overflow-x-hidden">
       <div className="  w-full flex items-center justify-between xs:px-10 px-20 py-8 h-14">
         <Link to="/">
           <svg
@@ -42,16 +42,16 @@ const NriRegister = () => {
           {/* fname lname email dob aadhar phone gender  */}
           <form
             action=""
-            className="flex flex-col  xs:w-80 sm:w-97.85 sm:h-98.5 h-full rounded-sm bg-white"
+            className="flex flex-col  xs:w-80 sm:w-97.85 sm:h-98 h-full rounded-sm bg-white"
           >
             <h1 className="text-2xl text-center mb-2 sm:text-4xl sm:py-3 font-semibold mt-4 uppercase">
               Registration
             </h1>
             {/* <div className="xs:h-9 w-72 mx-3 flex justify-center items-center text-sm tracking-tight italic text-blue-600 bg-indigo-100  text-center rounded-md">It looks like you've already registered try Login</div> */}
             {/* <div className="xs:h-9 w-72 mx-3 flex justify-center items-center text-sm tracking-tight italic text-red-600 bg-red-100  text-center rounded-md">*Required field empty</div> */}
-            <div className="xs:h-9 sm:h-12 w-72  sm:w-97.5 sm:mb-3 sm:mx-10 sm:text-lg mx-3 flex justify-center items-center text-sm italic tracking-tight text-green-700 bg-teal-100  text-center rounded-md">
+            {/* <div className="xs:h-9 sm:h-12 w-72  sm:w-97.5 sm:mb-3 sm:mx-10 sm:text-lg mx-3 flex justify-center items-center text-sm italic tracking-tight text-green-700 bg-teal-100  text-center rounded-md">
               Registration Successful, check your mail to Login
-            </div>
+            </div> */}
             <label
               htmlFor="Name"
               className="text-md sm:font-normal sm:text-lg font-light mt-2 sm:mt-3 ml-6 sm:ml-10"
