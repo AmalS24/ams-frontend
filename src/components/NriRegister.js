@@ -142,7 +142,7 @@ const NriRegister = () => {
               <div className="sm:flex flex-row sm:items-center">
               <p className="sm:flex hidden text-lg font-light">Already Registered ? Try </p>
               <Link to="/login" className="py-1 sm:ml-2 text-red-600 hover:underline hover:text-purple-700">
-                Login
+                Sign-In
               </Link>
               </div>
             </div>
