@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 
+
 const NriDetails_1 = () => {
   return (
-    <div className="w-full bg-trout-500 overflow-x-hidden ">
-      <div className="  w-full flex items-center justify-between xs:px-10 px-20 py-8 h-14">
+    <div className="w-full bg-trout-500 h-screen">
+      <div className="  w-full flex items-center justify-between xs:px-10 px-20 py-8 h-16">
         <Link to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -41,12 +42,12 @@ const NriDetails_1 = () => {
           </svg>
         </button>
       </div>
-      <div className="w-full h-99 bg-transparent flex">
-        <div className="flex justify-center items-center xl:w-full w-full">
-          {/* fname lname email dob aadhar phone gender  */}
+      <div className="w-full h-98 bg-transparent flex">
+        <div className="flex justify-center items-start xl:w-full w-full">
           <form
             action=""
             className="flex flex-col  xs:w-80 sm:w-97.85 sm:h-98 h-full lg:w-200 xl:w-300 rounded-sm bg-white"
+            method=""
           >
             <h1 className="text-2xl text-center mb-2 sm:text-4xl sm:py-3 font-semibold mt-4 uppercase">
               Basic Profile
@@ -100,6 +101,33 @@ const NriDetails_1 = () => {
           </form>
         </div>
       </div>
+    {/* <div className="bg-gray-300 flex items-center justify-center w-full h-98">
+
+    </div> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   );
 };

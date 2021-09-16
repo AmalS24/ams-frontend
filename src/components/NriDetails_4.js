@@ -41,7 +41,7 @@ const NriDetails_4 = () => {
           </svg>
         </button>
       </div>
-      <div className="w-full h-99 bg-transparent flex">
+      <div className="w-full h-98 bg-transparent flex">
         <div className="flex justify-center items-center xl:w-full w-full">
           {/* fname lname email dob aadhar phone gender  */}
           <form

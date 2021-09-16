@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../index.css"
 
 export const Header = () => {
   return (
@@ -10,10 +11,10 @@ export const Header = () => {
         alt="cover"
       />
       <div className="absolute inset-0 bg-gray-900 bg-opacity-75"></div>
-       <div className="px-4 py-4 text-lg  text-white flex  items-center justify-start relative bg-transparent ">
+       <div className="px-6 py-4 text-lg text-white flex items-center justify-between relative">
         <Link
           to="/"
-          className=" flex font-bold px-6 hover:text-red-600 
+          className=" flex font-bold px-6 hover:text-red-600   
           transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
         >    
           <svg
@@ -38,14 +39,15 @@ export const Header = () => {
           </svg>
           AMS
         </Link>
+        <div className="flex flex-row justify-between items-center w-64 mt-3">
         <Link
           to="/nri"
-          className="px-6 hover:text-red-600 
-          transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+          className="flex items-center  justify-center w-30 shadow-2xl rounded-xl h-10 text-white bg-red-600
+          transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-100"
         >
-          NRI
+          Register
         </Link>
-        <Link
+        {/* <Link
           to="/mgmt"
           className="px-6 hover:text-red-600 
           transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
@@ -58,14 +60,15 @@ export const Header = () => {
           transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
         >
           MERIT
-        </Link>
+        </Link> */}
         <Link
           to="/login"
-          className="flex items-center  ml-100 justify-center w-30 shadow-2xl rounded-full h-14 text-white bg-red-600
-                transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+          className="flex items-center  justify-center w-30 shadow-2xl rounded-xl h-10 text-white border-2 border-red-600 hover:bg-red-600
+                transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-100"
         >
           Sign-In
         </Link>
+        </div>
       </div>
       <div className=" flex flex-col h-96 items-center  justify-center relative ">
         <h1 className="py-5 xs:text-4xl sm:text-6xl text-3xl md:text-7xl text-white tracking-wider">
