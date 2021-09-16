@@ -26,7 +26,7 @@ function NriLogin() {
         </Link>
 
         {/* statub-bar */}
-        <div className="flex items-center mr-52">
+        {/* <div className="flex items-center mr-52">
           <div className="flex absolute w-64  h-14 items-center ">
             <div className="bg-teal-350 lg:flex h-2 hidden ml-9 w-8 "></div>
             <div className="bg-white ml-10 h-2 lg:flex hidden w-10"></div>
@@ -82,7 +82,7 @@ function NriLogin() {
               </svg>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <button>
           <svg
@@ -235,7 +235,7 @@ function NriLogin() {
                     className="w-96 ml-4 italic h-14 mt-2 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
                   />
                    <Link
-                to="/nri"
+                to="/nridetails_1"
                 className="flex items-center mt-8 ml-6 justify-center w-30 shadow-2xl rounded-full h-14 border-2 border-red-600 text-red-600 text-2xl hover:text-white hover:bg-red-600"
               >
                 Sign-In
