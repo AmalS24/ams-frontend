@@ -47,29 +47,49 @@ const NriRegister = () => {
             <h1 className="text-2xl text-center mb-2 sm:mb-1 sm:mt-2 sm:text-4xl sm:py-3 font-semibold mt-6 uppercase">
               Registration
             </h1>
-            <div className="xs:h-9 sm:h-12 w-72  sm:w-97.5 sm:mb-1 sm:mx-10 sm:text-lg mx-3 flex justify-center items-center text-sm italic tracking-tight text-blue-700 bg-blue-100  text-center rounded-md">It looks like you've already registered try SignIn</div>
+            <div className="xs:h-9 sm:h-12 w-72  sm:w-97.5 sm:mb-1 sm:mx-10 sm:text-lg mx-3 flex justify-center items-center text-sm italic tracking-tight text-blue-700 bg-blue-100  text-center rounded-md">
+              It looks like you've already registered try SignIn
+            </div>
             {/* <div className="xs:h-9 w-72 mx-3 flex justify-center items-center text-sm tracking-tight italic text-red-600 bg-red-100  text-center rounded-md">*Required field empty</div> */}
             {/* <div className="xs:h-9 sm:h-12 w-72  sm:w-97.5 sm:mb-1 sm:mx-10 sm:text-lg mx-3 flex justify-center items-center text-sm italic tracking-tight text-green-700 bg-teal-100  text-center rounded-md">
               Registration Successful, check your mail to Login
             </div> */}
-            <label
-              htmlFor="Name"
-              className="text-md sm:font-normal sm:text-lg font-light mt-2 sm:mt-3 ml-6 sm:ml-10"
-            >
-              Name*
-            </label>
+            <div className="bg-transparent sm:flex sm:justify-between w-full">
+              <label
+                htmlFor="Name"
+                className="text-md sm:font-normal sm:text-lg font-light mt-2 sm:mt-3 ml-6 sm:ml-10"
+              >
+                Name*
+              </label>
+              <label
+                htmlFor="Name"
+                className="text-md sm:font-normal xs:hidden sm:flex  text-lg font-light mt-3 mr-24"
+              >
+                Gender*
+              </label>
+            </div>
             <div className="sm:flex sm:px-6">
               <input
                 type="text"
                 placeholder="First Name"
                 required
-                className="mb-4  sm:mb-0 xs:h-11 sm:w-full sm:ml-3 px-4 w-72 mx-3 italic text-md sm:text-lg focus:outline-none border-2 border-black rounded-full"
+                className="mb-1  sm:mb-0 xs:h-11 sm:w-74 sm:ml-3 px-4 w-72 mx-3 italic text-md sm:text-lg focus:outline-none border-2 border-black rounded-full"
               />
-              <input
-                type="text"
-                placeholder="Last Name"
-                className=" xs:h-11 sm:w-full  px-4 w-72 mx-3 italic text-md sm:text-lg focus:outline-none border-2 border-black rounded-full"
-              />
+              <label
+                htmlFor="quota"
+                className="text-md sm:font-normal sm:text-lg font-light sm:hidden sm:mt-3 ml-6 sm:ml-10"
+              >
+                Gender*
+              </label>
+              <select
+                name="gender"
+                className=" xs:h-11 sm:w-36 px-4 w-72 mx-3 italic text-md sm:text-lg focus:outline-none border-2 border-black rounded-full"
+                id="gender"
+              >
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="Others">Others</option>
+              </select>
             </div>
             <label
               htmlFor="email"
@@ -124,16 +144,19 @@ const NriRegister = () => {
                   htmlFor="gender"
                   className="text-md sm:font-normal sm:text-lg font-light mt-2 sm:mt-3 ml-6 sm:ml-4"
                 >
-                  Gender*
+                  Quota*
                 </label>
                 <select
-                  name="gender"
+                  name="quota"
                   className="xs:h-11 sm:text-lg sm:w-48 sm:mx-0  px-4 w-72 mx-3 text-md italic focus:outline-none border-2 border-black rounded-full"
-                  id="gender"
+                  id="quota"
+                  required
                 >
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="Others">Others</option>
+                  <option value=""></option>
+                  <option value="NRI">NRI</option>
+                  <option value="Merit">Merit</option>
+                  <option value="Managment">Management</option>
+                  
                 </select>
               </div>
             </div>
@@ -142,10 +165,15 @@ const NriRegister = () => {
                 Register
               </button>
               <div className="sm:flex flex-row sm:mt-6">
-              <p className="sm:flex hidden text-xl font-light">Already Registered ? Try </p>
-              <Link to="/login" className=" sm:ml-2 sm:text-xl text-red-600 hover:underline hover:text-purple-700">
-                Sign-In
-              </Link>
+                <p className="sm:flex hidden text-xl font-light">
+                  Already Registered ? Try
+                </p>
+                <Link
+                  to="/login"
+                  className=" sm:ml-2 sm:text-xl text-red-600 hover:underline hover:text-purple-700"
+                >
+                  Sign-In
+                </Link>
               </div>
             </div>
           </form>
