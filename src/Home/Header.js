@@ -10,12 +10,8 @@ export const Header = () => {
         alt="cover"
       />
       <div className="absolute inset-0 bg-gray-900 bg-opacity-75"></div>
-       <div className="px-4 py-4 text-lg  text-white flex  items-center justify-start relative bg-transparent ">
-        <Link
-          to="/"
-          className=" flex font-bold px-6 hover:text-red-600 
-          transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
-        >    
+      <div className="px-4 py-4 text-lg  text-white flex items-center justify-start relative bg-transparent ">
+        <Link to="/" className=" flex font-bold px-6 hover:text-red-600">
           <svg
             class="w-6 h-6"
             fill="none"
@@ -38,33 +34,14 @@ export const Header = () => {
           </svg>
           AMS
         </Link>
-        <Link
-          to="/nri"
-          className="px-6 hover:text-red-600 
-          transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
-        >
+        <Link to="/nri" className="px-6 hover:text-red-600">
           NRI
         </Link>
-        <Link
-          to="/mgmt"
-          className="px-6 hover:text-red-600 
-          transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
-        >
+        <Link to="/mgmt" className="px-6 hover:text-red-600">
           MANAGEMENT
         </Link>
-        <Link
-          to="/merit"
-          className="px-6 hover:text-red-600 
-          transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
-        >
+        <Link to="/merit" className="px-6 hover:text-red-600">
           MERIT
-        </Link>
-        <Link
-          to="/login"
-          className="flex items-center  ml-100 justify-center w-30 shadow-2xl rounded-full h-14 text-white bg-red-600
-                transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
-        >
-          Sign-In
         </Link>
       </div>
       <div className=" flex flex-col h-96 items-center  justify-center relative ">
