@@ -17,7 +17,7 @@ export const Header = () => {
           transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
         >    
           <svg
-            class="w-6 h-6"
+            class="w-6 h-6 animate-pulse"
             fill="none"
             stroke="red"
             viewBox="0 0 24 24"
