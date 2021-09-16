@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 
-
 const NriDetails_1 = () => {
   return (
     <div className="w-full bg-trout-500 h-screen">
@@ -42,92 +41,52 @@ const NriDetails_1 = () => {
           </svg>
         </button>
       </div>
-      <div className="w-full h-98 bg-transparent flex">
-        <div className="flex justify-center items-start xl:w-full w-full">
-          <form
-            action=""
-            className="flex flex-col  xs:w-80 sm:w-97.85 sm:h-98 h-full lg:w-200 xl:w-300 rounded-sm bg-white"
-            method=""
-          >
-            <h1 className="text-2xl text-center mb-2 sm:text-4xl sm:py-3 font-semibold mt-4 uppercase">
-              Basic Profile
-            </h1>
-            <label
-              htmlFor="Name"
-              className="text-md sm:font-normal sm:text-lg font-light mt-2 sm:mt-3 ml-6 sm:ml-10"
-            >
-              Name*
-            </label>
-            <div className="sm:flex sm:px-6">
-              <input
-                type="text"
-                placeholder="First Name"
-                className="mb-4  sm:mb-0 xs:h-11 sm:w-full sm:ml-3 px-4 w-72 mx-3 italic text-md sm:text-lg focus:outline-none border-2 border-black rounded-full"
-              />
-              <input
-                type="text"
-                placeholder="Middle Name (optional)"
-                className=" xs:h-11 sm:w-full  px-4 w-72 mx-3 italic text-md sm:text-lg focus:outline-none border-2 border-black rounded-full"
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                className=" xs:h-11 sm:w-full  px-4 w-72 mx-3 italic text-md sm:text-lg focus:outline-none border-2 border-black rounded-full"
-              />
-            </div>
+      <div className="w-full h-98 items-center justify-center flex">
+        <form
+          action=""
+          className="flex flex-col  xs:w-80 sm:w-97.85 sm:h-97.75 h-full lg:w-100 xl:w-120 rounded-sm bg-white"
+          method=""
+        >
+          <h1 className="text-2xl text-center  sm:text-4xl sm:py-3 font-semibold mt-2 uppercase">
+            Basic Profile
+          </h1>
+          <div>
 
             <div className="h-6 w-72  sm:mt-4 sm:w-97.75  sm:h-12 mt-3 mx-auto flex sm:items-center justify-between   text-lg tracking-tighter">
-              <button className="py-1 opacity-50 cursor-not-allowed sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 
-              text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600">
+              <button
+                className="py-1 opacity-50 cursor-not-allowed sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 
+              text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600"
+              >
                 SUBMIT
               </button>
 
-              <button className="py-1 sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 
-              text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600 btn-transition">
+              <button
+                className="py-1 sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 
+              text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600 btn-transition"
+              >
                 SAVE
               </button>
 
-              <button className="py-1 opacity-50 cursor-not-allowed sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 
-              text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600">
+              <button
+                className="py-1 opacity-50 cursor-not-allowed sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 
+              text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600"
+              >
                 PREV
               </button>
 
-              <button className="py-1 sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 
-              text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600 btn-transition">
+              <button
+                className="py-1 sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 
+              text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600 btn-transition"
+              >
                 <Link to="./nridetails_2">NEXT</Link>
               </button>
-              
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
-    {/* <div className="bg-gray-300 flex items-center justify-center w-full h-98">
+      {/* <div className="bg-gray-300 flex items-center justify-center w-full h-98">
 
     </div> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   );
 };

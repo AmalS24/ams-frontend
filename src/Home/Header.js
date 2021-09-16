@@ -72,10 +72,10 @@ export const Header = () => {
       </div>
       <div className=" flex flex-col h-96 items-center  justify-center relative ">
         <h1 className="py-5 xs:text-4xl sm:text-6xl text-3xl md:text-7xl text-white tracking-wider">
-          WELCOME TO AMS
+          WELCOME TO MITS
         </h1>
-        <h3 className="text-red-600 text-xl xs:text-2xl sm:text-4xl md:text-4xl tracking-wide font-mono">
-          powered by MITS®
+        <h3 className="text-red-600 text-xl xs:text-2xl sm:text-4xl md:text-4xl  font-mono">
+          AMS
         </h3>
       </div>
     </div>

@@ -4,7 +4,7 @@ import ProgressBar from "./ProgressBar";
 
 const NriDetails_4 = () => {
   return (
-    <div className="w-full bg-trout-500 overflow-x-hidden ">
+    <div className="w-full bg-trout-500 h-screen">
       <div className="  w-full flex items-center justify-between xs:px-10 px-20 py-8 h-14">
         <Link to="/">
           <svg
