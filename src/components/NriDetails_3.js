@@ -49,7 +49,7 @@ const NriDetails_3 = () => {
             className="flex flex-col  xs:w-80 sm:w-97.85 sm:h-98 h-full lg:w-200 xl:w-300 rounded-sm bg-white"
           >
             <h1 className="text-2xl text-center mb-2 sm:text-4xl sm:py-3 font-semibold mt-4 uppercase">
-              batch preference
+              branch preference
             </h1>
 
             <div className="h-6 w-72  sm:mt-4 sm:w-97.75  sm:h-12 mt-3 mx-auto flex sm:items-center justify-between   text-lg tracking-tighter">
