@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <div className="w-full max-w-screen h-98 relative">
+    <div className="min-w-screen w-full h-98 relative">
       <img
         className="absolute h-full w-full object-cover  "
         src="https://wallpapercave.com/wp/wp2661905.jpg"
@@ -34,6 +34,7 @@ export const Header = () => {
           </svg>
           AMS
         </Link>
+        <div className="xs:hidden md:flex">
         <Link to="/nri" className="px-6 hover:text-red-600">
           NRI
         </Link>
@@ -43,6 +44,7 @@ export const Header = () => {
         <Link to="/merit" className="px-6 hover:text-red-600">
           MERIT
         </Link>
+        </div>
       </div>
       <div className=" flex flex-col h-96 items-center  justify-center relative ">
         <h1 className="py-5 xs:text-4xl sm:text-6xl text-3xl md:text-7xl text-white tracking-wider">

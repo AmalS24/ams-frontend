@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const NriRegister = () => {
   return (
     <div className="w-full min-h-screen h-full bg-trout-500 overflow-x-hidden">
-      <div className="  w-full flex items-center justify-between xs:px-10 px-20 py-8 h-14">
+      <div className="  w-full flex items-end justify-between bg-transparent xs:px-10 px-20 h-12 ">
         <Link to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -30,26 +30,26 @@ const NriRegister = () => {
             width="30"
             height="30"
             fill="white"
-            class="bi bi-question-circle-fill transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+            class="bi bi-question-circle-fill transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-100"
             viewBox="0 0 16 16"
           >
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
           </svg>
         </button>
       </div>
-      <div className="w-full h-99 bg-transparent flex">
+      <div className="w-screen xs:mt-10 sm:mt-0 bg-transparent h-99 flex">
         <div className="flex justify-center items-center xl:w-3/5 w-full">
           {/* fname lname email dob aadhar phone gender  */}
           <form
             action=""
-            className="flex flex-col  xs:w-80 sm:w-97.85 sm:h-98 h-full rounded-sm bg-white"
+            className="flex flex-col  xs:w-74 sm:w-97.85 sm:h-98 h-full rounded-sm bg-white"
           >
-            <h1 className="text-2xl text-center mb-2 sm:text-4xl sm:py-3 font-semibold mt-4 uppercase">
+            <h1 className="text-2xl text-center mb-2 sm:mb-1 sm:mt-2 sm:text-4xl sm:py-3 font-semibold mt-6 uppercase">
               Registration
             </h1>
-            {/* <div className="xs:h-9 w-72 mx-3 flex justify-center items-center text-sm tracking-tight italic text-blue-600 bg-indigo-100  text-center rounded-md">It looks like you've already registered try Login</div> */}
+            <div className="xs:h-9 sm:h-12 w-72  sm:w-97.5 sm:mb-1 sm:mx-10 sm:text-lg mx-3 flex justify-center items-center text-sm italic tracking-tight text-blue-700 bg-blue-100  text-center rounded-md">It looks like you've already registered try SignIn</div>
             {/* <div className="xs:h-9 w-72 mx-3 flex justify-center items-center text-sm tracking-tight italic text-red-600 bg-red-100  text-center rounded-md">*Required field empty</div> */}
-            {/* <div className="xs:h-9 sm:h-12 w-72  sm:w-97.5 sm:mb-3 sm:mx-10 sm:text-lg mx-3 flex justify-center items-center text-sm italic tracking-tight text-green-700 bg-teal-100  text-center rounded-md">
+            {/* <div className="xs:h-9 sm:h-12 w-72  sm:w-97.5 sm:mb-1 sm:mx-10 sm:text-lg mx-3 flex justify-center items-center text-sm italic tracking-tight text-green-700 bg-teal-100  text-center rounded-md">
               Registration Successful, check your mail to Login
             </div> */}
             <label
@@ -62,6 +62,7 @@ const NriRegister = () => {
               <input
                 type="text"
                 placeholder="First Name"
+                required
                 className="mb-4  sm:mb-0 xs:h-11 sm:w-full sm:ml-3 px-4 w-72 mx-3 italic text-md sm:text-lg focus:outline-none border-2 border-black rounded-full"
               />
               <input
@@ -79,6 +80,7 @@ const NriRegister = () => {
             <input
               type="email"
               placeholder="Email-ID"
+              required
               className="xs:h-11 sm:w-97.55 sm:text-lg sm:ml-8  px-4 w-72 ml-3  text-md italic focus:outline-none border-2 border-black rounded-full"
             />
             <div className="sm:flex ">
@@ -115,7 +117,7 @@ const NriRegister = () => {
                 </label>
                 <input
                   type="date"
-                  placeholder="Date"
+                  required
                   className="xs:h-11 sm:text-lg sm:w-48 sm:mx-0 sm:mb-3 px-4 w-72 mx-3 text-md italic focus:outline-none border-2 border-black rounded-full"
                 />
                 <label
@@ -135,13 +137,13 @@ const NriRegister = () => {
                 </select>
               </div>
             </div>
-            <div className="h-6 w-72  sm:mt-4 sm:w-97.75 sm:mr-24 sm:h-12 mt-3 mx-auto flex sm:items-center justify-between   px-2 text-lg tracking-tighter">
-              <button className="py-1 sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600 ">
+            <div className="h-8 w-72 sm:w-97.75 sm:mr-24 sm:h-12 mt-4 mx-auto flex items-center justify-between   px-2 text-lg tracking-tighter">
+              <button className=" sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600 ">
                 Register
               </button>
-              <div className="sm:flex flex-row sm:items-center">
-              <p className="sm:flex hidden text-lg font-light">Already Registered ? Try </p>
-              <Link to="/login" className="py-1 sm:ml-2 text-red-600 hover:underline hover:text-purple-700">
+              <div className="sm:flex flex-row sm:mt-6">
+              <p className="sm:flex hidden text-xl font-light">Already Registered ? Try </p>
+              <Link to="/login" className=" sm:ml-2 sm:text-xl text-red-600 hover:underline hover:text-purple-700">
                 Sign-In
               </Link>
               </div>
