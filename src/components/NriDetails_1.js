@@ -47,43 +47,71 @@ const NriDetails_1 = () => {
           className="flex flex-col  xs:w-80 sm:w-97.85 sm:h-97.75 h-full lg:w-100 xl:w-120 rounded-sm bg-white"
           method=""
         >
-          <h1 className="text-2xl text-center  sm:text-4xl sm:py-3 font-semibold mt-2 uppercase">
-            Basic Profile
-          </h1>
+          <div className="flex flex-row items-center justify-between px-10 py-2">
+            <div>
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-12 w-12 bi cursor-not-allowed opacity-50 bi-house-fill transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+                  fill="red"
+                  viewBox="0 0 24 24"
+                  stroke="white"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div>
+              <h1 className="text-2xl text-center  sm:text-4xl sm:py-2 font-semibold uppercase">
+                Basic Profile
+              </h1>
+            </div>
+            <div>
+              <button>
+                <Link to="./nridetails_2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-12 w-12 bi bi-house-fill transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+                    fill="red"
+                    viewBox="0 0 24 24"
+                    stroke="white"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </Link>
+              </button>
+            </div>
+          </div>
           <div>
-
             <div className="h-6 w-72  sm:mt-4 sm:w-97.75  sm:h-12 mt-3 mx-auto flex sm:items-center justify-between   text-lg tracking-tighter">
               <button
-                className="py-1 opacity-50 cursor-not-allowed sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 
+                className="py-1 opacity-50 cursor-not-allowed sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-xl sm:h-10 
               text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600"
               >
                 SUBMIT
               </button>
 
               <button
-                className="py-1 sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 
+                className="py-1 sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-xl sm:h-10 
               text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600 btn-transition"
               >
                 SAVE
-              </button>
-
-              <button
-                className="py-1 opacity-50 cursor-not-allowed sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 
-              text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600"
-              >
-                PREV
-              </button>
-
-              <button
-                className="py-1 sm:ml-6 sm:flex sm:items-center sm:w-30 sm:justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 
-              text-red-600  hover:text-purple-700 sm:border-2 border-red-600 sm:text-2xl sm:hover:text-white sm:hover:bg-red-600 btn-transition"
-              >
-                <Link to="./nridetails_2">NEXT</Link>
               </button>
             </div>
           </div>
         </form>
       </div>
+
       {/* <div className="bg-gray-300 flex items-center justify-center w-full h-98">
 
     </div> */}
