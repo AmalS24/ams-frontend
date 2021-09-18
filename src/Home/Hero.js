@@ -2,8 +2,8 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="w-full h-full flex lg:flex-row  flex-col items-center justify-between mt-20  bg-white">
-      <div className="lg:ml-10  lg:h-screen bg-transparent rounded-xl relative flex justify-center">
+    <div className="w-full h-full flex xl:flex-row  flex-col items-center justify-between mt-20  bg-white">
+      <div className="xl:ml-10  xl:h-screen bg-transparent rounded-xl relative flex justify-center">
         {/* <div className="absolute h-8 w-8 ml-70 rounded-full bg-red-600  animate-pulse"></div> */}
         <div className="mb-40 rounded-full bg-gray-200 h-64 w-64  flex items-center justify-center shadow-xl">
           <svg
@@ -19,18 +19,18 @@ function Hero() {
             <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
           </svg>
         </div>
-        <div className="absolute h-full lg:flex flex-col justify-center items-center ">
-          <p className="text-4xl lg:mt-16 mt-74 p-5 flex  justify-center uppercase">
+        <div className="absolute h-full xl:flex flex-col justify-center items-center ">
+          <p className="text-4xl xl:mt-16 mt-74 p-5 flex  justify-center uppercase">
             Verification
           </p>
-          <p className="mx-10 text-center lg:flex text-xl font-light text-gray-600 hidden">
+          <p className="mx-10 text-center xl:flex text-xl font-light text-gray-600 hidden">
             Provide a valid email-ID followed by a mobile number and verify it
             then click on register
           </p>
         </div>
       </div>
 
-      <div className="lg:ml-10  lg:h-screen bg-transparent rounded-xl relative flex justify-center">
+      <div className="xl:ml-10  xl:h-screen bg-transparent rounded-xl relative flex justify-center">
         {/* <div className="absolute h-6 w-6 ml-70 rounded-full bg-green-600 animate-ping"></div> */}
         <div className="mb-40 rounded-full bg-gray-200 h-64 w-64  flex items-center justify-center shadow-xl">
           <svg
@@ -48,18 +48,18 @@ function Hero() {
             ></path>
           </svg>
         </div>
-        <div className="absolute h-full lg:flex flex-col justify-center items-center ">
-          <p className="text-4xl lg:mt-21 mt-74 p-5 flex  justify-center uppercase">
+        <div className="absolute h-full xl:flex flex-col justify-center items-center ">
+          <p className="text-4xl xl:mt-21 mt-74 p-5 flex  justify-center uppercase">
             SIgn-UP
           </p>
-          <p className="mx-10 text-center lg:flex text-xl font-light text-gray-600 hidden">
+          <p className="mx-10 text-center xl:flex text-xl font-light text-gray-600 hidden">
             Login to your account with the username and password send to your
             provided email-ID
           </p>
         </div>
       </div>
 
-      <div className="lg:ml-10  lg:h-screen bg-transparent rounded-xl relative flex justify-center">
+      <div className="xl:ml-10  xl:h-screen bg-transparent rounded-xl relative flex justify-center">
         {/* <div className="absolute h-6 w-6 ml-70 rounded-full bg-green-600 animate-ping"></div> */}
         <div className="mb-40 rounded-full bg-gray-200 h-64 w-64  flex items-center justify-center shadow-xl">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi w-32 h-32 bi-info-circle" viewBox="0 0 16 16">
@@ -67,17 +67,17 @@ function Hero() {
   <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
 </svg>
         </div>
-        <div className="absolute h-full lg:flex flex-col justify-center items-center ">
-          <p className="text-4xl lg:mt-10 mt-72 p-5 flex  justify-center uppercase">
+        <div className="absolute h-full xl:flex flex-col justify-center items-center ">
+          <p className="text-4xl xl:mt-10 mt-72 p-5 flex  justify-center uppercase">
             details
           </p>
-          <p className="mx-14 text-center lg:flex text-xl font-light text-gray-600 hidden">
+          <p className="mx-14 text-center xl:flex text-xl font-light text-gray-600 hidden">
             Let us know you better ,kindly fill out the form provided to you
           </p>
         </div>
       </div>
 
-      <div className="lg:ml-10 lg:mr-10    lg:h-screen bg-transparent rounded-xl relative flex justify-center">
+      <div className="xl:ml-10 xl:mr-10    xl:h-screen bg-transparent rounded-xl relative flex justify-center">
         {/* <div className="absolute h-6 w-6 ml-70 rounded-full bg-green-600 animate-ping"></div> */}
         <div className="mb-40 rounded-full bg-gray-200 h-64 w-64  flex items-center justify-center shadow-xl">
           <svg
@@ -95,11 +95,11 @@ function Hero() {
             ></path>
           </svg>
         </div>
-        <div className="absolute h-full lg:flex flex-col justify-center items-center ">
-          <p className="text-4xl lg:mt-16 mt-74 p-5 flex  justify-center uppercase">
+        <div className="absolute h-full xl:flex flex-col justify-center items-center ">
+          <p className="text-4xl xl:mt-16 mt-74 p-5 flex  justify-center uppercase">
             payment
           </p>
-          <p className="mx-10 text-center lg:flex text-xl font-light text-gray-600 hidden">
+          <p className="mx-10 text-center xl:flex text-xl font-light text-gray-600 hidden">
             Complete the payment and you are all set(This part is excluded for
             Merit students)
           </p>

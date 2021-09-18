@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function NriLogin() {
   return (
-    <div className="w-screen h-screen bg-trout-500">
+    <div className="w-screen min-h-screen h-full bg-trout-500">
       <div className=" w-full flex items-center  justify-between px-20 py-10 h-14">
         <Link to="/">
           <svg
@@ -98,7 +98,7 @@ function NriLogin() {
         </button>
       </div>
 
-      <div className="w-97 lg:flex lg:w-full h-97.5 mx-auto mt-4 lg:justify-between  bg-transparent">
+      <div className="w-97 lg:flex lg:w-full h-97.5 mx-auto mt-0 lg:justify-between  bg-transparent">
         <div className="w-98 mt-20 h-full justify-center hidden lg:flex">
           <svg
             id="b368e7d6-7c4a-408c-9a35-0514749a7e1a"
