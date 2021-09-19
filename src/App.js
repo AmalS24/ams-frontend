@@ -1,15 +1,13 @@
-import Content from "./Home/Content"
-import Footer from "./Home/Footer"
-import { Header } from "./Home/Header"
-import Hero from "./Home/Hero"
+import React from 'react'
+import HomePage from './Home/HomePage'
+
 function App() {
   return (
     <>
-    <Header />
-    <Content />
-    <Hero />
-    <Footer /> 
+    <HomePage />
     </>
-  );
+  )
 }
-export default App;
+
+export default App
+

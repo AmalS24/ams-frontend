@@ -8,7 +8,7 @@
 }
 
 .btn {
-  @apply bg-transparent hover:bg-red-600 text-red-500 hover:text-white font-semibold rounded-full border border-red-500 items-center;
+  @apply bg-transparent hover:bg-red-600 text-red-500 hover:text-white font-semibold rounded-full border-2 border-red-500 items-center;
 }
 
 .btn-2 {
@@ -17,4 +17,9 @@
 
 .input-feed {
   @apply block bg-transparent border border-black rounded-full py-3 px-4  focus:outline-none;
+}
+
+.image {
+  width : 720px;
+  height: 480px;
 }
