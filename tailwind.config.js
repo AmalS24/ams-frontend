@@ -50,6 +50,7 @@ module.exports = {
       12: "3.25rem",
       14: "3.5rem",
       16: "4rem",
+      17: "4.5rem",
       20: "5rem",
       21: "5.75rem",
       24: "6rem",
@@ -57,7 +58,9 @@ module.exports = {
       30: "7.5rem",
       32: "8rem",
       36: "9rem",
+      38: "9.5rem",
       40: "10rem",
+      42: "10.25rem",
       44: "11rem",
       48: "12rem",
       52: "13rem",
@@ -494,7 +497,7 @@ module.exports = {
     keyframes: {
       spin: {
         to: {
-          transform: "rotate(180deg)",
+          transform: "rotate(360deg)",
         },
       },
       ping: {
@@ -937,6 +940,17 @@ module.exports = {
       transitionProperty: ["hover", "focus"],
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+      animation: {
+        anti: "anti 3s linear infinite",
+        spinslow:"spin 2s linear infinite"
+      },
+      keyframes: {
+        anti: {
+          to: {
+            transform: "rotate(-180deg)"
+          }
+        }
       },
     },
   },
