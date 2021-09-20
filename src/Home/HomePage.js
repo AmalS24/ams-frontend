@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import logo from "../icons/logo.svg";
 import wave from "../icons/wave.svg";
 import engineer from "../icons/engineer.svg";
-import { useState } from "react";
+import { Dropdown } from "./Dropdown";
 
-function HomePage() {
-  // const [state,changeState] = useState(false);
-
+function HomePage({toggle ,isOpen}) {
+  
   return (
     <div className="min-w-screen relative h-screen">
       <div className="relative h-2/5 sm:h-3/5 lg:h-4/5 bg-white flex mb-96 min-w-screen">
@@ -60,19 +59,22 @@ function HomePage() {
           </h1>
         </div>
 
-        <div className="absolute flex  items-center px-6 justify-between h-11 bg-transparent w-screen">
+        <div className="absolute flex  items-center px-0 justify-between h-11 bg-transparent w-screen">
           <div className="h-full  w-24 flex items-center justify-center">
-            <img src={logo} alt="" className="w-11 h-11" />
+            <img src={logo} alt="" className="w-11 ml-6 h-11" />
             <h1 className="text-lg font-bold ml-2 xs:text-white sm:text-black hover:text-red-600">
               AMS
             </h1>
           </div>
+
+
+          <div onClick={toggle} className="mr-4 cursor-pointer xs:flex md:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
             fill="white"
-            class="bi xs:flex md:hidden bi-list"
+            class="bi  bi-list"
             viewBox="0 0 16 16"
           >
             <path
@@ -80,6 +82,10 @@ function HomePage() {
               d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
             />
           </svg>
+          </div>
+          
+
+
           <div className="h-full md:flex text-white text-lg w-94 hidden items-center space-x-8 mt-3">
             <Link className="border-2 hover:bg-red-600 hover:text-white flex items-center justify-center rounded-full w-24 h-9">
               Register
@@ -113,7 +119,9 @@ function HomePage() {
               </svg>
             </Link>
           </div>
+          <Dropdown isOpen={isOpen} />
         </div>
+        
         <div className="hidden lg:flex flex-col items-center justify-center absolute bottom-8 lg:right-14 xl:right-12 sm:w-40  sm:h-44 md:w-48 md:h-48 lg:h-72 lg:w-72 xl:w-96 2xl:h-97.5 2xl:w-98">
           <img src={engineer} alt="" className="" />
         </div>
