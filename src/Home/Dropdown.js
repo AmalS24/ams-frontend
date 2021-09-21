@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export const Dropdown = ({isOpen }) => {
     return (
         <div className={isOpen ? 'absolute mt-70  space-y-5 py-4 bg-gray-200 flex  flex-col items-center justify-center w-screen ' : 'hidden'} >
-            <Link className="border-2 hover:bg-red-600 hover:text-white flex items-center justify-center rounded-full w-24 h-9">
+            <Link to="/nri" className="border-2 hover:bg-red-600 hover:text-white flex items-center justify-center rounded-full w-24 h-9">
               Register
             </Link>
             <Link className="border-2 hover:bg-white hover:text-black flex items-center justify-center w-24 h-9 rounded-full">

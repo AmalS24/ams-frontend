@@ -8,15 +8,15 @@ import { Dropdown } from "./Dropdown";
 function HomePage({toggle ,isOpen}) {
   
   return (
-    <div className="min-w-screen relative h-screen">
-      <div className="relative h-2/5 sm:h-3/5 lg:h-4/5 bg-white flex mb-96 min-w-screen">
+    <div className="min-w-screen relative xs:h-94 lg:h-screen">
+      <div className="lg:relative h-2/5 sm:h-3/5 lg:h-4/5 bg-white flex mb-96 min-w-screen">
         <img
           src={wave}
           alt=""
           className="absolute h-full right-0 object-cover"
         />
 
-        <div className="lg:space-y-1 xs:space-y-0 flex flex-col items-center justify-center absolute bottom-8 left-10 xs:w-52 xs:h-36 sm:h-52 sm:w-96 md:w-97.75 md:h-52 lg:h-72 lg:w-99 xl:w-100 xl:h-74 2xl:h-94 2xl:w-100">
+        <div className="lg:space-y-1  xs:space-y-0 flex flex-col items-center justify-center absolute bottom-8 left-10 xs:w-52 xs:h-36 sm:h-52 sm:w-96 md:w-97.75 md:h-52 lg:h-72 lg:w-99 xl:w-100 xl:h-74 2xl:h-94 2xl:w-100">
           <div className="relative xs:w-20 xs:h-16 sm:w-24 sm:h-24 md:w-30 md:h-28  lg:w-38 lg:h-36 2xl:w-44 2xl:h-44">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -86,8 +86,8 @@ function HomePage({toggle ,isOpen}) {
           
 
 
-          <div className="h-full md:flex text-white text-lg w-94 hidden items-center space-x-8 mt-3">
-            <Link className="border-2 hover:bg-red-600 hover:text-white flex items-center justify-center rounded-full w-24 h-9">
+          <div className="h-full md:flex text-white mr-4 text-lg w-94 hidden items-center space-x-8 mt-3">
+            <Link to="/nri" className="border-2 hover:bg-red-600 hover:text-white flex items-center justify-center rounded-full w-24 h-9">
               Register
             </Link>
             <Link className="border-2 hover:bg-white hover:text-black flex items-center justify-center w-24 h-9 rounded-full">
