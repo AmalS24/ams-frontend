@@ -1,112 +1,59 @@
 import React from "react";
 
-function Hero() {
+const Hero = () => {
   return (
-    <div className="w-full h-full flex lg:flex-row  flex-col items-center justify-between mt-20  bg-white">
-      <div className="lg:ml-10  lg:h-screen bg-transparent rounded-xl relative flex justify-center">
-        {/* <div className="absolute h-8 w-8 ml-70 rounded-full bg-red-600  animate-pulse"></div> */}
-        <div className="mb-40 rounded-full bg-gray-200 h-64 w-64  flex items-center justify-center shadow-xl">
+    <div className="flex w-screen bg-gray-300 overflow-hidden h-4/5">
+      <div className=" w-3/5 h-full relative text-center py-36 bg-gray-300">
+        <div
+          data-aos="fade-right"
+          className="  w-52 h-52 flex items-center justify-center shadow-xl absolute top-12 right-97.5 bg-white"
+        >
+          1
+        </div>
+        <div
+          data-aos="fade-left"
+          className=" w-70 h-48 shadow-xl items-center justify-center flex absolute top-12 right-40 bg-white"
+        >
+          2
+        </div>
+        <div
+          data-aos="fade-up"
+          className=" w-52 h-72 flex items-center justify-center shadow-xl absolute bottom-10 right-40 animate-fadeIn bg-white"
+        >
+          3
+        </div>
+        <div
+          data-aos="fade-right"
+          className=" w-70 h-70 flex items-center justify-center shadow-xl absolute bottom-10 right-96 bg-white "
+        >
+          4
+        </div>
+      </div>
+
+      <div
+        data-aos="zoom-in"
+        className="w-3/5 tracking-tighter text-center space-y-8 px-36 py-24  h-full bg-gray-200"
+      >
+        <div className="flex space-x-6 h-24 items-center  flex-row border">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
-            fill="red"
-            class="bi bi-check2-circle"
+            fill="#e60023"
+            class="w-20 animate-spin-slow h-20 bi bi-gear-wide-connected"
             viewBox="0 0 16 16"
-            className="w-40 h-40"
           >
-            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
-            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+            <path d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5zm0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78h4.723zM5.048 3.967c-.03.021-.058.043-.087.065l.087-.065zm-.431.355A4.984 4.984 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8 4.617 4.322zm.344 7.646.087.065-.087-.065z" />
           </svg>
+          <p className="text-5xl tracking-wider ">How it Works..? </p>
         </div>
-        <div className="absolute h-full lg:flex flex-col justify-center items-center ">
-          <p className="text-4xl lg:mt-16 mt-74 p-5 flex  justify-center uppercase">
-            Verification
-          </p>
-          <p className="mx-10 text-center lg:flex text-xl font-light text-gray-600 hidden">
-            Provide a valid email-ID followed by a mobile number and verify it
-            then click on register
-          </p>
-        </div>
-      </div>
-
-      <div className="lg:ml-10  lg:h-screen bg-transparent rounded-xl relative flex justify-center">
-        {/* <div className="absolute h-6 w-6 ml-70 rounded-full bg-green-600 animate-ping"></div> */}
-        <div className="mb-40 rounded-full bg-gray-200 h-64 w-64  flex items-center justify-center shadow-xl">
-          <svg
-            class="w-40 h-40"
-            fill="none"
-            stroke="red"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.2"
-              d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-            ></path>
-          </svg>
-        </div>
-        <div className="absolute h-full lg:flex flex-col justify-center items-center ">
-          <p className="text-4xl lg:mt-21 mt-74 p-5 flex  justify-center uppercase">
-            SIgn-UP
-          </p>
-          <p className="mx-10 text-center lg:flex text-xl font-light text-gray-600 hidden">
-            Login to your account with the username and password send to your
-            provided email-ID
-          </p>
-        </div>
-      </div>
-
-      <div className="lg:ml-10  lg:h-screen bg-transparent rounded-xl relative flex justify-center">
-        {/* <div className="absolute h-6 w-6 ml-70 rounded-full bg-green-600 animate-ping"></div> */}
-        <div className="mb-40 rounded-full bg-gray-200 h-64 w-64  flex items-center justify-center shadow-xl">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi w-32 h-32 bi-info-circle" viewBox="0 0 16 16">
-  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-</svg>
-        </div>
-        <div className="absolute h-full lg:flex flex-col justify-center items-center ">
-          <p className="text-4xl lg:mt-10 mt-72 p-5 flex  justify-center uppercase">
-            details
-          </p>
-          <p className="mx-14 text-center lg:flex text-xl font-light text-gray-600 hidden">
-            Let us know you better ,kindly fill out the form provided to you
-          </p>
-        </div>
-      </div>
-
-      <div className="lg:ml-10 lg:mr-10    lg:h-screen bg-transparent rounded-xl relative flex justify-center">
-        {/* <div className="absolute h-6 w-6 ml-70 rounded-full bg-green-600 animate-ping"></div> */}
-        <div className="mb-40 rounded-full bg-gray-200 h-64 w-64  flex items-center justify-center shadow-xl">
-          <svg
-            class="w-40 h-40"
-            fill="none"
-            stroke="red"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.2"
-              d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z"
-            ></path>
-          </svg>
-        </div>
-        <div className="absolute h-full lg:flex flex-col justify-center items-center ">
-          <p className="text-4xl lg:mt-16 mt-74 p-5 flex  justify-center uppercase">
-            payment
-          </p>
-          <p className="mx-10 text-center lg:flex text-xl font-light text-gray-600 hidden">
-            Complete the payment and you are all set(This part is excluded for
-            Merit students)
-          </p>
-        </div>
+        <p className="text-5xl">1.Registration</p>
+        <p className="text-5xl">2.Login</p>
+        <p className="text-5xl">3.Details</p>
+        <p className="text-5xl">4.Payment</p>
       </div>
     </div>
   );
-}
+};
 
 export default Hero;

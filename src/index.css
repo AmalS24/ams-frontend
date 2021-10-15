@@ -18,3 +18,18 @@
 .input-feed {
   @apply block bg-transparent border border-black rounded-full py-3 px-4  focus:outline-none;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.item {
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+  padding-top: 75px;
+  background: #ccc;
+  text-align: center;
+  color: #FFF;
+  font-size: 3em;
+}

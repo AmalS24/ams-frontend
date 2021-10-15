@@ -6,7 +6,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
-      xs: "390px",
+      xs: "360px",
       sm: "640px",
       md: "768px",
       lg: "1024px",
@@ -75,8 +75,8 @@ module.exports = {
       97: "26rem",
       97.5: "28rem",
       97.55: "30rem",
-      97.75:"32rem",
-      97.85:"34rem",
+      97.75: "32rem",
+      97.85: "34rem",
       98: "36rem",
       98.5: "38rem",
       99: "41.5rem",
@@ -931,8 +931,23 @@ module.exports = {
           800: "#1e2122",
           900: "#191b1c",
         },
+        "torch-red": {
+          50: "#fef2f4",
+          100: "#fde6e9",
+          200: "#f9bfc8",
+          300: "#f599a7",
+          400: "#ee4d65",
+          500: "#e60023",
+          600: "#cf0020",
+          700: "#ad001a",
+          800: "#8a0015",
+          900: "#710011",
+        },
       },
-      transitionProperty: ['hover', 'focus'],
+      transitionProperty: ["hover", "focus"],
+    },
+    animation : {
+      "spin-slow": 'spin 4s linear infinite',
     },
   },
   variantOrder: [
