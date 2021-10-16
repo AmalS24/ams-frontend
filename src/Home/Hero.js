@@ -1,4 +1,8 @@
 import React from "react";
+import lock from "../Icons/lock.svg";
+import rupee from "../Icons/rupee.svg";
+import info from "../Icons/info.svg";
+import reg from "../Icons/reg.svg";
 
 const Hero = () => {
   return (
@@ -8,31 +12,31 @@ const Hero = () => {
           data-aos="fade-right"
           className="  w-52 h-52 flex items-center justify-center shadow-xl absolute top-12 right-97.5 bg-white"
         >
-          1
+          <img src={reg} alt="" className="" />
         </div>
         <div
           data-aos="fade-left"
           className=" w-70 h-48 shadow-xl items-center justify-center flex absolute top-12 right-40 bg-white"
         >
-          2
+          <img src={lock} alt="" className="" />
         </div>
         <div
           data-aos="fade-up"
           className=" w-52 h-72 flex items-center justify-center shadow-xl absolute bottom-10 right-40 animate-fadeIn bg-white"
         >
-          3
+          <img src={rupee} alt="" className="" />
         </div>
         <div
           data-aos="fade-right"
           className=" w-70 h-70 flex items-center justify-center shadow-xl absolute bottom-10 right-96 bg-white "
         >
-          4
+          <img src={info} alt="" className="" />
         </div>
       </div>
 
       <div
         data-aos="zoom-in"
-        className="w-3/5 tracking-tighter text-center space-y-8 px-36 py-24  h-full bg-gray-200"
+        className="w-3/5 tracking-tighter text-center hidden 2xl:flex 2xl:flex-col space-y-8 px-36 py-24  h-full bg-gray-200"
       >
         <div className="flex space-x-6 h-24 items-center  flex-row border">
           <svg
@@ -47,10 +51,10 @@ const Hero = () => {
           </svg>
           <p className="text-5xl tracking-wider ">How it Works..? </p>
         </div>
-        <p className="text-5xl">1.Registration</p>
-        <p className="text-5xl">2.Login</p>
-        <p className="text-5xl">3.Details</p>
-        <p className="text-5xl">4.Payment</p>
+        <p className="text-5xl">#Register</p>
+        <p className="text-5xl">#Login</p>
+        <p className="text-5xl">#Details</p>
+        <p className="text-5xl">#Payment</p>
       </div>
     </div>
   );

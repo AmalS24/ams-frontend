@@ -215,36 +215,47 @@ function NriLogin() {
           </svg>
         </div>
         <div className="lg:w-97 flex  lg:mt-18 mt-16 h-full mx-auto  bg-transparent shadow-3xl">
-            <form action="" className="flex flex-col mx-auto  h-full w-97 bg-white ">
-                <h1 className="mt-8 text-4xl text-center  font-semi-bold">
-                    SIGN-IN
-                </h1>
-                <div className="w-full h-full py-8 bg-white">
-                    <label htmlFor="username" className="ml-6 font-light text-2xl">Username</label>
-                    <input
-                    type="text"
-                    id="username"
-                    placeholder="Username"
-                    className="w-96 ml-4 my-6 italic h-14 mt-2 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
-                  />
-                   <label htmlFor="username" className="ml-6 font-light text-2xl">Password</label>
-                    <input
-                    type="password"
-                    id="password"
-                    placeholder="Password"
-                    className="w-96 ml-4 italic h-14 mt-2 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
-                  />
-                   <Link
+          <form
+            action=""
+            className="flex flex-col mx-auto  h-full w-97 bg-white "
+          >
+            <h1 className="mt-8 text-4xl text-center  font-semi-bold">
+              SIGN-IN
+            </h1>
+            <div className="w-full h-full py-8 bg-white">
+              <label htmlFor="username" className="ml-6 font-light text-2xl">
+                Username
+              </label>
+              <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                className="w-96 ml-4 my-6 italic h-14 mt-2 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
+              />
+              <label htmlFor="username" className="ml-6 font-light text-2xl">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                className="w-96 ml-4 italic h-14 mt-2 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
+              />
+              <Link
                 to="/nri"
                 className="flex items-center mt-8 ml-6 justify-center w-30 shadow-2xl rounded-full h-14 border-2 border-red-600 text-red-600 text-2xl hover:text-white hover:bg-red-600"
               >
                 Sign-In
               </Link>
-              <a class="font-light text-xl text-black-500 text-red-600 
-              hover:text-indigo-600 ml-64 " href="https://github.com/NANDAKRISHNAN-P-N">
-                Forgot Password!</a>
-                </div>
-            </form>
+              <a
+                class="font-light text-xl text-black-500 text-red-600 
+              hover:text-indigo-600 ml-64 "
+                href="https://github.com/NANDAKRISHNAN-P-N"
+              >
+                Forgot Password!
+              </a>
+            </div>
+          </form>
         </div>
       </div>
     </div>

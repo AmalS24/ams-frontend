@@ -11,7 +11,7 @@ import Check from "./Home/Check";
 function App() {
 
   useEffect(() => {
-    Aos.init({duration : 2000});
+    Aos.init({duration : 3000});
   }, []);
 
   return (
