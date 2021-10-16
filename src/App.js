@@ -4,28 +4,28 @@ import NriLogin from "./components/NriLogin";
 import NriRegister from "./components/NriRegister";
 import Hero from "./Home/Hero";
 import Aos from "aos";
-import "aos/dist/aos.css"
+import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Check from "./Home/Check";
+import { About } from "./Home/About";
 
 function App() {
-
   useEffect(() => {
-    Aos.init({duration : 3000});
+    Aos.init({ duration: 3000 });
   }, []);
 
   return (
-    <div className="h-screen w-screen  min-w-screen">
+    <>
       <Switch>
         <Route path="/" exact>
           <Header />
           <Hero />
-          {/* <Check /> */}
+          <About />
         </Route>
         <Route path="/nri" component={NriRegister} />
         <Route path="/login" component={NriLogin} />
       </Switch>
-    </div>
+    </>
   );
 }
 export default App;
