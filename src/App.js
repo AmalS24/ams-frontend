@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Check from "./Home/Check";
 import { About } from "./Home/About";
+import "animate.css"
 
 function App() {
   useEffect(() => {

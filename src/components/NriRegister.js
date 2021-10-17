@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const NriRegister = () => {
   return (
+    
     <div className="w-full min-h-screen h-full bg-trout-600 overflow-x-hidden">
       <div className="  w-full flex items-end justify-between bg-transparent xs:px-10 px-20 h-12 ">
         <Link to="/">
