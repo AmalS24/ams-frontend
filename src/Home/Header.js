@@ -1,13 +1,14 @@
 import React from "react";
 import logo from "../Icons/logo.svg";
 import { Link } from "react-router-dom";
+import pic from "../Icons/pic.jpg"
 
 function Header() {
   return (
     // <div className="min-w-screen w-screen flex justify-center xs:h-2/5 md:h-3/5 lg:h-4/5 relative">
     <div className="min-w-full flex justify-center h-screen relative">
       <img
-        src="https://wallpapercave.com/wp/wp9455549.jpg"
+        src={pic}
         alt=""
         className="absolute w-screen h-full object-cover"
       />

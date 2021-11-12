@@ -48,13 +48,12 @@ const NriRegister = () => {
             <h1 className="text-2xl text-center mb-2 sm:mb-1 sm:mt-2 sm:text-4xl sm:py-3 font-semibold mt-6 uppercase">
               Registration
             </h1>
-            <div className="xs:h-9 sm:h-12 w-71  sm:w-97.5 sm:mb-1 sm:mx-10 sm:text-lg mx-2 flex justify-center items-center text-sm italic tracking-tight text-blue-700 bg-blue-100  text-center rounded-md">
-              It looks like you've already registered try SignIn
-            </div>
-            {/* <div className="xs:h-9 w-72 mx-2 flex justify-center items-center text-sm tracking-tight italic text-red-600 bg-red-100  text-center rounded-md">*Required field empty</div> */}
-            {/* <div className="xs:h-9 sm:h-12 w-72  sm:w-97.5 sm:mb-1 sm:mx-10 sm:text-lg mx-2 flex justify-center items-center text-sm italic tracking-tight text-green-700 bg-teal-100  text-center rounded-md">
-              Registration Successful, check your mail to Login
-            </div> */}
+            <div className="xs:h-9 sm:h-12 w-71  sm:w-97.5 sm:mb-1 sm:mx-10 sm:text-lg mx-2 flex justify-center items-center text-sm italic tracking-tight text-blue-700 bg-blue-100  text-center rounded-md">It looks like you've already registered try SignIn</div>
+            {/* <div className="xs:h-9 sm:h-12 w-71  sm:w-97.5 sm:mb-1 sm:mx-10 sm:text-lg mx-2 flex justify-center items-center text-sm italic tracking-tight text-red-600 bg-red-100  text-center rounded-md">*Required field empty</div> */}
+            {/* <div className="xs:h-2 sm:h-4 w-71  sm:w-97.5 sm:mb-1 sm:mx-10 sm:text-lg mx-2 flex justify-center items-center text-sm italic tracking-tight bg-transparent  text-center rounded-md"></div> */}
+            {/* <div className="xs:h-9 sm:h-12 w-71  sm:w-97.5 sm:mb-1 sm:mx-10 sm:text-lg mx-2 flex justify-center items-center text-sm italic tracking-tight text-green-600 bg-teal-100  text-center rounded-md">Registration Successful, check your mail to Login</div> */}
+    
+            
             <div className="bg-transparent sm:flex sm:justify-between w-full">
               <label
                 htmlFor="Name"
@@ -64,7 +63,7 @@ const NriRegister = () => {
               </label>
               <label
                 htmlFor="Name"
-                className="text-md sm:font-normal xs:hidden sm:flex  text-lg font-light mt-3 mr-24"
+                className="text-md sm:font-normal xs:hidden sm:flex  text-lg font-light mt-3 mr-28"
               >
                 Gender*
               </label>
@@ -86,7 +85,9 @@ const NriRegister = () => {
                 name="gender"
                 className=" xs:h-11 sm:w-36 px-4 w-72 mx-2 italic text-md sm:text-lg focus:outline-none border-2 border-black rounded-full"
                 id="gender"
+                required="true"
               >
+                <option value=""></option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="Others">Others</option>
