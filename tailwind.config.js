@@ -947,9 +947,9 @@ module.exports = {
       },
       transitionProperty: ["hover", "focus"],
     },
-    animation : {
-      "spin-slow": 'spin 4s linear infinite',
-    },
+    // animation : {
+    //   "spin-slow": 'spin 4s linear infinite',
+    // },
   },
   variantOrder: [
     "first",
