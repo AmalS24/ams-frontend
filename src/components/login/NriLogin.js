@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Backdrop from "./Backdrop";
+import Backdrop from "../help/Backdrop";
 import { useState } from "react";
-import { Loginhelp } from "./Loginhelp";
+import { Loginhelp } from "../help/Loginhelp";
 
 function NriLogin() {
   const [helpIsOpen, setHelpIsOpen] = useState(false);

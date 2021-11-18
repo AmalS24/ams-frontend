@@ -1,5 +1,6 @@
 import React from "react";
-import "../index.css";
+import "./style.css"
+
 
 export const Loginhelp = (props) => {
   return (

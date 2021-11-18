@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../Icons/logo.svg";
 import { Link } from "react-router-dom";
-import pic from "../Icons/pic.jpg"
+import pic from "../Icons/pic.png"
 
 function Header() {
   return (
@@ -37,8 +37,8 @@ function Header() {
       </div>
       <div className="w-full xs:h-6 sm:h-8 lg:h-10 text-white lg:text-lg px-8 bg-transparent flex items-center justify-between mt-4 absolute">
         <div className="flex h-full space-x-1 items-center">
-          <img src={logo} alt="" className="sm:w-11 sm:h-11 lg:w-14 lg:h-14" />
-          <p className=" sm:text-lg lg:text-2xl">AMS</p>
+          <img src={logo} alt="" className="sm:w-11  sm:h-11 lg:w-14 lg:h-14" />
+          <p className=" sm:text-lg  lg:text-2xl">AMS</p>
         </div>
       </div>
     </div>

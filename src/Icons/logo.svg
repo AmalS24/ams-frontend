@@ -16,7 +16,7 @@
      id="defs1173" />
   <sodipodi:namedview
      id="namedview1171"
-     pagecolor="#ffffff"
+     pagecolor="#e60023"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageshadow="2"
@@ -46,22 +46,22 @@ Created by potrace 1.16, written by Peter Selinger 2001-2019
      fill="#000000"
      stroke="none"
      id="g1167"
-     style="fill:#ffffff">
+     style="fill:#e60023">
     <path
        d="M835 1569 c-345 -42 -613 -169 -735 -349 -138 -203 -76 -435 160 -597 215 -147 572 -225 885 -194 323 33 566 134 716 299 273 298 52 667 -481 803 -161 42 -386 57 -545 38z m-195 -210 c180 -50 310 -159 356 -300 18 -54 18 -54 25 -22 17 85 86 176 177 236 109 72 263 117 401 117 l51 0 0 -385 0 -385 -135 0 -135 0 0 165 0 165 -27 2 c-117 7 -193 -28 -193 -90 0 -35 38 -71 78 -74 73 -6 45 -67 -31 -68 -81 0 -149 64 -183 175 l-12 40 -7 -30 c-14 -58 -59 -127 -101 -156 -50 -34 -116 -39 -146 -12 -33 30 -17 53 38 53 59 0 87 86 42 127 -26 24 -106 42 -161 35 l-37 -4 0 -164 0 -164 -135 0 -135 0 0 378 c0 208 3 382 8 386 12 14 183 -3 262 -25z"
        id="path1165"
-       style="fill:#ffffff" />
+       style="fill:#e60023" />
   </g>
   <path
-     style="fill:#ffffff;stroke:#ffffff;stroke-width:0.615515px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.995951"
+     style="fill:#e60023;stroke:#e60023;stroke-width:0.615515px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.995951"
      d="M 71.25,95.397218 V 101.25 l 17.739595,0.35472 z"
      id="path2544" />
   <path
-     style="fill:#ffffff;stroke:#ffffff;stroke-width:0.615515px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.995951"
+     style="fill:#e60023;stroke:#e60023;stroke-width:0.615515px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.995951"
      d="m 130.2396,95.042502 v 5.852778 L 112.5,101.25 Z"
      id="path4417" />
   <path
-     style="fill:#ffffff;stroke:#ffffff;stroke-opacity:0.995951"
+     style="fill:#e60023;stroke:#e60023;stroke-opacity:0.995951"
      id="path4735"
      sodipodi:type="arc"
      sodipodi:cx="78.132149"
@@ -74,7 +74,7 @@ Created by potrace 1.16, written by Peter Selinger 2001-2019
      d="m 78.134566,63.336577 a 3.8575301,1.0688766 0 0 1 -3.859946,-1.067911 3.8575301,1.0688766 0 0 1 3.852977,-1.069842 3.8575301,1.0688766 0 0 1 3.862078,1.067319 3.8575301,1.0688766 0 0 1 -3.850841,1.070432 l -0.0067,-1.068875 z"
      transform="matrix(0.96944262,0.24531818,-0.01179378,0.99993045,0,0)" />
   <path
-     style="fill:#ffffff;stroke:#ffffff;stroke-opacity:0.995951"
+     style="fill:#e60023;stroke:#e60023;stroke-opacity:0.995951"
      id="path4916"
      sodipodi:type="arc"
      sodipodi:cx="-130.14604"
