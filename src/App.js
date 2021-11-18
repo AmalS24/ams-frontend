@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { About } from "./Home/About";
 import "animate.css"
 import RegisterPage from "./components/register/RegisterPage";
+import DetailsPage from "./components/Details/DetailsPage";
 
 function App() {
   useEffect(() => {
@@ -16,7 +17,8 @@ function App() {
 
   return (
     <>
-      <Switch>
+    <DetailsPage/>
+      {/* <Switch>
         <Route path="/" exact>
           <Header />
           <Hero />
@@ -24,7 +26,7 @@ function App() {
         </Route>
         <Route path="/nri" component={RegisterPage} />
         <Route path="/login" component={NriLogin} />
-      </Switch>
+      </Switch> */}
     </>
   );
 }
