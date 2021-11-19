@@ -2,12 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function TitleBar() {
-  function alertCall()
-  {
-    window.alert("Please check your details once again");
-  }
+  
     return (
-        <div className="  w-full flex items-end justify-between bg-transparent xs:px-10 px-20 h-12 ">
+        <div className="  w-full flex items-center justify-between bg-transparent xs:px-10 px-20 h-12 ">
         <Link to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +24,7 @@ function TitleBar() {
             />
           </svg>
         </Link>
-        <button onClick={alertCall}>
+        <button >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"

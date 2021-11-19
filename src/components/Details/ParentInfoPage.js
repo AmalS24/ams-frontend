@@ -2,8 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ParentInfoPage() {
+  function alertCall()
+  {
+    window.alert("Please check your details once again");
+  }
   return (
-    <div className="w-screen h-full bg-transparent ">
+    <div className="w-screen h-full bg-transparent overflow-auto">
       <form
         action=""
         className="w-200 flex flex-col items-center py-3 space-y-2 justify-start mx-auto  left-10 h-99 rounded-sm bg-white"
@@ -197,7 +201,7 @@ function ParentInfoPage() {
               Back
             </Link>
             <div className="w-94 flex px-5 items-center justify-between h-full">
-              <Link className="h-11 w-30 ml-14 flex items-center justify-center rounded-full border-2 text-torch-red-500 text-xl border-torch-red-500 hover:text-white hover:bg-torch-red-500">
+              <Link to='/' onClick={alertCall} className="h-11 w-30 ml-14 flex items-center justify-center rounded-full border-2 text-torch-red-500 text-xl border-torch-red-500 hover:text-white hover:bg-torch-red-500">
                 Save
               </Link>
               <Link className="h-11 w-30 flex items-center justify-center rounded-full border-2 text-torch-red-500 text-xl border-torch-red-500 hover:text-white hover:bg-torch-red-500">
