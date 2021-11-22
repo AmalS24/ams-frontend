@@ -2,16 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function RegisterForm() {
+  function addHyphen() {
+    var val = document.getElementById("aadr");
+    if (val.value != "") {
+      val = val.value.split("-").join("");
+      let finalVal = val.match(/.{1,4}/g).join("-");
+      document.getElementById("aadr").value = finalVal;
+    }
+  }
 
-  // function addHyphen (element) {
-  //   let ele = document.getElementById(element.id);
-  //         ele = ele.value.split('-').join('');    // Remove dash (-) if mistakenly entered.
-  
-  //         let finalVal = ele.match(/.{1,3}/g).join('-');
-  //         document.getElementById(element.id).value = finalVal;
-  // }
-
-  
   return (
     <div className="flex justify-center items-center xl:w-3/5 w-full">
       <form
@@ -88,8 +87,10 @@ function RegisterForm() {
               Aadhar No.
             </label>
             <input
-            // id="tbNum" onkeyup={addHyphen(this)}
-              placeholder="Aadhar Number"
+              id="aadr"
+              onKeyUp={addHyphen}
+              maxLength="14"
+              placeholder="xxxx-xxxx-xxxx"
               className="xs:h-11 sm:text-lg sm:w-64 sm:ml-8 sm:mr-5 sm:mb-3 px-4 w-72 mx-2 text-md italic focus:outline-none border-2 border-black rounded-full"
             />
             <label
@@ -156,5 +157,4 @@ function RegisterForm() {
   );
 }
 
-    
 export default RegisterForm;
