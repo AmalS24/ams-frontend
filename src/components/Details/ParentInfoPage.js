@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 function ParentInfoPage() {
   function alertCall()
   {
-    window.alert("Please check your details once again");
+    window.alert(document.getElementById("date").value);
+    console.log(document.getElementById("date").value)
   }
   return (
     <div className="w-screen h-full bg-transparent overflow-auto">
@@ -21,9 +22,9 @@ function ParentInfoPage() {
               Father's Name*
             </label>
             <input
-              type="text"
+              type="date"
               className="w-72 h-10 ml-4 pl-4 text-lg italic required rounded-full border-2 border-black "
-            />
+              id="date"            />
             <label htmlFor="" className="text-xl ml-8">
               Occupation*
             </label>
