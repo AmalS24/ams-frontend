@@ -196,7 +196,7 @@ function NriLogin() {
                 className="w-96 ml-4 italic h-14 mt-2 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
               />
               <Link
-                to="/nri"
+                to="/login/form"
                 className="flex items-center mt-8 ml-6 justify-center w-30 shadow-2xl rounded-full h-14 border-2 border-red-600 text-red-600 text-2xl hover:text-white hover:bg-red-600"
               >
                 Sign-In

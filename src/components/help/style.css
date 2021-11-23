@@ -4,9 +4,10 @@
     background-color: white;
     padding: 2rem;
     text-align: center;
-    width: 30rem;
+    width: 40rem;
+    height: 30rem;
     z-index: 10;
-    position: fixed;
-    top: 30vh;
-    left: calc(50% - 15rem);
+    position: absolute;
+    top: 15vh;
+    left: calc(50% - 20rem);
   }

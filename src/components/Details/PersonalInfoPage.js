@@ -47,6 +47,14 @@ function autoFilladdress(){
 //   cCountry.value      = " ";           
 // }
 }
+function addHyphen() {
+  var val = document.getElementById("aadhaar");
+  if (val.value != "") {
+    val = val.value.split("-").join("");
+    let finalVal = val.match(/.{1,4}/g).join("-");
+    document.getElementById("aadhaar").value = finalVal;
+  }
+}
   return (
     <div className="w-screen h-auto bg-transparent ">
       <form
@@ -57,7 +65,7 @@ function autoFilladdress(){
         <h1 className="text-center text-2xl py-3 uppercase">Personal Info</h1>
         <div className="w-full h-full flex flex-col mt-14">
           <div className="w-full h-170 flex flex-col space-y-2">
-            <div className="w-full h-1/3 bg-gray-100 grid grid-cols-3">
+            <div className="w-full h-1/3 bg-white grid grid-cols-3">
               <div className="h-full ">
                 <div className="h-full py-1 flex space-y-2 flex-col bg-transparent">
                   <label htmlFor="" className="text-xl ml-8">
@@ -117,6 +125,8 @@ function autoFilladdress(){
                   <input
                     type="text"
                     className="w-72 h-10 ml-4 pl-4 text-lg italic required rounded-full border-2 border-black "
+                    onKeyUp={addHyphen}
+                    maxLength="14"
                     placeholder="xxxx-xxxx-xxxx"
                     id="aadhaar"
                   />
@@ -151,7 +161,7 @@ function autoFilladdress(){
                 </div>
               </div>
             </div>
-            <div className="w-full h-1/3 bg-gray-100">
+            <div className="w-full h-1/3 bg-white">
               <div className="grid grid-cols-3 gap-4">
                 <div className="col-span-3">
                   <label htmlFor="" className="text-2xl ml-8">
@@ -212,7 +222,7 @@ function autoFilladdress(){
                 </div>
               </div>
             </div>
-            <div className="w-full h-1/3 bg-gray-100">
+            <div className="w-full h-1/3 bg-white">
               <div className="grid grid-cols-3 gap-4">
                 <div className="col-span-3">
                   <label htmlFor="" className="text-2xl ml-8">
@@ -275,13 +285,15 @@ function autoFilladdress(){
               Back
             </Link>
             <div className="w-94 flex px-5 items-center justify-between h-full">
-              <Link
-                to="/"
+              <div
+              onClick={printValue}
                 className="h-10 w-30 ml-14 flex items-center justify-center rounded-full border-2 text-torch-red-500 text-xl border-torch-red-500 hover:text-white hover:bg-torch-red-500"
               >
                 Save
-              </Link>
-              <Link className="h-10 w-30 flex items-center justify-center rounded-full border-2 text-torch-red-500 text-xl border-torch-red-500 hover:text-white hover:bg-torch-red-500">
+              </div>
+              <Link
+              to="/login/form2"
+              className="h-10 w-30 flex items-center justify-center rounded-full border-2 text-torch-red-500 text-xl border-torch-red-500 hover:text-white hover:bg-torch-red-500">
                 Next
               </Link>
             </div>
@@ -292,5 +304,8 @@ function autoFilladdress(){
     </div>
   );
 }
-
+function printValue(){
+  var name = document.getElementById("dob").value;
+  console.log(name)
+}
 export default PersonalInfoPage;

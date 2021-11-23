@@ -1,7 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import Backdrop from "../help/Backdrop"
+import DetailsHelp from '../help/DetailsHelp'
 
 function TitleBar() {
+  const [helpIsOpen,setHelpIsOpen]=useState(false)
+  function togglehelp(){
+    setHelpIsOpen(!helpIsOpen)
+    console.log(helpIsOpen)
+  }
   
     return (
         <div className="  w-full flex items-center justify-between bg-transparent xs:px-10 px-20 h-12 ">
@@ -24,7 +32,12 @@ function TitleBar() {
             />
           </svg>
         </Link>
-        <button >
+        <button 
+        onClick={togglehelp}
+        >
+          {helpIsOpen ?<Backdrop/> :null}
+          {helpIsOpen ?<DetailsHelp/> :null}
+          
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"
