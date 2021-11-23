@@ -3,13 +3,17 @@ import { Link } from "react-router-dom";
 import Backdrop from "../help/Backdrop";
 import { useState } from "react";
 import { Loginhelp } from "../help/Loginhelp";
+import { ForgotHelp } from "../help/ForgotHelp";
 
 function NriLogin() {
   const [helpIsOpen, setHelpIsOpen] = useState(false);
   function toggleHelp() {
     setHelpIsOpen(!helpIsOpen);
   }
-
+  const [forgotOpen, setforgotOpen] = useState(false);
+  function passwordHelp(){
+    setforgotOpen(!forgotOpen);
+  }
   return (
     <div className="w-screen h-screen bg-trout-600">
       <div className=" w-full flex items-center  justify-between px-20 py-10 h-14">
@@ -197,13 +201,13 @@ function NriLogin() {
               >
                 Sign-In
               </Link>
-              <a
-                class="font-light text-xl text-black-500 text-red-600 
-              hover:text-indigo-600 ml-64 "
-                href="https://github.com/NANDAKRISHNAN-P-N"
+              <div
+                 onClick={passwordHelp}
+                className="flex items-center mt-6 ml-64  justify-center w-30 shadow-2xl rounded-full h-14 border-2 border-red-600 text-red-600 text-2xl hover:text-white hover:bg-red-600"
               >
-                Forgot Password!
-              </a>
+                Forgot Password
+              </div>
+              {forgotOpen && <ForgotHelp onClick={passwordHelp} />}
             </div>
           </form>
         </div>
