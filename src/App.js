@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { About } from "./Home/About";
 import RegisterPage from "./components/register/RegisterPage";
 import DetailsPage from "./components/Details/DetailsPage";
+import PaymentInfoPage from "./components/Details/PaymentInfoPage";
 import Sample from "./components/Details/Sample";
 
 function App() {
@@ -17,8 +18,9 @@ function App() {
 
   return (
      <>
-    <Sample />
-      {/* <Switch>
+     <PaymentInfoPage/>
+    {/* <Sample /> */}
+       {/* <Switch>
         <Route path="/" exact>
           <Header />
           <Hero />
@@ -26,7 +28,7 @@ function App() {
         </Route>
         <Route path="/nri" component={RegisterPage} />
         <Route path="/login" component={NriLogin} />
-      </Switch> */}
+      </Switch>  */}
     </>
   );
 }
