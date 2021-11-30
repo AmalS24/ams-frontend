@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 function RegisterForm() {
   function addHyphen() {
@@ -11,11 +12,76 @@ function RegisterForm() {
     }
   }
 
+  const nameRef = useRef();
+  const genderRef = useRef();
+  const emailidRef = useRef();
+  const aadharRef = useRef();
+  const dobRef = useRef();
+  const phoneRef = useRef();
+  const quotaRef = useRef();
+
+  function RegisterationForm(event) {
+    event.preventDefault();
+
+    const inputname = nameRef.current.value;
+    const inputgender = genderRef.current.value;
+    const inputemailid = emailidRef.current.value;
+    const inputaadhar = aadharRef.current.value;
+    const inputdob = dobRef.current.value;
+    const inputphone = phoneRef.current.value;
+    const inputquota = quotaRef.current.value;
+
+    const namearray = inputname.split(" ");
+    var registerInput =null;
+    var date = new Date();
+    const dt = date.toLocaleDateString()+" "+date.toLocaleTimeString();
+    if(namearray.length==3){
+      registerInput = {
+      fname   : namearray[0],
+      mname   : namearray[1],
+      lname   : namearray[2],
+      gender  : inputgender,
+      email   : inputemailid,
+      aadhar  : inputaadhar,
+      dob     : inputdob,
+      phone   : inputphone,
+      quota   : inputquota,
+      time    : dt,
+    };
+  }
+  if(namearray.length==2){
+    registerInput = {
+      fname   : namearray[0],
+      mname   : null,
+      lname   : namearray[1],
+      gender  : inputgender,
+      email   : inputemailid,
+      aadhar  : inputaadhar,
+      dob     : inputdob,
+      phone   : inputphone,
+      quota   : inputquota,
+      time    : dt,
+    };
+  }
+  
+    console.log(JSON.stringify(registerInput),registerInput);
+  fetch("https://mits-qnkohm.firebaseio.com/sample.json",
+  {
+    method: "POST",
+    body  : JSON.stringify(registerInput),
+    headers : {
+      "Content-Type" : "application/JASON"
+    }
+  })
+  
+  
+  }
   return (
     <div className="flex justify-center items-center xl:w-3/5 w-full">
       <form
         action=""
         className="flex flex-col  xs:w-74 sm:w-97.85 sm:h-98 h-full rounded-sm bg-white"
+        onSubmit={RegisterationForm}
       >
         <h1 className="text-2xl text-center mb-2 sm:mb-1 sm:mt-2 sm:text-4xl sm:py-3 font-semibold mt-6 uppercase">
           Registration
@@ -47,6 +113,7 @@ function RegisterForm() {
             placeholder="Full Name"
             required
             className="mb-1  sm:mb-0 xs:h-11 sm:w-74 sm:ml-3 px-4 w-72 mx-2 italic text-md sm:text-lg focus:outline-none border-2 border-black rounded-full"
+            ref={nameRef}
           />
           <label
             htmlFor="quota"
@@ -59,6 +126,7 @@ function RegisterForm() {
             className=" xs:h-11 sm:w-36 px-4 w-72 mx-2 italic text-md sm:text-lg focus:outline-none border-2 border-black rounded-full"
             id="gender"
             required="true"
+            ref={genderRef}
           >
             <option value=""></option>
             <option value="male">Male</option>
@@ -77,6 +145,7 @@ function RegisterForm() {
           placeholder="Email-ID"
           required
           className="xs:h-11 sm:w-97.55 sm:text-lg sm:ml-8  px-4 w-72 ml-2  text-md italic focus:outline-none border-2 border-black rounded-full"
+          ref={emailidRef}
         />
         <div className="sm:flex ">
           <div className="xs:my-2 sm:w-3/5 sm:mt-4">
@@ -92,6 +161,7 @@ function RegisterForm() {
               maxLength="14"
               placeholder="xxxx-xxxx-xxxx"
               className="xs:h-11 sm:text-lg sm:w-64 sm:ml-8 sm:mr-5 sm:mb-3 px-4 w-72 mx-2 text-md italic focus:outline-none border-2 border-black rounded-full"
+              ref={aadharRef}
             />
             <label
               htmlFor="phone"
@@ -103,6 +173,7 @@ function RegisterForm() {
               type="tel"
               placeholder="Phone Number"
               className="xs:h-11 sm:text-lg  sm:w-64 sm:mx-8  px-4 w-72 mx-2 text-md italic focus:outline-none border-2 border-black rounded-full"
+              ref={phoneRef}
             />
           </div>
           <div className="sm:w-2/5 sm:mr-2 sm:mt-4">
@@ -116,6 +187,7 @@ function RegisterForm() {
               type="date"
               required
               className="xs:h-11 sm:text-lg sm:w-48 sm:mx-0 sm:mb-3 px-4 w-72 mx-2 text-md italic focus:outline-none border-2 border-black rounded-full"
+              ref={dobRef}
             />
             <label
               htmlFor="gender"
@@ -128,6 +200,7 @@ function RegisterForm() {
               className="xs:h-11 sm:text-lg sm:w-48 sm:mx-0  px-4 w-72 mx-2 text-md italic focus:outline-none border-2 border-black rounded-full"
               id="quota"
               required
+              ref={quotaRef}
             >
               <option value=""></option>
               <option value="NRI">NRI</option>
