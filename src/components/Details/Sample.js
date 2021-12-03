@@ -1,5 +1,6 @@
 import React from "react";
 import TitleBar from "./TitleBar";
+import { Link } from "react-router-dom";
 
 function Sample() {
   function branchAlert() {
@@ -17,7 +18,7 @@ function Sample() {
   return (
     <div className="w-screen overflow-x-hidden h-screen bg-shark-500">
       <TitleBar />
-      <div className="w-screen h-auto xs:px-3 py-6 sm:px-14 bg-shark-500">
+      <div className="w-screen h-auto xs:px-3 pt-4 pb-14 sm:px-14 bg-shark-500">
         <div className="xs:w-full sm:px-6 space-y-6 xs:h-full xs:rounded-md xs:flex flex-col items-center pb-8 bg-white">
           <p className="text-center xs:text-2xl xs:mt-4 font-semibold uppercase">
             Parental details
@@ -69,8 +70,10 @@ function Sample() {
             <p className="xs:text-xl xs:ml-4 xs:mt-2">Relation with Sponser</p>
             <input
               type="text"
-              className="xs:h-11 pl-4 text-xl italic xs:w-full border-2  border-black rounded-full"
-            />
+              className="xs:h-11 pl-4 text-xl italic xs:w-full border-2 border-black focus:outline-none bg-gray-100 focus:border-red-600 rounded-full"
+              />
+
+              
           </div>
           <div className="xs:w-full xs:flex flex-col xs:items-center xs:justify-center xs:h-auto px-3 space-y-5">
             <div className="bg-gray-600 w-full rounded-xl h-1 my-4 xl:hidden"></div>
@@ -114,10 +117,10 @@ function Sample() {
               <p>Waiting position : 4</p>
             </div>
             <div className="xs:w-full xs:pt-6 xs:flex xs:justify-between">
-              <p className="h-10  rounded-full w-20 text-lg flex items-center justify-center 
-            cursor-pointer border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white">Back</p>
-               <p className="h-10  rounded-full w-32 text-lg flex items-center justify-center 
-            cursor-pointer border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white">Save & Next</p>
+              <Link to='/' className="h-10  rounded-full w-20 text-lg flex items-center justify-center 
+            cursor-pointer border-2 bg-red-600 text-white">Back</Link>
+               <Link to='' className="h-10 focus:rounded-full rounded-full w-32 text-lg flex items-center justify-center 
+            cursor-pointer border-2 bg-red-600 text-white">Save & Next</Link>
                {/* <p className="h-10  rounded-full w-20 text-lg flex items-center justify-center 
             cursor-pointer border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white">Next</p> */}
             </div>
