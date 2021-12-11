@@ -7,8 +7,8 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { About } from "./Home/About";
 import RegisterPage from "./components/register/RegisterPage";
-import DetailsPage from "./components/Details/DetailsPage";
-import Sample from "./components/Details/Sample";
+// import DetailsPage from "./components/Details/DetailsPage";
+// import Sample from "./components/Details/Sample";
 
 function App() {
   useEffect(() => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import PersonalInfoPage from './PersonalInfoPage'
+// import PersonalInfoPage from './PersonalInfoPage'
 import ParentInfoPage from './ParentInfoPage'
 
 function Body() {

@@ -2,7 +2,7 @@ import React from "react";
 
 function RegisterLogo() {
   return (
-    <div className="xl:flex justify-center items-center w-2/5 hidden ">
+    <div className="xl:flex  items-center w-2/5 hidden ">
       <svg
         id="a65bca02-317b-4705-84dd-2a5586816ee4"
         data-name="Layer 1"

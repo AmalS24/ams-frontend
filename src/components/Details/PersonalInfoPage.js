@@ -8,7 +8,7 @@ function autoFilladdress(){
   var checkBox= document.getElementById('checkBox');
 
  
-   if (checkBox.checked == true)
+   if (checkBox.checked === true)
    {
    
     var pHousename = document.getElementById("pHousename");
