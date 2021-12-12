@@ -168,10 +168,10 @@ function NriLogin() {
             <rect x="427.49994" y="107.5" width="2" height="304" fill="#ccc" />
           </svg>
         </div>
-        <div  className="lg:w-97 flex  lg:mt-18 mt-16 h-full mx-auto bg-transparent shadow-3xl">
+        <div  className="lg:w-97 flex  h-auto mx-auto bg-transparent shadow-3xl">
           <form
             action=""
-            className="flex flex-col mx-auto  h-full w-97 bg-white "
+            className="flex flex-col mx-auto  h-auto w-auto bg-white "
           >
             <h1 className="mt-8 text-4xl text-center  font-semi-bold">
               SIGN-IN
@@ -203,7 +203,7 @@ function NriLogin() {
               </Link>
               <div
                  onClick={passwordHelp}
-                className="flex items-center mt-6 ml-64  justify-center w-30 shadow-2xl rounded-full h-14 border-2 border-red-600 text-red-600 text-2xl hover:text-white hover:bg-red-600"
+                className="flex items-center ml-64 mr-4 justify-center w-45 shadow-2xl rounded-full h-10 border-2 border-red-600 text-red-600 text-ms hover:text-white hover:bg-red-600"
               >
                 Forgot Password
               </div>

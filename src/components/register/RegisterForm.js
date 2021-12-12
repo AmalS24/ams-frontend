@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 function RegisterForm() {
   function addHyphen() {
@@ -11,11 +12,78 @@ function RegisterForm() {
     }
   }
 
+
+
+
+
+  const fname = useRef();
+  const mname = useRef();
+  const lname = useRef();
+  const gender = useRef();
+  const emailid = useRef();
+  const aadhar = useRef();
+  const dob = useRef();
+  const phone = useRef();
+  const quota = useRef();
+  const program = useRef();
+
+  function RegistrationForm(event) {
+    event.preventDefault();
+
+    const inputfname = fname.current.value;
+    const inputmame = mname.current.value;
+    const inputlname = lname.current.value;
+    const inputgender = gender.current.value;
+    const inputemailid = emailid.current.value;
+    const inputaadhar = aadhar.current.value;
+    const inputdob = dob.current.value;
+    const inputphone = phone.current.value;
+    const inputquota = quota.current.value;
+    const inputprogram = program.current.value;
+
+    var registerInput=null;
+    var date = new Date();
+    const dt = date.toLocaleDateString()+" "+date.toLocaleTimeString();
+    
+    registerInput = {
+      fname   : inputfname,
+      mname   : inputmame,
+      lname   : inputlname,
+      gender  : inputgender,
+      email   : inputemailid,
+      aadhar  : inputaadhar,
+      dob     : inputdob,
+      phone   : inputphone,
+      quota   : inputquota,
+      program : inputprogram,
+      time    : dt,
+    };
+
+  
+  console.log(JSON.stringify(registerInput),registerInput);
+  fetch("https://mits-qnkohm.firebaseio.com/registration.json",
+  {
+    method: "POST",
+    body  : JSON.stringify(registerInput),
+    headers : {
+      "Content-Type" : "application/JASON"
+    }
+  })
+
+}
+  
+  
+  
+
+
+
+
   return (
     <div className="xl:w-2/5  sm:my-0 h-auto mx-auto flex justify-center ">
       <form
         action=""
         className="w-auto mx-auto p-6 space-y-4  h-auto rounded-md bg-white"
+        onSubmit={RegistrationForm}
       >
         <p className="text-center text-2xl sm:text-4xl sm:mt-3 uppercase font-semibold">
           Registration
@@ -31,6 +99,7 @@ function RegisterForm() {
               placeholder="First"
               required
               className="sm:h-10 h-11 w-72 sm:w-40 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
+              ref={fname}
             />
           </div>
           <div className="w-auto h-full mt-7">
@@ -38,6 +107,7 @@ function RegisterForm() {
               type="text"
               placeholder="Middle"
               className="sm:h-10 h-11 w-72 sm:w-36 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
+              ref={mname}
             />
           </div>
           <div className="w-auto h-full mt-7">
@@ -46,6 +116,7 @@ function RegisterForm() {
               placeholder="Last"
               required
               className="sm:h-10 h-11 w-72 sm:w-50 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
+              ref={lname}
             />
           </div>
         </div>
@@ -59,6 +130,7 @@ function RegisterForm() {
               placeholder="Email"
               required
               className="sm:h-10 h-11 w-72 sm:w-90 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
+              ref={emailid}
             />
           </div>
           <div className="w-auto flex flex-col h-full">
@@ -71,6 +143,7 @@ function RegisterForm() {
               className="sm:h-10 h-11 bg-white w-72 sm:w-40 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               id="gender"
               required="true"
+              ref={gender}
             >
               <option value=""></option>
               <option value="male">Male</option>
@@ -89,6 +162,7 @@ function RegisterForm() {
               placeholder="Phone"
               maxLength={10}
               className="sm:h-10 h-11 w-72 sm:w-52 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
+              ref={phone}
             />
           </div>
           <div className="w-auto sm:mb-0 mb-4 flex flex-col h-full">
@@ -101,6 +175,7 @@ function RegisterForm() {
               className="sm:h-10 h-11 bg-white w-72 sm:w-40 px-4  italic text-lg focus:outline-none border-2 border-black rounded-full"
               id="quota"
               required
+              ref={quota}
             >
               <option value=""></option>
               <option value="NRI">NRI</option>
@@ -118,6 +193,7 @@ function RegisterForm() {
               className="sm:h-10 h-11 bg-white sm:w-30 px-4 w-72 italic text-lg focus:outline-none border-2 border-black rounded-full"
               id="quota"
               required
+              ref={program}
             >
               <option value=""></option>
               <option value="B-Tech">B-Tech</option>
@@ -138,6 +214,7 @@ function RegisterForm() {
               maxLength={14}
               required
               className="sm:h-10 h-11 w-72 sm:w-64 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
+              ref={aadhar}
             />
           </div>
           <div className="w-auto flex flex-col h-full">
@@ -149,6 +226,7 @@ function RegisterForm() {
               placeholder="DOB"
               required
               className="sm:h-10 h-11 bg-white w-72 sm:w-52 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
+              ref={dob}
             />
           </div>
         </div>
@@ -176,5 +254,4 @@ function RegisterForm() {
     </div>
   );
 }
-
 export default RegisterForm;
