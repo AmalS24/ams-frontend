@@ -5,11 +5,12 @@ import "./style.css"
 export const Loginhelp = (props) => {
   return (
     <div
+    data-aos="zoom-in"
       className="modal font-light "
     >
       <div
         className="absolute  z-30 w-8 h-8 rounded-full bg-torch-red-500  
-        font-extrabold transform rotate-45 text-white text-xl cursor-pointer -right-2 -top-2"
+        font-extrabold transform rotate-45 text-white text-xl cursor-pointer -left-2 -top-2"
         onClick={props.onClick}
       >
         +

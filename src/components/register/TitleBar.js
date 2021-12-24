@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function TitleBar() {
     return (
-        <div className="sm:absolute relative w-full flex items-end justify-between bg-transparent xs:px-10 px-20 h-12 ">
+        <div className="w-full flex items-end justify-between bg-transparent px-10 h-14 ">
         <Link to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"

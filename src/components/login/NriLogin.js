@@ -52,7 +52,7 @@ function NriLogin() {
         {helpIsOpen && <Loginhelp onClick={toggleHelp} />}
       </div>
 
-      <div className="w-97 lg:flex lg:w-full h-97.5 mx-auto mt-4 lg:justify-between  bg-transparent">
+      <div className="w-97 lg:flex lg:w-full h-97.5 mx-auto lg:justify-between">
         <div className="w-98 mt-20 h-full justify-center hidden lg:flex">
           <svg
             id="b368e7d6-7c4a-408c-9a35-0514749a7e1a"
@@ -168,7 +168,11 @@ function NriLogin() {
             <rect x="427.49994" y="107.5" width="2" height="304" fill="#ccc" />
           </svg>
         </div>
+<<<<<<< Updated upstream
         <div  className="lg:w-97 flex  h-auto mx-auto bg-transparent shadow-3xl">
+=======
+        <div  className="lg:w-97 flex  lg:mt-18 mt-16 h-full mx-auto shadow-3xl">
+>>>>>>> Stashed changes
           <form
             action=""
             className="flex flex-col mx-auto  h-auto w-auto bg-white "
@@ -201,12 +205,16 @@ function NriLogin() {
               >
                 Sign-In
               </Link>
-              <div
+              <p
                  onClick={passwordHelp}
+<<<<<<< Updated upstream
                 className="flex items-center ml-64 mr-4 justify-center w-45 shadow-2xl rounded-full h-10 border-2 border-red-600 text-red-600 text-ms hover:text-white hover:bg-red-600"
+=======
+                className="font-light text-lg font-montserrat hover:text-purple-600 text-right mr-6"
+>>>>>>> Stashed changes
               >
                 Forgot Password
-              </div>
+              </p>
               {forgotOpen && <ForgotHelp onClick={passwordHelp} />}
             </div>
           </form>
