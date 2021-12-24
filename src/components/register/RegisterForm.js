@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 
@@ -80,22 +79,16 @@ function RegisterForm() {
 
 
   return (
-    <div className="xl:w-2/5 h-auto mx-auto flex justify-center ">
+    <div className="xl:w-2/5  sm:my-0 h-auto mx-auto flex justify-center ">
       <form
         action=""
-<<<<<<< Updated upstream
         className="w-auto mx-auto p-6 space-y-4  h-auto rounded-md bg-white"
         onSubmit={RegistrationForm}
-=======
-        className="w-auto mx-auto sm:p-6 p-4 space-y-4  h-auto rounded-sm bg-white"
->>>>>>> Stashed changes
       >
         <p className="text-center text-2xl sm:text-4xl sm:mt-3 uppercase font-semibold">
           Registration
         </p>
-        {/* <div className="w-auto h-14 text-blue-700 flex items-center justify-center mx-3 font-comic text-xl font-bold bg-indigo-100 rounded-md">
-          It looks like you've already registered, Try Sign-In
-        </div> */}
+        {/* <div className="w-auto h-16 mx-3 bg-indigo-200 rounded-md"></div> */}
         <div className="sm:flex sm:space-x-2 justify-between w-full h-auto">
           <div className="w-auto flex flex-col h-full">
             <label htmlFor="" className="ml-4 text-lg">
@@ -103,7 +96,7 @@ function RegisterForm() {
             </label>
             <input
               type="text"
-              placeholder="First*"
+              placeholder="First"
               required
               className="sm:h-10 h-11 w-72 sm:w-40 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={fname}
@@ -120,7 +113,7 @@ function RegisterForm() {
           <div className="w-auto h-full mt-7">
             <input
               type="text"
-              placeholder="Last*"
+              placeholder="Last"
               required
               className="sm:h-10 h-11 w-72 sm:w-50 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={lname}
@@ -140,21 +133,7 @@ function RegisterForm() {
               ref={emailid}
             />
           </div>
-          <div className="w-auto sm:mb-0 mb-4 flex flex-col h-full">
-            <label htmlFor="" className="ml-4 text-lg">
-              Phone
-            </label>
-            <input
-              type="tel"
-              placeholder="Phone"
-              maxLength={10}
-              className="sm:h-10 h-11 w-72 sm:w-44 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
-            />
-          </div>
-         
-        </div>
-        <div className="sm:flex space-y-3 sm:space-y-0 justify-between w-full h-auto">
-        <div className="w-auto flex flex-col h-full">
+          <div className="w-auto flex flex-col h-full">
             <label htmlFor="" className="ml-4 text-lg">
               Gender*
             </label>
@@ -172,7 +151,6 @@ function RegisterForm() {
               <option value="Others">Others</option>
             </select>
           </div>
-<<<<<<< Updated upstream
         </div>
         <div className="sm:flex justify-between w-full h-auto">
           <div className="w-auto sm:mb-0 mb-4 flex flex-col h-full">
@@ -188,43 +166,38 @@ function RegisterForm() {
             />
           </div>
           <div className="w-auto sm:mb-0 mb-4 flex flex-col h-full">
-=======
-          
-         
-          <div className="w-auto flex flex-col h-full">
->>>>>>> Stashed changes
-            <label htmlFor="" className="ml-4 text-lg">
-              Program*
-            </label>
-
-            <select
-              name="quota"
-              className="sm:h-10 h-11 bg-white sm:w-40 px-4 w-72 italic text-lg focus:outline-none border-2 border-black rounded-full"
-              id="quota"
-              required
-              ref={quota}
-            >
-              <option value=""></option>
-              <option value="B-Tech">B-Tech</option>
-              <option value="M-Tech">M-Tech</option>
-            </select>
-          </div>
-          <div className="w-auto sm:mb-0 mb-4 flex flex-col h-full">
             <label htmlFor="" className="ml-4 text-lg">
               Quota*
             </label>
 
             <select
               name="quota"
-              className="sm:h-10 h-11 bg-white w-72 sm:w-44 px-4  italic text-lg focus:outline-none border-2 border-black rounded-full"
+              className="sm:h-10 h-11 bg-white w-72 sm:w-40 px-4  italic text-lg focus:outline-none border-2 border-black rounded-full"
+              id="quota"
+              required
+              ref={quota}
+            >
+              <option value=""></option>
+              <option value="NRI">NRI</option>
+              <option value="Merit">Government</option>
+              <option value="Managment">Management</option>
+            </select>
+          </div>
+          <div className="w-auto flex flex-col h-full">
+            <label htmlFor="" className="ml-4 text-lg">
+              Program*
+            </label>
+
+            <select
+              name="quota"
+              className="sm:h-10 h-11 bg-white sm:w-30 px-4 w-72 italic text-lg focus:outline-none border-2 border-black rounded-full"
               id="quota"
               required
               ref={program}
             >
-              <option value="" ></option>
-              <option value="NRI">NRI</option>
-              <option value="Merit">Government</option>
-              <option value="Managment">Management</option>
+              <option value=""></option>
+              <option value="B-Tech">B-Tech</option>
+              <option value="M-Tech">M-Tech</option>
             </select>
           </div>
         </div>
@@ -239,13 +212,9 @@ function RegisterForm() {
               placeholder="xxxx-xxxx-xxxx"
               onKeyUp={addHyphen}
               maxLength={14}
-<<<<<<< Updated upstream
               required
               className="sm:h-10 h-11 w-72 sm:w-64 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={aadhar}
-=======
-              className="sm:h-10 h-11 tracking-wider w-72 sm:w-64 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
->>>>>>> Stashed changes
             />
           </div>
           <div className="w-auto flex flex-col h-full">
@@ -263,22 +232,22 @@ function RegisterForm() {
         </div>
         <div className="flex justify-between w-full h-auto">
           <div className="w-auto my-3 h-full">
-            <button className=" flex items-center sm:w-30 w-24 justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 h-10  sm:text-xl text-white bg-red-600 font-montserrat">
-              Register
+          <button className=" flex items-center sm:w-30 w-24 justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 h-10  sm:text-xl text-white bg-red-600 font-montserrat">
+           Register       
             </button>
           </div>
           <div className="w-auto mt-4 h-full">
-            <div className="sm:flex flex-row sm:mt-6">
-              <p className="sm:flex hidden text-lg font-light">
-                Already Registered ? Try
-              </p>
-              <Link
-                to="/login"
-                className="sm:ml-2 sm:text-xl text-red-600 hover:underline hover:text-purple-700"
-              >
-                Sign-In
-              </Link>
-            </div>
+          <div className="sm:flex flex-row sm:mt-6">
+           <p className="sm:flex hidden text-lg font-light">
+             Already Registered ? Try
+           </p>
+           <Link
+             to="/login"
+             className="sm:ml-2 sm:text-xl text-red-600 hover:underline hover:text-purple-700"
+           >
+             Sign-In
+          </Link>
+       </div> 
           </div>
         </div>
       </form>
