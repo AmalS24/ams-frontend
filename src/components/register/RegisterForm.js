@@ -12,10 +12,6 @@ function RegisterForm() {
     }
   }
 
-
-
-
-
   const fname = useRef();
   const mname = useRef();
   const lname = useRef();
@@ -41,48 +37,39 @@ function RegisterForm() {
     const inputquota = quota.current.value;
     const inputprogram = program.current.value;
 
-    var registerInput=null;
+    var registerInput = null;
     var date = new Date();
-    const dt = date.toLocaleDateString()+" "+date.toLocaleTimeString();
-    
+    const dt = date.toLocaleDateString() + " " + date.toLocaleTimeString();
+
     registerInput = {
-      fname   : inputfname,
-      mname   : inputmame,
-      lname   : inputlname,
-      gender  : inputgender,
-      email   : inputemailid,
-      aadhar  : inputaadhar,
-      dob     : inputdob,
-      phone   : inputphone,
-      quota   : inputquota,
-      program : inputprogram,
-      time    : dt,
+      fname: inputfname,
+      mname: inputmame,
+      lname: inputlname,
+      gender: inputgender,
+      email: inputemailid,
+      aadhar: inputaadhar,
+      dob: inputdob,
+      phone: inputphone,
+      quota: inputquota,
+      program: inputprogram,
+      time: dt,
     };
 
-  
-  console.log(JSON.stringify(registerInput),registerInput);
-  fetch("https://mits-qnkohm.firebaseio.com/registration.json",
-  {
-    method: "POST",
-    body  : JSON.stringify(registerInput),
-    headers : {
-      "Content-Type" : "application/JASON"
-    }
-  })
-
-}
-  
-  
-  
-
-
-
+    console.log(JSON.stringify(registerInput), registerInput);
+    fetch("https://mits-qnkohm.firebaseio.com/registration.json", {
+      method: "POST",
+      body: JSON.stringify(registerInput),
+      headers: {
+        "Content-Type": "application/JASON",
+      },
+    });
+  }
 
   return (
     <div className="xl:w-2/5  sm:my-0 h-auto mx-auto flex justify-center ">
       <form
         action=""
-        className="w-auto mx-auto p-6 space-y-4  h-auto rounded-md bg-white"
+        className="w-auto mx-auto p-6 space-y-4  h-auto rounded-sm bg-white"
         onSubmit={RegistrationForm}
       >
         <p className="text-center text-2xl sm:text-4xl sm:mt-3 uppercase font-semibold">
@@ -232,22 +219,22 @@ function RegisterForm() {
         </div>
         <div className="flex justify-between w-full h-auto">
           <div className="w-auto my-3 h-full">
-          <button className=" flex items-center sm:w-30 w-24 justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 h-10  sm:text-xl text-white bg-red-600 font-montserrat">
-           Register       
+            <button className=" flex items-center sm:w-30 w-24 justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 h-10  sm:text-xl text-white bg-red-600 font-montserrat">
+              Register
             </button>
           </div>
           <div className="w-auto mt-4 h-full">
-          <div className="sm:flex flex-row sm:mt-6">
-           <p className="sm:flex hidden text-lg font-light">
-             Already Registered ? Try
-           </p>
-           <Link
-             to="/login"
-             className="sm:ml-2 sm:text-xl text-red-600 hover:underline hover:text-purple-700"
-           >
-             Sign-In
-          </Link>
-       </div> 
+            <div className="sm:flex flex-row sm:mt-6">
+              <p className="sm:flex hidden text-lg font-light">
+                Already Registered ? Try
+              </p>
+              <Link
+                to="/login"
+                className="sm:ml-2 sm:text-xl text-red-600 hover:underline hover:text-purple-700"
+              >
+                Sign-In
+              </Link>
+            </div>
           </div>
         </div>
       </form>

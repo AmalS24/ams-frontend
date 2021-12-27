@@ -9,16 +9,16 @@ import { About } from "./Home/About";
 import RegisterPage from "./components/register/RegisterPage";
 import DetailsPage from "./components/Details/DetailsPage";
 import PaymentInfoPage from "./components/Details/PaymentInfoPage";
-import Sample from "./components/Details/Sample";
+import ParentInfoPage from "./components/Details/ParentForm/ParentInfoPage";
 
 function App() {
   useEffect(() => {
-    Aos.init({ duration: 500 });
+    Aos.init();
   }, []);
 
   return (
      <>
-       <Switch>
+       {/* <Switch>
         <Route path="/" exact>
           <Header />
           <Hero />
@@ -26,7 +26,8 @@ function App() {
         </Route>
         <Route path="/nri" component={RegisterPage} />
         <Route path="/login" component={NriLogin} />
-      </Switch> 
+      </Switch>  */}
+      <ParentInfoPage />
     </>
   );
 }

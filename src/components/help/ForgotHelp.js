@@ -4,7 +4,7 @@ export const ForgotHelp = (props) => {
   return (
     <div
       data-aos="zoom-in"
-      className="w-97 h-97.5 px-8 absolute top-30 z-5 max-auto bg-white"
+      className="w-97 h-97.5 px-8 absolute top-28 z-5 max-auto bg-white"
     >
       <p className="text-center text-3xl mt-10 font-montserrat">
         Forgot Password?
@@ -21,7 +21,7 @@ export const ForgotHelp = (props) => {
               Submit
             </button>
      </div>
-      <p onClick={props.onClick} className="cursor-pointer w-auto hover:text-purple-600 text-xl mt-20">
+      <p onClick={props.onClick} className="cursor-pointer hover:text-red-600 w-11 text-xl mt-20">
         Back
       </p>
     </div>
