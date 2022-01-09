@@ -1,16 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useRef,useState } from "react";
+import { useRef, useState } from "react";
 import axios from "axios";
-// import {  useNavigate } from "react-router-dom";
-import { Redirect,useHistory } from "react-router-dom";
-
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function RegisterForm() {
- 
-  let history = useHistory();
-
-  var [aadrErr,setErr] = useState(false)
+  
+  var [aadrErr, setErr] = useState(false);
   function addHyphen() {
     var val = document.getElementById("aadr");
     if (val.value !== "") {
@@ -31,17 +28,13 @@ function RegisterForm() {
   const quota = useRef();
   const program = useRef();
 
-  function typeError()
-  {
-    const str = document.getElementById("aadr").value.split("-").join("")
-    
-    if(isNaN(str))
-    {
-      setErr(true)
-    }
-    else
-    {
-      setErr(false)
+  function typeError() {
+    const str = document.getElementById("aadr").value.split("-").join("");
+
+    if (isNaN(str)) {
+      setErr(true);
+    } else {
+      setErr(false);
     }
   }
 
@@ -59,11 +52,9 @@ function RegisterForm() {
     const inputquota = quota.current.value;
     const inputprogram = program.current.value;
 
-    
-
     var registerInput = null;
-    var date = new Date();
-    const dt = date.toLocaleDateString() + " " + date.toLocaleTimeString();
+    // var date = new Date();
+    // const dt = date.toLocaleDateString() + " " + date.toLocaleTimeString();
 
     registerInput = {
       firstName: inputfname,
@@ -76,34 +67,47 @@ function RegisterForm() {
       phone: inputphone,
       quota: inputquota,
       course: inputprogram,
-      age: 18
+      age: 18,
       //registrationTimeStamp: dt,
     };
 
-    axios.post("https://ams-back-end.herokuapp.com/user/register",registerInput)
-    .then((Response) => {
-     history.push("/login")
-    })
-    .catch(({ response }) => {
-      if (response) {
-        console.log("error",response)
-      }
-      // setLoading(false);
-    });
-    // console.log(JSON.stringify(registerInput), registerInput);
-    // fetch("https://ams-back-end.herokuapp.com/user/register", {
-    //   mode: "no-cors",
-    //   method: "POST",
-    //   body: JSON.stringify(registerInput),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     'Accept': 'application/json'
-    //   },
-    // }).then((Response) => console.log(Response));
+    axios
+      .post("https://ams-back-end.herokuapp.com/user/register", registerInput)
+      .then((Response) => {
+        switch (Response.status) {
+          case 200:
+            toast.success("Registration Success");
+            break;
+          case 204:
+            Error(toast.error("Required Field Empty"));
+            break;
+            default:
+        }
+      })
+      .catch(({ response }) => {
+        if (response) {
+          switch (response.status) {
+            case 409:
+              toast.info("Looks like you've Already registered");
+              break;
+            default:
+              toast.warn("Something went wrong ! Try Again");
+          }
+        }
+      });
   }
 
   return (
     <div className="xl:w-2/5  sm:my-0 h-auto mx-auto flex justify-center ">
+      <ToastContainer
+        draggable={false}
+        autoClose={8000}
+        transition={Bounce}
+        pauseOnHover={true}
+        limit={1}
+        bodyClassName="text-center text-black"
+        // position="top-center"
+      />
       <form
         action=""
         className="w-auto mx-auto p-6 space-y-4  h-auto rounded-sm bg-white"
@@ -112,7 +116,11 @@ function RegisterForm() {
         <p className="text-center text-2xl sm:text-4xl sm:mt-3 uppercase font-semibold">
           Registration
         </p>
-        {aadrErr && <div className="w-auto h-12 mx-3 flex items-center text-xl justify-center italic text-red-500 bg-red-100 rounded-md">Invalid Aadhar Number</div>}
+        {aadrErr && (
+          <div className="w-auto h-12 mx-3 flex items-center text-xl justify-center italic text-red-500 bg-red-100 rounded-md">
+            Invalid Aadhar Number
+          </div>
+        )}
         <div className="sm:flex sm:space-x-2 justify-between w-full h-auto">
           <div className="w-auto flex flex-col h-full">
             <label htmlFor="" className="ml-4 text-lg">
@@ -121,7 +129,6 @@ function RegisterForm() {
             <input
               type="text"
               placeholder="First"
-              
               className="sm:h-10 h-11 w-72 sm:w-40 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={fname}
             />
@@ -138,7 +145,6 @@ function RegisterForm() {
             <input
               type="text"
               placeholder="Last"
-              
               className="sm:h-10 h-11 w-72 sm:w-50 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={lname}
             />
@@ -152,7 +158,6 @@ function RegisterForm() {
             <input
               type="text"
               placeholder="Email"
-              
               className="sm:h-10 h-11 w-72 sm:w-90 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={emailid}
             />
@@ -166,7 +171,6 @@ function RegisterForm() {
               name="gender"
               className="sm:h-10 h-11 bg-white w-72 sm:w-40 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               id="gender"
-              
               ref={gender}
             >
               <option value=""></option>
@@ -198,7 +202,6 @@ function RegisterForm() {
               name="quota"
               className="sm:h-10 h-11 bg-white w-72 sm:w-40 px-4  italic text-lg focus:outline-none border-2 border-black rounded-full"
               id="quota"
-              
               ref={quota}
             >
               <option value=""></option>
@@ -216,7 +219,6 @@ function RegisterForm() {
               name="quota"
               className="sm:h-10 h-11 bg-white sm:w-30 px-4 w-72 italic text-lg focus:outline-none border-2 border-black rounded-full"
               id="quota"
-              
               ref={program}
             >
               <option value=""></option>
@@ -248,7 +250,6 @@ function RegisterForm() {
             <input
               type="date"
               placeholder="DOB"
-              
               className="sm:h-10 h-11 bg-white w-72 sm:w-52 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={dob}
             />
