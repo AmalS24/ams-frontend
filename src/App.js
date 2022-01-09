@@ -13,7 +13,6 @@ import PersonalInfoPage1 from "./components/Details/PersonalInfoPage";
 import { ToastContainer, toast, Zoom, Bounce} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
-
 function App() {
   useEffect(() => {
     Aos.init();
@@ -21,7 +20,8 @@ function App() {
   
   return (
      <>
-       <Switch>
+
+        <Switch>
         <Route path="/" exact>
           <Header />
           <Hero />
@@ -29,7 +29,7 @@ function App() {
         </Route>
         <Route path="/nri" component={RegisterPage} />
         <Route path="/login" component={NriLogin} />
-      </Switch> 
+      </Switch>  
       {/* <ParentInfoPage /> */}
     </>
   );

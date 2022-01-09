@@ -1,12 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useRef, useState } from "react";
 import axios from "axios";
-import { ToastContainer, toast, Bounce } from "react-toastify";
+import { ToastContainer, toast, Bounce ,Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loader from "./Loader";
 
 function RegisterForm() {
-  
+ const history=new useHistory()
+ const [Loader,setLoader]=useState(false);
   var [aadrErr, setErr] = useState(false);
   function addHyphen() {
     var val = document.getElementById("aadr");
@@ -39,6 +41,7 @@ function RegisterForm() {
   }
 
   function RegistrationForm(event) {
+    setLoader(true);
     event.preventDefault();
 
     const inputfname = fname.current.value;
@@ -76,7 +79,11 @@ function RegisterForm() {
       .then((Response) => {
         switch (Response.status) {
           case 200:
-            toast.success("Registration Success");
+             toast.success("Registration Success.....Login Credentials are sent to the provided Email");
+             setTimeout(function() {
+              history.push("/login")
+            }, 8000);
+             //  history.push("/login")
             break;
           case 204:
             Error(toast.error("Required Field Empty"));
@@ -95,18 +102,23 @@ function RegisterForm() {
           }
         }
       });
+      setLoader(false);
   }
 
   return (
-    <div className="xl:w-2/5  sm:my-0 h-auto mx-auto flex justify-center ">
+    <>{
+      Loader ? (<Loader/>) :
+
+    
+    (<div className="xl:w-2/5  sm:my-0 h-auto mx-auto flex justify-center ">
       <ToastContainer
-        draggable={false}
-        autoClose={8000}
-        transition={Bounce}
+        draggable={true}
+        autoClose={false}
+        transition={Zoom}
         pauseOnHover={true}
         limit={1}
         bodyClassName="text-center text-black"
-        // position="top-center"
+        //position="top-center"
       />
       <form
         action=""
@@ -257,7 +269,8 @@ function RegisterForm() {
         </div>
         <div className="flex justify-between w-full h-auto">
           <div className="w-auto my-3 h-full">
-            <button className=" flex items-center sm:w-30 w-24 justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 h-10  sm:text-xl text-white bg-red-600 font-montserrat">
+            <button 
+            className="flex items-center sm:w-30 w-24 justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 h-10  sm:text-xl text-white bg-red-600 font-montserrat">
               Register
             </button>
           </div>
@@ -276,7 +289,9 @@ function RegisterForm() {
           </div>
         </div>
       </form>
-    </div>
+    </div>)
+}
+    </>
   );
 }
 export default RegisterForm;
