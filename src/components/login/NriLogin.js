@@ -76,7 +76,7 @@ function NriLogin() {
         {helpIsOpen && <Loginhelp onClick={toggleHelp} />}
       </div>
 
-      <div className="w-97 lg:flex lg:w-full h-97.5 mx-auto mt-4 lg:justify-between  bg-transparent">
+      <div className="w-96 sm:w-97 lg:flex lg:w-full h-97.5 mx-auto mt-4 lg:justify-between  bg-transparent">
         <div className="w-98 mt-20 h-full justify-center hidden lg:flex">
           <svg
             id="b368e7d6-7c4a-408c-9a35-0514749a7e1a"

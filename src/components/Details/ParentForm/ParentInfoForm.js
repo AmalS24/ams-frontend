@@ -9,32 +9,23 @@ const ParentInfoForm = () => {
     var val = -1;
     switch (sel) {
       case "Computer Science":
-        hide = false;
         val = 1;
         break;
       case "Electical And Electronics":
-        hide = false;
         val = 2;
         break;
       case "Electronics And Communications":
-        hide = false;
         val = 3;
         break;
-      case "Mechanical":  
-        hide = true;
-        break;
-      case "" : val = 0; 
+      case "":
+        val = 0;
     }
     if (val > 0) {
-      akn.value = "You are in waiting Position : " + val;
-    }
-    else if(val == 0)
-    {
-        akn.value = "Select Branch"
-    }
-    else
-    {
-        akn.value = "Seat Reserved Successfully";
+      akn.value = "You are in waiting Position: " + val;
+    } else if (val == 0) {
+      akn.value = "Select Branch";
+    } else {
+      akn.value = "Seat Available";
     }
   }
   return (
@@ -45,17 +36,18 @@ const ParentInfoForm = () => {
         </p>
         <div className="md:flex">
           <div className="w-full h-auto px-3 space-y-2">
-            <p className="text-xl ml-4 mt-2">Father's Name*</p>
+            <p className="text-lg ml-4 mt-2">Father's Name*</p>
+            <input
+          
+              type="text"
+              className="h-10 pl-4 text-xl italic w-full border-2 border-black focus:outline-none bg-gray-100 focus:border-red-600 rounded-full"
+            />
+            <p className="text-lg ml-4 mt-2">Father's Occupation*</p>
             <input
               type="text"
               className="h-10 pl-4 text-xl italic w-full border-2 border-black focus:outline-none bg-gray-100 focus:border-red-600 rounded-full"
             />
-            <p className="text-xl ml-4 mt-2">Father's Occupation*</p>
-            <input
-              type="text"
-              className="h-10 pl-4 text-xl italic w-full border-2 border-black focus:outline-none bg-gray-100 focus:border-red-600 rounded-full"
-            />
-            <p className="text-xl ml-4 mt-2">Father's Phone*</p>
+            <p className="text-lg ml-4 mt-2">Father's Phone*</p>
             <input
               type="tel"
               className="h-10 pl-4 text-xl italic w-full border-2 border-black focus:outline-none bg-gray-100 focus:border-red-600 rounded-full"
@@ -64,17 +56,17 @@ const ParentInfoForm = () => {
           </div>
           <div className="w-full h-auto px-3 space-y-2">
             <div className="w-full bg-gray-600 rounded-xl h-1 my-4 md:hidden"></div>
-            <p className="text-xl ml-4 mt-2">Mother's Name*</p>
+            <p className="text-lg ml-4 mt-2">Mother's Name*</p>
             <input
               type="text"
               className="h-10 pl-4 text-xl italic w-full border-2 border-black focus:outline-none bg-gray-100 focus:border-red-600 rounded-full"
             />
-            <p className="text-xl ml-4 mt-2">Mother's Occupation*</p>
+            <p className="text-lg ml-4 mt-2">Mother's Occupation*</p>
             <input
               type="text"
               className="h-10 pl-4 text-xl italic w-full border-2 border-black focus:outline-none bg-gray-100 focus:border-red-600 rounded-full"
             />
-            <p className="text-xl ml-4 mt-2">Mother's Phone*</p>
+            <p className="text-lg ml-4 mt-2">Mother's Phone*</p>
             <input
               type="tel"
               className="h-10 pl-4 text-xl italic w-full border-2 border-black focus:outline-none bg-gray-100 focus:border-red-600 rounded-full"
@@ -85,20 +77,22 @@ const ParentInfoForm = () => {
         <div className="md:flex ">
           <div className="w-full h-auto px-3 space-y-2 ">
             <div className="bg-gray-600 w-full rounded-xl h-1 my-4 md:hidden"></div>
-            <p className="text-xl ml-4 mt-2">Name of NRI Sponser</p>
+            <p className="text-lg ml-4 mt-2">Name of NRI Sponser</p>
             <input
+            placeholder="-------Not Mandatory-------"
               type="text"
               className="h-10 pl-4 text-xl italic w-full border-2 border-black focus:outline-none bg-gray-100 focus:border-red-600 rounded-full"
             />
-            <p className="text-xl ml-4 mt-2">Relation with Sponser</p>
+            <p className="text-lg ml-4 mt-2">Relation with Sponser</p>
             <input
+            placeholder="-------Not Mandatory-------"
               type="text"
               className="h-10 pl-4 text-xl italic w-full border-2 border-black focus:outline-none bg-gray-100 focus:border-red-600 rounded-full"
             />
           </div>
           <div className="w-full h-auto px-3">
             <div className="bg-gray-600 w-full rounded-xl h-1 my-4 md:hidden"></div>
-            <p className="text-center text-xl font-semibold underline">
+            <p className="text-center text-lg font-semibold underline">
               Branch Preference
             </p>
             {/* <p className="text-xl">Select Branch*</p> */}
@@ -126,7 +120,7 @@ const ParentInfoForm = () => {
               disabled="true"
               type="text"
               defaultValue={"Select Branch"}
-              className="w-full focus:outline-none text-red-600 italic border-2 text-xl py-3 bg-red-100 border-red-600 h-auto mt-8 px-4 rounded-xl"
+              className="w-full focus:outline-none text-red-600 italic border-2 text-xl py-3 bg-red-100 border-red-600 h-auto mt-8 text-center rounded-xl"
             ></input>
           </div>
         </div>

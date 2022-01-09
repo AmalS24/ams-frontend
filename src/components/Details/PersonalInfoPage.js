@@ -48,7 +48,7 @@ function autoFilladdress(){
 // }
 }
   return (
-    <div className="w-screen h-auto bg-transparent ">
+    <div className="w-screen h-auto bg-trout-600 ">
       <form
         action=""
         className="w-200 flex flex-col items-center py-3 px-3 space-y-2 justify-start mx-auto h-210 rounded-sm bg-white "
