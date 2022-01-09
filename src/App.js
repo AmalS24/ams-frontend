@@ -18,7 +18,7 @@ function App() {
 
   return (
      <>
-       {/* <Switch>
+       { <Switch>
         <Route path="/" exact>
           <Header />
           <Hero />
@@ -26,8 +26,8 @@ function App() {
         </Route>
         <Route path="/nri" component={RegisterPage} />
         <Route path="/login" component={NriLogin} />
-      </Switch>  */}
-      <ParentInfoPage />
+      </Switch>  }
+      {/* <ParentInfoPage /> */}
     </>
   );
 }

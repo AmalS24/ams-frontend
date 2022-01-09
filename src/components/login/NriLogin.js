@@ -4,8 +4,12 @@ import Backdrop from "../help/Backdrop";
 import { useState } from "react";
 import { Loginhelp } from "../help/Loginhelp";
 import { ForgotHelp } from "../help/ForgotHelp";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function NriLogin() {
+  let history=useHistory()
+
   const [helpIsOpen, setHelpIsOpen] = useState(false);
   function toggleHelp() {
     setHelpIsOpen(!helpIsOpen);
@@ -13,6 +17,26 @@ function NriLogin() {
   const [forgotOpen, setforgotOpen] = useState(false);
   function passwordHelp() {
     setforgotOpen(!forgotOpen);
+  }
+
+  const [applicationNo,setapplicationNo]=useState("");
+  const [password,setPassword]=useState("");
+  function handleSubmit(e)
+  {
+    e.preventDefault();
+    console.warn(applicationNo,password)
+    let item={applicationNo,password};
+    axios.post("https://ams-backend-api.herokuapp.com/user/login",item)
+    .then((response) => {
+      console.log("response",response)
+     history.push("/register")
+    })
+    .catch(({ response }) => {
+      if (response) {
+        console.log("error",response)
+      }
+      // setLoading(false);
+    });
   }
   return (
     <div className="w-screen h-screen bg-trout-600">
@@ -170,7 +194,7 @@ function NriLogin() {
         </div>
         <div className="lg:w-97 flex  h-auto mx-auto shadow-3xl">
           <form
-            action=""
+            onSubmit={handleSubmit}
             className="flex flex-col mx-auto  h-auto w-auto bg-white"
           >
             <h1 className="mt-8 text-4xl text-center  font-semi-bold">
@@ -182,8 +206,9 @@ function NriLogin() {
               </label>
               <input
                 type="text"
-                id="username"
-                placeholder="Username"
+                value={applicationNo}
+                placeholder="Username" 
+                onChange={(e)=>setapplicationNo(e.target.value)}
                 className="w-96 ml-4 my-6 italic h-14 mt-2 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
               />
               <label htmlFor="username" className="ml-6 font-light text-2xl">
@@ -191,16 +216,17 @@ function NriLogin() {
               </label>
               <input
                 type="password"
-                id="password"
-                placeholder="Password"
+                value={password}
+                placeholder="Password" 
+                onChange={(e)=>setPassword(e.target.value)}
                 className="w-96 ml-4 italic h-14 mt-2 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
               />
-              <Link
-                to="/nri"
+              <button
+                
                 className="flex items-center mt-8 ml-6 justify-center w-30 shadow-2xl rounded-full h-14 border-2 border-red-600 text-red-600 text-2xl hover:text-white hover:bg-red-600"
               >
                 Sign-In
-              </Link>
+              </button>
 
               <p
                 onClick={passwordHelp}
