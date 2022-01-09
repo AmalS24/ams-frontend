@@ -7,9 +7,10 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { About } from "./Home/About";
 import RegisterPage from "./components/register/RegisterPage";
-import DetailsPage from "./components/Details/DetailsPage";
-import PaymentInfoPage from "./components/Details/PaymentInfoPage";
 import ParentInfoPage from "./components/Details/ParentForm/ParentInfoPage";
+import PersonalInfoPage from "./components/Details/PersonalForm/PersonalInfoPage";
+import PersonalInfoPage1 from "./components/Details/PersonalInfoPage";
+
 
 function App() {
   useEffect(() => {
@@ -18,7 +19,7 @@ function App() {
 
   return (
      <>
-       {/* <Switch>
+       <Switch>
         <Route path="/" exact>
           <Header />
           <Hero />
@@ -26,8 +27,8 @@ function App() {
         </Route>
         <Route path="/nri" component={RegisterPage} />
         <Route path="/login" component={NriLogin} />
-      </Switch>  */}
-      <ParentInfoPage />
+      </Switch> 
+      {/* <ParentInfoPage /> */}
     </>
   );
 }

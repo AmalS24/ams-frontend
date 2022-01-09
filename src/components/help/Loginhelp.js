@@ -6,7 +6,7 @@ export const Loginhelp = (props) => {
   return (
     <div
     data-aos="zoom-in"
-      className="modal font-light "
+      className="absolute w-97 p-6 rounded-md h-auto left-0 xl:left-97.5 top-44 bg-white z-30 font-light "
     >
       <div
         className="absolute  z-30 w-8 h-8 rounded-full bg-torch-red-500  

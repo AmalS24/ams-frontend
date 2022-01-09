@@ -1,8 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { useRef,useState } from "react";
+import axios from "axios";
+// import {  useNavigate } from "react-router-dom";
+import { Redirect,useHistory } from "react-router-dom";
+
 
 function RegisterForm() {
+ 
+  let history = useHistory();
+
+  var [aadrErr,setErr] = useState(false)
   function addHyphen() {
     var val = document.getElementById("aadr");
     if (val.value !== "") {
@@ -23,6 +31,20 @@ function RegisterForm() {
   const quota = useRef();
   const program = useRef();
 
+  function typeError()
+  {
+    const str = document.getElementById("aadr").value.split("-").join("")
+    
+    if(isNaN(str))
+    {
+      setErr(true)
+    }
+    else
+    {
+      setErr(false)
+    }
+  }
+
   function RegistrationForm(event) {
     event.preventDefault();
 
@@ -37,32 +59,47 @@ function RegisterForm() {
     const inputquota = quota.current.value;
     const inputprogram = program.current.value;
 
+    
+
     var registerInput = null;
     var date = new Date();
     const dt = date.toLocaleDateString() + " " + date.toLocaleTimeString();
 
     registerInput = {
-      fname: inputfname,
-      mname: inputmame,
-      lname: inputlname,
+      firstName: inputfname,
+      middleName: inputmame,
+      lastName: inputlname,
       gender: inputgender,
       email: inputemailid,
       aadhar: inputaadhar,
       dob: inputdob,
       phone: inputphone,
       quota: inputquota,
-      program: inputprogram,
-      time: dt,
+      course: inputprogram,
+      age: 18
+      //registrationTimeStamp: dt,
     };
 
-    console.log(JSON.stringify(registerInput), registerInput);
-    fetch("https://mits-qnkohm.firebaseio.com/registration.json", {
-      method: "POST",
-      body: JSON.stringify(registerInput),
-      headers: {
-        "Content-Type": "application/JASON",
-      },
+    axios.post("https://ams-back-end.herokuapp.com/user/register",registerInput)
+    .then((Response) => {
+     history.push("/login")
+    })
+    .catch(({ response }) => {
+      if (response) {
+        console.log("error",response)
+      }
+      // setLoading(false);
     });
+    // console.log(JSON.stringify(registerInput), registerInput);
+    // fetch("https://ams-back-end.herokuapp.com/user/register", {
+    //   mode: "no-cors",
+    //   method: "POST",
+    //   body: JSON.stringify(registerInput),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     'Accept': 'application/json'
+    //   },
+    // }).then((Response) => console.log(Response));
   }
 
   return (
@@ -75,7 +112,7 @@ function RegisterForm() {
         <p className="text-center text-2xl sm:text-4xl sm:mt-3 uppercase font-semibold">
           Registration
         </p>
-        {/* <div className="w-auto h-16 mx-3 bg-indigo-200 rounded-md"></div> */}
+        {aadrErr && <div className="w-auto h-12 mx-3 flex items-center text-xl justify-center italic text-red-500 bg-red-100 rounded-md">Invalid Aadhar Number</div>}
         <div className="sm:flex sm:space-x-2 justify-between w-full h-auto">
           <div className="w-auto flex flex-col h-full">
             <label htmlFor="" className="ml-4 text-lg">
@@ -84,7 +121,7 @@ function RegisterForm() {
             <input
               type="text"
               placeholder="First"
-              required
+              
               className="sm:h-10 h-11 w-72 sm:w-40 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={fname}
             />
@@ -101,7 +138,7 @@ function RegisterForm() {
             <input
               type="text"
               placeholder="Last"
-              required
+              
               className="sm:h-10 h-11 w-72 sm:w-50 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={lname}
             />
@@ -115,7 +152,7 @@ function RegisterForm() {
             <input
               type="text"
               placeholder="Email"
-              required
+              
               className="sm:h-10 h-11 w-72 sm:w-90 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={emailid}
             />
@@ -129,12 +166,12 @@ function RegisterForm() {
               name="gender"
               className="sm:h-10 h-11 bg-white w-72 sm:w-40 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               id="gender"
-              required="true"
+              
               ref={gender}
             >
               <option value=""></option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
               <option value="Others">Others</option>
             </select>
           </div>
@@ -161,12 +198,12 @@ function RegisterForm() {
               name="quota"
               className="sm:h-10 h-11 bg-white w-72 sm:w-40 px-4  italic text-lg focus:outline-none border-2 border-black rounded-full"
               id="quota"
-              required
+              
               ref={quota}
             >
               <option value=""></option>
               <option value="NRI">NRI</option>
-              <option value="Merit">Government</option>
+              <option value="Government">Government</option>
               <option value="Managment">Management</option>
             </select>
           </div>
@@ -179,12 +216,12 @@ function RegisterForm() {
               name="quota"
               className="sm:h-10 h-11 bg-white sm:w-30 px-4 w-72 italic text-lg focus:outline-none border-2 border-black rounded-full"
               id="quota"
-              required
+              
               ref={program}
             >
               <option value=""></option>
-              <option value="B-Tech">B-Tech</option>
-              <option value="M-Tech">M-Tech</option>
+              <option value="BTech">BTech</option>
+              <option value="MTech">MTech</option>
             </select>
           </div>
         </div>
@@ -196,10 +233,10 @@ function RegisterForm() {
             <input
               id="aadr"
               type="tel"
-              placeholder="xxxx-xxxx-xxxx"
+              placeholder="xxxx - xxxx - xxxx"
               onKeyUp={addHyphen}
               maxLength={14}
-              required
+              onChange={typeError}
               className="sm:h-10 h-11 w-72 sm:w-64 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={aadhar}
             />
@@ -211,7 +248,7 @@ function RegisterForm() {
             <input
               type="date"
               placeholder="DOB"
-              required
+              
               className="sm:h-10 h-11 bg-white w-72 sm:w-52 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={dob}
             />
