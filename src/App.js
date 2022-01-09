@@ -10,13 +10,15 @@ import RegisterPage from "./components/register/RegisterPage";
 import ParentInfoPage from "./components/Details/ParentForm/ParentInfoPage";
 import PersonalInfoPage from "./components/Details/PersonalForm/PersonalInfoPage";
 import PersonalInfoPage1 from "./components/Details/PersonalInfoPage";
+import { ToastContainer, toast, Zoom, Bounce} from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 
 function App() {
   useEffect(() => {
     Aos.init();
   }, []);
-
+  
   return (
      <>
        <Switch>
