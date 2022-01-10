@@ -1,9 +1,45 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Backdrop from "../help/Backdrop";
+import { useState } from "react";
+import { Loginhelp } from "../help/Loginhelp";
+import { ForgotHelp } from "../help/ForgotHelp";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function NriLogin() {
+  let history=useHistory()
+
+  const [helpIsOpen, setHelpIsOpen] = useState(false);
+  function toggleHelp() {
+    setHelpIsOpen(!helpIsOpen);
+  }
+  const [forgotOpen, setforgotOpen] = useState(false);
+  function passwordHelp() {
+    setforgotOpen(!forgotOpen);
+  }
+
+  const [applicationNo,setapplicationNo]=useState("");
+  const [password,setPassword]=useState("");
+  function handleSubmit(e)
+  {
+    e.preventDefault();
+    console.warn(applicationNo,password)
+    let item={applicationNo,password};
+    axios.post("https://ams-backend-api.herokuapp.com/user/login",item)
+    .then((response) => {
+      console.log("response",response)
+     history.push("/register")
+    })
+    .catch(({ response }) => {
+      if (response) {
+        console.log("error",response)
+      }
+      // setLoading(false);
+    });
+  }
   return (
-    <div className="w-screen h-screen bg-trout-500">
+    <div className="w-screen h-screen bg-trout-600">
       <div className=" w-full flex items-center  justify-between px-20 py-10 h-14">
         <Link to="/">
           <svg
@@ -25,80 +61,22 @@ function NriLogin() {
           </svg>
         </Link>
 
-        {/* statub-bar */}
-        <div className="flex items-center mr-52">
-          <div className="flex absolute w-64  h-14 items-center ">
-            <div className="bg-teal-350 lg:flex h-2 hidden ml-9 w-8 "></div>
-            <div className="bg-white ml-10 h-2 lg:flex hidden w-10"></div>
-            <div className="bg-white ml-6 h-2 lg:flex hidden w-10 "></div>
-            <div className="lg:justify-between justify-center items-center absolute flex w-full ">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#3debbf"
-                class="bi hidden lg:flex  w-10 h-10 bi-person-circle"
-                viewBox="0 0 16 16"
-              >
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#3debbf"
-                class="bi mr-8 lg:mr-0 w-10 h-10 bi-check-circle-fill "
-                viewBox="0 0 16 16"
-              >
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                <path
-                  fill-rule="evenodd"
-                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="white"
-                class="bi hidden lg:flex w-10 h-10 bi-person-circle"
-                viewBox="0 0 16 16"
-              >
-                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-              </svg>
-              <svg
-                class=" hidden mt-0 lg:flex  w-12 h-12 "
-                fill="none"
-                stroke="white"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-width="1.2"
-                  d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z"
-                ></path>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <button>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            fill="white"
-            class="bi bi-question-circle-fill transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
-            viewBox="0 0 16 16"
-          >
-            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
-          </svg>
-        </button>
+        <svg
+          onClick={toggleHelp}
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          fill="white"
+          class="bi bi-question-circle-fill cursor-pointer transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+          viewBox="0 0 16 16"
+        >
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
+        </svg>
+        {helpIsOpen && <Backdrop onClick={toggleHelp} />}
+        {helpIsOpen && <Loginhelp onClick={toggleHelp} />}
       </div>
 
-      <div className="w-97 lg:flex lg:w-full h-97.5 mx-auto mt-4 lg:justify-between  bg-transparent">
+      <div className="w-96 sm:w-97 lg:flex lg:w-full h-97.5 mx-auto mt-4 lg:justify-between  bg-transparent">
         <div className="w-98 mt-20 h-full justify-center hidden lg:flex">
           <svg
             id="b368e7d6-7c4a-408c-9a35-0514749a7e1a"
@@ -214,37 +192,52 @@ function NriLogin() {
             <rect x="427.49994" y="107.5" width="2" height="304" fill="#ccc" />
           </svg>
         </div>
-        <div className="lg:w-97 flex  lg:mt-18 mt-16 h-full mx-auto  bg-transparent shadow-3xl">
-            <form action="" className="flex flex-col mx-auto  h-full w-97 bg-white ">
-                <h1 className="mt-8 text-4xl text-center  font-semi-bold">
-                    SIGN-IN
-                </h1>
-                <div className="w-full h-full py-8 bg-white">
-                    <label htmlFor="username" className="ml-6 font-light text-2xl">Username</label>
-                    <input
-                    type="text"
-                    id="username"
-                    placeholder="Username"
-                    className="w-96 ml-4 my-6 italic h-14 mt-2 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
-                  />
-                   <label htmlFor="username" className="ml-6 font-light text-2xl">Password</label>
-                    <input
-                    type="password"
-                    id="password"
-                    placeholder="Password"
-                    className="w-96 ml-4 italic h-14 mt-2 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
-                  />
-                   <Link
-                to="/nri"
+        <div className="lg:w-97 flex  h-auto mx-auto shadow-3xl">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col mx-auto  h-auto w-auto bg-white"
+          >
+            <h1 className="mt-8 text-4xl text-center  font-semi-bold">
+              SIGN-IN
+            </h1>
+            <div className="w-full h-full py-8 bg-white">
+              <label htmlFor="username" className="ml-6 font-light text-2xl">
+                Username
+              </label>
+              <input
+                type="text"
+                value={applicationNo}
+                placeholder="Username" 
+                onChange={(e)=>setapplicationNo(e.target.value)}
+                className="w-96 ml-4 my-6 italic h-14 mt-2 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
+              />
+              <label htmlFor="username" className="ml-6 font-light text-2xl">
+                Password
+              </label>
+              <input
+                type="password"
+                value={password}
+                placeholder="Password" 
+                onChange={(e)=>setPassword(e.target.value)}
+                className="w-96 ml-4 italic h-14 mt-2 px-5 text-xl rounded-full focus:outline-none border-2 border-black"
+              />
+              <button
+                
                 className="flex items-center mt-8 ml-6 justify-center w-30 shadow-2xl rounded-full h-14 border-2 border-red-600 text-red-600 text-2xl hover:text-white hover:bg-red-600"
               >
                 Sign-In
-              </Link>
-              <a class="font-light text-xl text-black-500 text-red-600 
-              hover:text-indigo-600 ml-64 " href="https://github.com/NANDAKRISHNAN-P-N">
-                Forgot Password!</a>
-                </div>
-            </form>
+              </button>
+
+              <p
+                onClick={passwordHelp}
+                className="text-lg text-right w-40 ml-56 font-montserrat cursor-pointer  hover:text-red-600"
+              >
+                Forgot Password
+              </p>
+
+              {forgotOpen && <ForgotHelp onClick={passwordHelp} />}
+            </div>
+          </form>
         </div>
       </div>
     </div>

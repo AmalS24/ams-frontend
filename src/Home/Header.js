@@ -1,57 +1,48 @@
 import React from "react";
+import logo from "../Icons/logo.svg";
 import { Link } from "react-router-dom";
+import pic from "../Icons/pic.png"
 
-export const Header = () => {
+function Header() {
   return (
-    <div className="w-full max-w-screen h-98 relative">
+    // <div className="min-w-screen w-screen flex justify-center xs:h-2/5 md:h-3/5 lg:h-4/5 relative">
+    <div className="min-w-full flex justify-center h-screen relative">
       <img
-        className="absolute h-full w-full object-cover  "
-        src="https://wallpapercave.com/wp/wp2661905.jpg"
-        alt="cover"
+        src={pic}
+        alt=""
+        className="absolute w-screen h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gray-900 bg-opacity-75"></div>
-      <div className="px-4 py-4 text-lg  text-white flex items-center justify-start relative bg-transparent ">
-        <Link to="/" className=" flex font-bold px-6 hover:text-red-600">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="red"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+      <div className="absolute flex flex-col  py-4 text-center space-y-6 text-white sm:top-20 md:top-28 lg:top-40 2xl:top-56 w-4/5 h-2/5">
+        <p className="sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl  font-light lg:tracking-normal tracking-wider xl:tracking-wider uppercase">
+          welcome to mits
+        </p>
+        {/* <h1 class="animate__animated animate__swing animate_repeat-infinite">An animated element</h1> */}
+        <p className="sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-thin lg:tracking-wide tracking-wider uppercase">
+          admission management system
+        </p>
+        <div className="flex justify-center items-center h-20 py-3 text-xl space-x-4 lg:space-x-4">
+          <Link
+            to="nri"
+            className="h-full cursor-pointer hover:bg-torch-red-500 w-20 lg:w-28 flex items-center justify-center rounded-full bg-transparent border-2"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
-            ></path>
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
-            ></path>
-          </svg>
-          AMS
-        </Link>
-        <Link to="/nri" className="px-6 hover:text-red-600">
-          NRI
-        </Link>
-        <Link to="/mgmt" className="px-6 hover:text-red-600">
-          MANAGEMENT
-        </Link>
-        <Link to="/merit" className="px-6 hover:text-red-600">
-          MERIT
-        </Link>
+            Register
+          </Link>
+          <Link
+            to="login"
+            className="h-full cursor-pointer hover:bg-white hover:text-black w-20 lg:w-28 flex items-center justify-center rounded-full bg-transparent border-2"
+          >
+            Sign In
+          </Link>
+        </div>
       </div>
-      <div className=" flex flex-col h-96 items-center  justify-center relative ">
-        <h1 className="py-5 xs:text-4xl sm:text-6xl text-3xl md:text-7xl text-white tracking-wider">
-          WELCOME TO AMS
-        </h1>
-        <h3 className="text-red-600 text-xl xs:text-2xl sm:text-4xl md:text-4xl tracking-wide font-mono">
-          powered by MITS®
-        </h3>
+      <div className="w-full xs:h-6 sm:h-8 lg:h-10 text-white lg:text-lg px-8 bg-transparent flex items-center justify-between mt-4 absolute">
+        <div className="flex h-full space-x-1 items-center">
+          <img src={logo} alt="" className="sm:w-11  sm:h-11 lg:w-14 lg:h-14" />
+          <p className=" sm:text-lg  lg:text-2xl">AMS</p>
+        </div>
       </div>
     </div>
   );
-};
+}
+
+export default Header;
