@@ -2,13 +2,11 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useRef, useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 import { ToastContainer, toast, Bounce, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "./Loader";
 
 function RegisterForm() {
- const history=new useHistory()
  const [Loader,setLoader]=useState(false);
   var [aadrErr, setErr] = useState(false);
   const history = new useHistory();
