@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Loader from "./Loader";
 
 function RegisterForm() {
+
  const [Loader,setLoader]=useState(false);
   var [aadrErr, setErr] = useState(false);
   const history = new useHistory();
@@ -97,8 +98,11 @@ function RegisterForm() {
             case 409:
               toast.info("Looks like you've Already registered");
               break;
+            // case 500:
+            //   toast.warn("There are errors in input, Plz check once again");  
+            //   break;
             default:
-              toast.warn("Something went wrong ! Try Again");
+              toast.warn("Something went wrong ! Plz refresh & Try Again");
               
           }
         }
@@ -217,7 +221,7 @@ function RegisterForm() {
               <option value=""></option>
               <option value="NRI">NRI</option>
               <option value="Government">Government</option>
-              <option value="Managment">Management</option>
+              <option value="Management">Management</option>
             </select>
           </div>
           <div className="w-auto flex flex-col h-full">
