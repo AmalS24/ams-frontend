@@ -288,9 +288,7 @@ function RegisterForm() {
           </div>
         </div>
       </form>
-    </div>)
-}
-    </>
+    </div>
   );
 }
 export default RegisterForm;
