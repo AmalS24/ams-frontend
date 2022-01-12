@@ -1,13 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useRef, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast, Bounce, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loader from "./Loader";
 
 function RegisterForm() {
-  
+ const history=new useHistory()
+ const [Loader,setLoader]=useState(false);
   var [aadrErr, setErr] = useState(false);
   const history = new useHistory();
 
@@ -42,6 +44,7 @@ function RegisterForm() {
   }
 
   function RegistrationForm(event) {
+    setLoader(true);
     event.preventDefault();
 
     const inputfname = fname.current.value;
@@ -102,6 +105,7 @@ function RegisterForm() {
           }
         }
       });
+      setLoader(false);
   }
 
   return (
@@ -284,7 +288,9 @@ function RegisterForm() {
           </div>
         </div>
       </form>
-    </div>
+    </div>)
+}
+    </>
   );
 }
 export default RegisterForm;
