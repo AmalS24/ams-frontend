@@ -7,9 +7,10 @@ import "react-toastify/dist/ReactToastify.css";
 import Loader from "./Loader";
 
 function RegisterForm() {
+  var [phErr, setphErr] = useState(false);
+  var [aadrErr, setaadrErr] = useState(false);
+  var [emailErr, setemailErr] = useState(false);
 
- const [Loader,setLoader]=useState(false);
-  var [aadrErr, setErr] = useState(false);
   const history = new useHistory();
 
   function addHyphen() {
@@ -32,18 +33,39 @@ function RegisterForm() {
   const quota = useRef();
   const program = useRef();
 
-  function typeError() {
+  function checkAadhar() {
     const str = document.getElementById("aadr").value.split("-").join("");
 
-    if (isNaN(str)) {
-      setErr(true);
+    if (isNaN(str) || (str.length < 12 && str != "")) {
+      setaadrErr(true);
     } else {
-      setErr(false);
+      setaadrErr(false);
+    }
+  }
+
+  function checkPhone() {
+    const str = document.getElementById("phone").value;
+
+    if (isNaN(str) || (str.length < 10 && str != "")) {
+      setphErr(true);
+    } else {
+      setphErr(false);
+    }
+  }
+
+  function checkEmail() {
+    const str = document.getElementById("email").value;
+    const test =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if (str.match(test) && str != "") {
+      setemailErr(false);
+    } else {
+      setemailErr(true);
     }
   }
 
   function RegistrationForm(event) {
-    setLoader(true);
     event.preventDefault();
 
     const inputfname = fname.current.value;
@@ -83,13 +105,13 @@ function RegisterForm() {
           case 200:
             toast.success("Registration Success, Being redirected...");
             setTimeout(() => {
-              history.push("/login")
+              history.push("/login");
             }, 8000);
             break;
           case 204:
             Error(toast.error("Required Field Empty"));
             break;
-            default:
+          default:
         }
       })
       .catch(({ response }) => {
@@ -99,15 +121,13 @@ function RegisterForm() {
               toast.info("Looks like you've Already registered");
               break;
             // case 500:
-            //   toast.warn("There are errors in input, Plz check once again");  
+            //   toast.warn("There are errors in input, Plz check once again");
             //   break;
             default:
               toast.warn("Something went wrong ! Plz refresh & Try Again");
-              
           }
         }
       });
-      setLoader(false);
   }
 
   return (
@@ -130,11 +150,6 @@ function RegisterForm() {
         <p className="text-center text-2xl sm:text-4xl sm:mt-3 uppercase font-semibold">
           Registration
         </p>
-        {aadrErr && (
-          <div className="w-auto h-12 mx-3 flex items-center text-xl justify-center italic text-red-500 bg-red-100 rounded-md">
-            Invalid Aadhar Number
-          </div>
-        )}
         <div className="sm:flex sm:space-x-2 justify-between w-full h-auto">
           <div className="w-auto flex flex-col h-full">
             <label htmlFor="" className="ml-4 text-lg">
@@ -166,10 +181,19 @@ function RegisterForm() {
         </div>
         <div className="sm:flex  justify-between w-full h-auto">
           <div className="w-auto sm:mb-0 mb-4 flex flex-col h-full">
-            <label htmlFor="" className="ml-4 text-lg">
-              Email*
-            </label>
+            <div className="w-72 px-4 items-center sm:w-90 h-auto flex justify-between">
+              <label htmlFor="" className=" text-lg">
+                Email*
+              </label>
+              {emailErr && (
+                <p className="w-auto font-comic text-md ml-4 font-bold italic text-torch-red-600 ">
+                  Invalid!
+                </p>
+              )}
+            </div>
             <input
+              id="email"
+              onChange={checkEmail}
               type="text"
               placeholder="Email"
               className="sm:h-10 h-11 w-72 sm:w-90 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
@@ -196,13 +220,22 @@ function RegisterForm() {
         </div>
         <div className="sm:flex justify-between w-full h-auto">
           <div className="w-auto sm:mb-0 mb-4 flex flex-col h-full">
-            <label htmlFor="" className="ml-4 text-lg">
-              Phone
-            </label>
+            <div className="w-72 px-4 items-center sm:w-52 h-auto flex justify-between">
+              <label htmlFor="" className=" text-lg">
+                Phone
+              </label>
+              {phErr && (
+                <p className="w-auto font-comic text-md ml-4 font-bold italic text-torch-red-600 ">
+                  Invalid!
+                </p>
+              )}
+            </div>
             <input
+              id="phone"
               type="tel"
-              placeholder="Phone"
+              placeholder="+91 xxxxxxxxxx"
               maxLength={10}
+              onChange={checkPhone}
               className="sm:h-10 h-11 w-72 sm:w-52 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={phone}
             />
@@ -243,17 +276,24 @@ function RegisterForm() {
         </div>
         <div className="sm:flex justify-between w-full h-auto">
           <div className="w-auto sm:mb-0 mb-4 flex flex-col h-full">
-            <label htmlFor="" className="ml-4 text-lg">
-              Aadhar No.
-            </label>
+            <div className="w-72 px-4 items-center sm:w-64 h-auto flex justify-between">
+              <label htmlFor="" className=" text-lg">
+                Aadhar No.
+              </label>
+              {aadrErr && (
+                <p className="w-auto font-comic text-md ml-4 font-bold italic text-torch-red-600 ">
+                  Invalid!
+                </p>
+              )}
+            </div>
             <input
               id="aadr"
               type="tel"
               placeholder="xxxx - xxxx - xxxx"
               onKeyUp={addHyphen}
               maxLength={14}
-              onChange={typeError}
-              className="sm:h-10 h-11 w-72 sm:w-64 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
+              onChange={checkAadhar}
+              className="sm:h-10 h-11 w-72 font sm:w-64 px-5  italic text-lg focus:outline-none border-2 border-black rounded-full"
               ref={aadhar}
             />
           </div>
@@ -271,7 +311,7 @@ function RegisterForm() {
         </div>
         <div className="flex justify-between w-full h-auto">
           <div className="w-auto my-3 h-full">
-            <button className=" flex items-center sm:w-30 w-24 justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 h-10  sm:text-xl text-white bg-red-600 hover:bg-red-500 font-montserrat">
+            <button className=" flex items-center sm:w-30 w-24 justify-center shadow-2xl sm:px-4 rounded-full sm:h-12 h-10  sm:text-xl text-white bg-red-600  font-montserrat">
               Register
             </button>
           </div>
