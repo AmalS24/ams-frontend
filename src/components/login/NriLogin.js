@@ -215,7 +215,7 @@ function NriLogin() {
                 Password
               </label>
               <input
-                type="password"
+                type="text"
                 value={password}
                 placeholder="Password" 
                 onChange={(e)=>setPassword(e.target.value)}

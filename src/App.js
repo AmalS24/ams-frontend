@@ -20,7 +20,16 @@ function App() {
   
   return (
      <>
-
+    <ToastContainer
+        draggable={false}
+        autoClose={8000}
+        transition={Zoom}
+        pauseOnHover={true}
+        limit={1}
+        bodyClassName="text-center text-black"
+        position="top-center"
+        toastClassName="sm:w-97"
+      />
         <Switch>
         <Route path="/" exact>
           <Header />

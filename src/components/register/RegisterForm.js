@@ -7,9 +7,10 @@ import "react-toastify/dist/ReactToastify.css";
 import Loader from "./Loader";
 
 function RegisterForm() {
-  var [phErr, setphErr] = useState(false);
-  var [aadrErr, setaadrErr] = useState(false);
-  var [emailErr, setemailErr] = useState(false);
+  const [phErr, setphErr] = useState(false);
+  const [aadrErr, setaadrErr] = useState(false);
+  const [emailErr, setemailErr] = useState(false);
+  const [loading,setLoading] = useState(false);
 
   const history = new useHistory();
 
@@ -67,7 +68,7 @@ function RegisterForm() {
 
   function RegistrationForm(event) {
     event.preventDefault();
-
+    setLoading(true);
     const inputfname = fname.current.value;
     const inputmame = mname.current.value;
     const inputlname = lname.current.value;
@@ -103,27 +104,29 @@ function RegisterForm() {
       .then((Response) => {
         switch (Response.status) {
           case 200:
+            history.push("/login");
             toast.success("Registration Success, Being redirected...");
-            setTimeout(() => {
-              history.push("/login");
-            }, 8000);
+            setLoading(false);
             break;
           case 204:
+            setLoading(false);
             Error(toast.error("Required Field Empty"));
             break;
-          default:
+          default: setLoading(false);
         }
       })
       .catch(({ response }) => {
         if (response) {
           switch (response.status) {
             case 409:
+              setLoading(false)
               toast.info("Looks like you've Already registered");
               break;
             // case 500:
             //   toast.warn("There are errors in input, Plz check once again");
             //   break;
             default:
+              setLoading(false);
               toast.warn("Something went wrong ! Plz refresh & Try Again");
           }
         }
@@ -131,17 +134,10 @@ function RegisterForm() {
   }
 
   return (
-    <div className="xl:w-2/5  sm:my-2 h-auto mx-auto flex justify-center ">
-      <ToastContainer
-        draggable={false}
-        autoClose={8000}
-        transition={Zoom}
-        pauseOnHover={true}
-        limit={1}
-        bodyClassName="text-center text-black"
-        position="top-center"
-        toastClassName="sm:w-97"
-      />
+  <>
+      {loading ? (<Loader />) : (
+      <div className="xl:w-2/5  sm:my-2 h-auto mx-auto flex justify-center ">
+      
       <form
         action=""
         className="w-auto mx-auto p-6 space-y-4  h-auto rounded-sm bg-white"
@@ -331,6 +327,10 @@ function RegisterForm() {
         </div>
       </form>
     </div>
+    )
+
+    }
+    </>
   );
 }
 export default RegisterForm;
