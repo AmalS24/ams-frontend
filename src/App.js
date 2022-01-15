@@ -9,7 +9,6 @@ import { About } from "./Home/About";
 import RegisterPage from "./components/register/RegisterPage";
 import ParentInfoPage from "./components/Details/ParentForm/ParentInfoPage";
 import PersonalInfoPage from "./components/Details/PersonalForm/PersonalInfoPage";
-import PersonalInfoPage1 from "./components/Details/PersonalInfoPage";
 import { ToastContainer, toast, Zoom, Bounce} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
@@ -17,19 +16,10 @@ function App() {
   useEffect(() => {
     Aos.init();
   }, []);
-  
+  const access = localStorage.getItem("access_token");
   return (
      <>
-    <ToastContainer
-        draggable={false}
-        autoClose={8000}
-        transition={Zoom}
-        pauseOnHover={true}
-        limit={1}
-        bodyClassName="text-center text-black"
-        position="top-center"
-        toastClassName="sm:w-97"
-      />
+    
         <Switch>
         <Route path="/" exact>
           <Header />
@@ -39,7 +29,9 @@ function App() {
         <Route path="/nri" component={RegisterPage} />
         <Route path="/login" component={NriLogin} />
       </Switch>  
-      {/* <ParentInfoPage /> */}
+      {/* <PersonalInfoPage />
+      <ParentInfoPage/> */}
+      {/* <LoginPage/> */}
     </>
   );
 }

@@ -137,7 +137,16 @@ function RegisterForm() {
   <>
       {loading ? (<Loader />) : (
       <div className="xl:w-2/5  sm:my-2 h-auto mx-auto flex justify-center ">
-      
+      <ToastContainer
+        draggable={false}
+        autoClose={8000}
+        transition={Zoom}
+        pauseOnHover={true}
+        limit={1}
+        bodyClassName="text-center text-black"
+        position="top-center"
+        toastClassName="sm:w-97"
+      />
       <form
         action=""
         className="w-auto mx-auto p-6 space-y-4  h-auto rounded-sm bg-white"
