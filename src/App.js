@@ -7,10 +7,11 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { About } from "./Home/About";
 import RegisterPage from "./components/register/RegisterPage";
-import ParentInfoPage from "./components/Details/ParentForm/ParentInfoPage";
-import PersonalInfoPage from "./components/Details/PersonalForm/PersonalInfoPage";
-import { ToastContainer, toast, Zoom, Bounce} from "react-toastify"
+// import ParentInfoPage from "./components/Details/ParentForm/ParentInfoPage";
+// import PersonalInfoPage from "./components/Details/PersonalForm/PersonalInfoPage";
+// import { ToastContainer, toast, Zoom, Bounce} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import NriForm from "./components/Details/NriForm";
 
 function App() {
   useEffect(() => {
@@ -19,7 +20,7 @@ function App() {
   const access = localStorage.getItem("access_token");
   return (
      <>
-    
+{/*     
         <Switch>
         <Route path="/" exact>
           <Header />
@@ -28,9 +29,8 @@ function App() {
         </Route>
         <Route path="/nri" component={RegisterPage} />
         <Route path="/login" component={NriLogin} />
-      </Switch>  
-      {/* <PersonalInfoPage />
-      <ParentInfoPage/> */}
+      </Switch>   */}
+      <NriForm />
       {/* <LoginPage/> */}
     </>
   );

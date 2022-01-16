@@ -12,7 +12,7 @@ import { ToastContainer, toast,Zoom } from "react-toastify";
 function NriLogin() {
   let history = useHistory();
 
-  const [helpIsOpen, setHelpIsOpen] = useState(false);
+  const [helpIsOpen, setHelpIsOpen] = useState(true);
   function toggleHelp() {
     setHelpIsOpen(!helpIsOpen);
   }
@@ -38,7 +38,7 @@ function NriLogin() {
         switch (response.status) {
           case 200:
             
-            // history.push("/");
+            // history.push("/form");
             localStorage.setItem("access_token", response.data.token);
             toast.success("login successful");
             setLoading(false);
