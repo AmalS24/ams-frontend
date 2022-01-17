@@ -5,7 +5,7 @@ import Body from './Body'
 
 function NriForm() {
     return (
-        <div className="w-screen h-screen overflow-x-hidden bg-trout-600">
+        <div className="w-screen h-screen overflow-x-hidden bg-trout-700">
             <TitleBar />
             <Body />
         </div>
