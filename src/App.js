@@ -29,9 +29,9 @@ function App() {
         </Route>
         <Route path="/nri" component={RegisterPage} />
         <Route path="/login" component={NriLogin} />
+        <Route path="/form" component={NriForm} />
       </Switch>   */}
       <NriForm />
-      {/* <LoginPage/> */}
     </>
   );
 }
