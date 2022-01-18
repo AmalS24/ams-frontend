@@ -100,7 +100,7 @@ function RegisterForm() {
     };
 
     axios
-      .post("https://ams-back-end.herokuapp.com/user/register", registerInput)
+      .post("https://ams-backend-api.herokuapp.com/user/register", registerInput)
       .then((Response) => {
         switch (Response.status) {
           case 200:

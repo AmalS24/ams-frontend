@@ -37,8 +37,7 @@ function NriLogin() {
         
         switch (response.status) {
           case 200:
-            
-            // history.push("/form");
+            history.push("/form");
             localStorage.setItem("access_token", response.data.token);
             toast.success("login successful");
             setLoading(false);
@@ -54,9 +53,11 @@ function NriLogin() {
       })
       .catch(({ response }) => {
         if (response.status == 400) {
+          
           Error(toast.error("invalid user name or password"));
           console.log("error", response);
         }
+        setLoading(false)
       });
   }
   return (

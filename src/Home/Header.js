@@ -38,7 +38,7 @@ function Header() {
       <div className="w-full xs:h-6 sm:h-8 lg:h-10 text-white lg:text-lg px-8 bg-transparent flex items-center justify-between mt-4 absolute">
         <div className="flex h-full space-x-1 items-center">
           <img src={logo} alt="" className="sm:w-11  sm:h-11 lg:w-14 lg:h-14" />
-          <p className=" sm:text-lg  lg:text-2xl">AMS</p>
+          <p className=" sm:text-lg lg:text-2xl">AMS</p>
         </div>
       </div>
     </div>

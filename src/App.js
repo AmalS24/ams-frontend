@@ -20,8 +20,7 @@ function App() {
   const access = localStorage.getItem("access_token");
   return (
      <>
-{/*     
-        <Switch>
+        {/* <Switch>
         <Route path="/" exact>
           <Header />
           <Hero />
