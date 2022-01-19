@@ -34,11 +34,12 @@ function NriLogin() {
     axios
       .post("https://ams-backend-api.herokuapp.com/user/login", item)
       .then((response) => {
-        
         switch (response.status) {
           case 200:
-            history.push("/form");
+            
             localStorage.setItem("access_token", response.data.token);
+            history.push("/form");
+            // window.location.reload();
             toast.success("login successful");
             setLoading(false);
             console.log(response,localStorage.getItem("access_token"),loading)

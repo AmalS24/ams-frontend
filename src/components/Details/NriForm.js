@@ -1,5 +1,5 @@
 import React from 'react'
-import TitleBar from '../register/TitleBar'
+import TitleBar from './TitleBar'
 import Body from './Body'
 
 
