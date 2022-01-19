@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Body = () => {
   const dt = new Date();
@@ -23,7 +24,7 @@ const Body = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const enableButton = () => {
     const isChecked = document.getElementById("check").checked;
     const submitBtn = document.getElementById("btn");
    
@@ -94,8 +95,15 @@ const Body = () => {
     e.preventDefault();
     console.log(submitForm)
     const api = "https://ams-backend-api.herokuapp.com/user/application/"
-    axios.patch(api+"61e7bacca853f1001653dba7",submitForm).then((Response) => {
+    axios.patch(api+"61e7bacca853f1001653dba7",submitForm)
+    .then((Response) => {
       console.log(Response)
+    })
+    .catch(({ Response }) => {
+      if(Response)
+      {
+        toast.error("Something went wrong ERR_CODE: "+Response.status)
+      }
     })
   }
 
@@ -463,7 +471,7 @@ const Body = () => {
             <input 
             id="check"
             type="checkbox"  
-            onChange={handleSubmit}
+            onChange={enableButton}
             className="w-8 md:w-4 md:h-4 h-8" />
             <p className=" ">
               I agree that I have reviewed the form, and is proceeding for final
