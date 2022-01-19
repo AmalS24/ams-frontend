@@ -33,7 +33,7 @@ const Body = () => {
     if(isChecked)
     {
       submitBtn.disabled = false
-      submitBtn.className = "w-auto mt-8 h-auto p-2 rounded-md bg-torch-red-600 text-white"
+      submitBtn.className = "w-auto mt-8 h-auto hover:bg-green-600 p-2 rounded-md bg-torch-red-600 text-white"
     }
     
   }
