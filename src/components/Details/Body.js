@@ -33,7 +33,6 @@ const Body = () => {
     {
       submitBtn.disabled = false
       submitBtn.className = "w-auto mt-8 h-auto p-2 rounded-md bg-torch-red-600 text-white"
-      submitBtn.onClick = () => {window.alert("Are you Sure ?")}
     }
     
   }
@@ -462,7 +461,9 @@ const Body = () => {
           <br />
           <div className="w-auto h-auto space-x-2 flex items-center justify-center">
             <input 
+            id="check"
             type="checkbox"  
+            onChange={handleSubmit}
             className="w-8 md:w-4 md:h-4 h-8" />
             <p className=" ">
               I agree that I have reviewed the form, and is proceeding for final
@@ -470,8 +471,9 @@ const Body = () => {
             </p>
           </div>
           <button 
-          id="button"
-          className = "bg-torch-red-600 text-white rounded-lg w-auto h-auto p-2" >
+          id="btn"
+          disabled
+          className = "w-auto mt-8 h-auto cursor-not-allowed p-2 rounded-md bg-torch-red-600 opacity-40 text-white" >
             submit
           </button>
         </div>
