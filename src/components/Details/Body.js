@@ -38,6 +38,18 @@ const Body = () => {
     
   }
 
+  const sameAs =()=>{
+    const isChecked = document.getElementById("sameas").checked;
+    if(isChecked)
+    {
+        document.getElementById("phousename").value=submitForm.chousename;
+        document.getElementById("pcity").value=submitForm.ccity;
+        document.getElementById("pdistrict").value=submitForm.cdistrict;
+        document.getElementById("pstate").value=submitForm.cstate;
+        document.getElementById("ppin").value=submitForm.cpin;
+    }
+  }
+
   const handleImageChange = (e) => {
     const selected = e.target.files[0];
     const ALLOWED_TYPES = ["image/jpg", "image/jpeg", "image/png"];
@@ -114,7 +126,7 @@ const Body = () => {
         action=""
         onSubmit={formSubmit}
         className="w-auto font-montserrat space-y-4 sm rounded-lg h-auto bg-gray-100 p-4"
-      >
+      ><h1 className="text-center text-2xl uppercase font-semibold	font-sans">Application Form</h1>
         <div className="w-full h-auto  flex flex-col md:flex-row ">
           <div className="md:w-1/3 h-auto px-3 py-4 flex flex-col space-y-2 ">
             {/*Name and DoB*/}
@@ -143,7 +155,7 @@ const Body = () => {
             </label>
             <input
               id="photo"
-              onChange={handleImageChange,handleChange}
+              onChange={handleChange,handleImageChange}
               type="file"
               className="w-full mt-1 h-10 rounded-lg px-4 text-md bg-white border-2 border-black "
             />
@@ -245,7 +257,11 @@ const Body = () => {
               />
             </div>
             <div className="space-x-3 ml-3 flex items-center pr-3">
-              <input type="checkbox" className="w-4 h-4" />
+              <input 
+              type="checkbox" 
+              id="sameas"
+              onChange={sameAs}
+              className="w-4 h-4" />
               <p className="">Use this as Permanent Address</p>
             </div>
           </div>

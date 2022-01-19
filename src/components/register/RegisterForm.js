@@ -81,8 +81,15 @@ function RegisterForm() {
     const inputprogram = program.current.value;
 
     var registerInput = null;
-    // var date = new Date();
+    var date = new Date();
     // const dt = date.toLocaleDateString() + " " + date.toLocaleTimeString();
+    var year = Number(inputdob.substr(0,4));
+    var month = Number(inputdob.substr(5,2));
+    var day = Number(inputdob.substr(8,2));
+    var age = date.getFullYear()-year;
+    if(date.getMonth()< month || (date.getMonth == month && date.getDate()<day))
+      age--;
+
 
     registerInput = {
       firstName: inputfname,
@@ -95,7 +102,7 @@ function RegisterForm() {
       phone: inputphone,
       quota: inputquota,
       course: inputprogram,
-      age: 18,
+      age: age,
       //registrationTimeStamp: dt,
     };
 
@@ -104,6 +111,7 @@ function RegisterForm() {
       .then((Response) => {
         switch (Response.status) {
           case 200:
+            console.log(registerInput)
             history.push("/login");
             toast.success("Registration Success, Being redirected...");
             setLoading(false);
