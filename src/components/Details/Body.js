@@ -22,8 +22,18 @@ const Body = () => {
     }
   };
 
-  const enableSubmit = () => {
-    
+  const handleSubmit = (e) => {
+    const isChecked = document.getElementById("check").checked;
+    const submitBtn = document.getElementById("btn");
+   
+    submitBtn.disabled = true;
+    submitBtn.className = "w-auto mt-8 h-auto cursor-not-allowed p-2 rounded-md bg-torch-red-600 opacity-40 text-white"
+    if(isChecked)
+    {
+      submitBtn.disabled = false
+      submitBtn.className = "w-auto mt-8 h-auto p-2 rounded-md bg-torch-red-600 text-white"
+      submitBtn.onClick = () => {window.alert("Are you Sure ?")}
+    }
     
   }
 
@@ -46,8 +56,9 @@ const Body = () => {
   return (
     <div className="w-full h-auto py-4 px-3 lg:px-30 xl:px-56">
       <form
+      // onSubmit={handleSubmit}
         action=""
-        className="w-auto font-montserrat space-y-4 sm rounded-lg h-auto bg-gray-100 p-4"
+        className="w-auto font-montserrat space-y-4 sm rounded-lg  h-auto bg-gray-100 p-4"
       >
         <div className="w-full h-auto  flex flex-col md:flex-row ">
           <div className="md:w-1/3 h-auto px-3 py-4 flex flex-col space-y-2 ">
@@ -105,10 +116,10 @@ const Body = () => {
                 </svg>
               </div>
             )}
-            <div className="w-3/6 flex items-center mx-auto justify-center shadow-3xl rounded-md h-auto p-3 bg-white">
+            <div className="w-1/2 flex items-center mx-auto justify-center shadow-3xl rounded-md h-auto p-3 bg-white">
               {!ImagePreview || InvalidFormat ? (
                 <>
-                  <p className="text-center  h-full font-comic font-bold">
+                  <p className="text-center h-full font-comic font-bold">
                     Size:300-800kb
                     <br />
                     Resolution: 600x800
@@ -303,7 +314,7 @@ const Body = () => {
             <label htmlFor="" className="ml-3 text-md">
               Branch Preference*
             </label>
-            <select className="border-2 my-3 w-full h-10 border-black bg-white rounded-lg">
+            <select className="border-2 my-3 pl-3 w-full h-10 border-black bg-white rounded-lg">
               <option value="Computer Science Engineering">
                 Computer Science Engineering
               </option>
@@ -335,7 +346,7 @@ const Body = () => {
             <br />
             <br />I am aware about the criteria followed by "Muthoot Institute
             of Technology & Science, for BTech NRI Quota admission, for the year
-            2021, such that my ward has to attain 60% Marks for Mathematics
+            {" "+dt.getFullYear()}, such that my ward has to attain 60% Marks for Mathematics
             individually and 60% put together in Physics, chemistry &
             Mathematics, in the 12th standard, for the qualifying examination.
             If my ward failed to do so, there is no claim, from my side for the
@@ -352,13 +363,14 @@ const Body = () => {
           </p>
           <br />
           <div className="w-auto h-auto space-x-2 flex items-center justify-center">
-            <input type="checkbox" id="check" onChange={enableSubmit} className="w-8 md:w-4 md:h-4 h-8" />
+            <input type="checkbox" id="check" onChange={handleSubmit} className="w-8 md:w-4  md:h-4 h-8" />
             <p className=" ">
               I agree that I have reviewed the form, and is proceeding for final
               submit
             </p>
           </div>
-          <input id="submitButton" type="submit" value="Submit" className="bg-torch-red-600 text-white rounded-lg w-auto h-auto p-2" />
+          {/* <input id="submitButton" type="submit" value="Submit" className="bg-torch-red-600 mt-8 text-white rounded-lg w-auto opacity-30 h-auto p-2" /> */}
+        <button id="btn" disabled className="w-auto mt-8 h-auto p-2 rounded-md bg-torch-red-600 opacity-40 cursor-not-allowed text-white">Submit</button>
         </div>
       </form>
     </div>
