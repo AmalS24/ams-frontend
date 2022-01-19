@@ -20,7 +20,7 @@ function App() {
   const access = localStorage.getItem("access_token");
   return (
      <>
-        {/* <Switch>
+        <Switch>
         <Route path="/" exact>
           <Header />
           <Hero />
@@ -29,8 +29,8 @@ function App() {
         <Route path="/nri" component={RegisterPage} />
         <Route path="/login" component={NriLogin} />
         <Route path="/form" component={NriForm} />
-      </Switch>   */}
-      <NriForm />
+      </Switch>  
+      {/* <NriForm /> */}
     </>
   );
 }

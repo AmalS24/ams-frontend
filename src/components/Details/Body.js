@@ -7,7 +7,8 @@ const Body = () => {
   const dt = new Date();
   const [parentName, setparentName] = useState("");
   const [ImagePreview, setImagePreview] = useState(null);
-  const [InvalidFormat, setInvalidFormat] = useState(false);
+  const [InvalidImgFormat, setInvalidImgFormat] = useState(false);
+  const [InvalidFileFormat,  setInvalidFileFormat] = useState(false);
   const [Message, setMessage] = useState("");
 
   const removeImage = () => {
@@ -55,16 +56,27 @@ const Body = () => {
     const ALLOWED_TYPES = ["image/jpg", "image/jpeg", "image/png"];
     // console.log(selected)
     if (selected && ALLOWED_TYPES.includes(selected.type)) {
-      setInvalidFormat(false);
+      setInvalidImgFormat(false);
       let reader = new FileReader();
       reader.onloadend = () => {
         setImagePreview(reader.result);
       };
       reader.readAsDataURL(selected);
     } else {
-      setInvalidFormat(true);
+      setInvalidImgFormat(true);
     }
   };
+
+  const handleTransactionFileFormat = (e) =>{
+    const file = e.target.files[0];
+    // console.log(file.type == "application/pdf")
+    if(file.type == "application/pdf")
+    {
+      setInvalidFileFormat(false)
+      return;
+    }
+    setInvalidFileFormat(true);
+  }
   
   const Form = {
     fname:"",
@@ -157,9 +169,9 @@ const Body = () => {
               id="photo"
               onChange={handleChange,handleImageChange}
               type="file"
-              className="w-full mt-1 h-10 rounded-lg px-4 text-md bg-white border-2 border-black "
+              className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
-            {InvalidFormat && (
+            {InvalidImgFormat && (
               <p className="ml-3 text-red-700 font-mono text-center text-md font-bold italic">
                 Unsupported Format
               </p>
@@ -188,7 +200,7 @@ const Body = () => {
               </div>
             )}
             <div className="w-1/2 flex items-center mx-auto justify-center shadow-3xl rounded-md h-auto p-3 bg-white">
-              {!ImagePreview || InvalidFormat ? (
+              {!ImagePreview || InvalidImgFormat ? (
                 <>
                   <p className="text-center h-full font-comic font-bold">
                     Size:300-800kb
@@ -419,9 +431,14 @@ const Body = () => {
             <input
               type="file"
               id="transactionDoc"
-              onChange={handleChange}
+              onChange={handleChange,handleTransactionFileFormat}
               className="w-full mb-3 h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
+            {InvalidFileFormat && (
+              <p className="ml-3 text-red-700 font-mono text-center text-md font-bold italic">
+                Unsupported Format
+              </p>
+            )}
           </div>
         </div>
         <div className="w-full h-auto py-4 flex flex-col  md:flex-row ">
@@ -451,13 +468,10 @@ const Body = () => {
               </option>
             </select>
           </div>
-          <div className="md:w-1/3 mx-auto h-auto px-3 border-4 border-white rounded-md shadow-xl">
-            <p className="font-comic italic font-bold text-md text-center">
-              size: 30-50kb
-              <br />
-              resolution: 1000x100
-              <br />
-              format: png, jpeg, jpg
+          <div className="md:w-1/3 mx-auto h-auto px-3 bg-white rounded-md shadow-xl">
+            <p className="font-comic py-3 italic font-bold text-md md:text-lg text-center">
+             <u>Note:</u> Plz upload your transaction<br/>
+             document as a pdf file 
             </p>
           </div>
         </div>

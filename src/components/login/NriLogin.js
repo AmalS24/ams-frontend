@@ -12,7 +12,7 @@ import { ToastContainer, toast,Zoom } from "react-toastify";
 function NriLogin() {
   let history = useHistory();
 
-  const [helpIsOpen, setHelpIsOpen] = useState(true);
+  const [helpIsOpen, setHelpIsOpen] = useState(false);
   function toggleHelp() {
     setHelpIsOpen(!helpIsOpen);
   }
