@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
 
@@ -22,11 +23,6 @@ const Body = () => {
     }
   };
 
-  const enableSubmit = () => {
-    
-    
-  }
-
   const handleImageChange = (e) => {
     const selected = e.target.files[0];
     const ALLOWED_TYPES = ["image/jpg", "image/jpeg", "image/png"];
@@ -42,11 +38,58 @@ const Body = () => {
       setInvalidFormat(true);
     }
   };
+  
+  const Form = {
+    fname:"",
+    mname:"",
+    lname:"",
+    dob:"",
+    photo:{},
+    chousename:"",
+    ccity:"",
+    cdistrict:"",
+    cstate:"",
+    cpin:"",
+    phousename:"",
+    pcity:"",
+    pdistrict:"",
+    pstate:"",
+    ppin:"",
+    phone1:"",
+    phone2:"",
+    parentName:"",
+    occupation:"",
+    sponser:"",
+    relationWithSponser:"",
+    transactionId:"",
+    transactionDoc:{},
+    branch:"",
+  };
+
+  const [submitForm,setSubmitForm] = useState(Form);
+
+  const handleChange= (e) =>{
+    const {value,id}=e.target;
+    const newForm = {...submitForm};
+    newForm[id] = value;
+    setSubmitForm(newForm);
+    console.log(newForm);
+  };
+
+  const formSubmit =(e)=>{
+    e.preventDefault();
+    console.log(submitForm)
+    const api = "https://ams-backend-api.herokuapp.com/user/application/"
+    axios.patch(api+"61e7bacca853f1001653dba7",submitForm).then((Response) => {
+      console.log(Response)
+    })
+  }
 
   return (
     <div className="w-full h-auto py-4 px-3 lg:px-30 xl:px-56">
       <form
         action=""
+        onSubmit={formSubmit}
         className="w-auto font-montserrat space-y-4 sm rounded-lg h-auto bg-gray-100 p-4"
       >
         <div className="w-full h-auto  flex flex-col md:flex-row ">
@@ -57,6 +100,8 @@ const Body = () => {
             </label>
             <input
               type="text"
+              id="fname"
+              onChange={handleChange}
               className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
             <label htmlFor="" className="ml-3 text-md">
@@ -64,6 +109,8 @@ const Body = () => {
             </label>
             <input
               type="date"
+              id="dob"
+              onChange={handleChange}
               className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
           </div>
@@ -73,9 +120,9 @@ const Body = () => {
             </label>
             <input
               id="photo"
-              onChange={handleImageChange}
+              onChange={handleImageChange,handleChange}
               type="file"
-              className="w-full mt-1 h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
+              className="w-full mt-1 h-10 rounded-lg px-4 text-md bg-white border-2 border-black "
             />
             {InvalidFormat && (
               <p className="ml-3 text-red-700 font-mono text-center text-md font-bold italic">
@@ -138,17 +185,23 @@ const Body = () => {
             <input
               placeholder="House Name"
               type="text"
+              id="chousename"
+              onChange={handleChange}
               className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
             />
             <div className="w-full md:flex space-y-1 md:space-y-0 md:space-x-2">
               <input
                 placeholder="District"
                 type="text"
+                id="cdistrict"
+                onChange={handleChange}
                 className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
               />
               <input
                 placeholder="State"
                 type="text"
+                id="cstate"
+                onChange={handleChange}
                 className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
               />
             </div>
@@ -156,11 +209,15 @@ const Body = () => {
               <input
                 placeholder="City"
                 type="text"
+                id="ccity"
+                onChange={handleChange}
                 className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
               />
               <input
                 placeholder="Pincode"
                 type="tel"
+                id="cpin"
+                onChange={handleChange}
                 className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
               />
             </div>
@@ -178,17 +235,23 @@ const Body = () => {
             <input
               placeholder="House Name"
               type="text"
+              id="phousename"
+              onChange={handleChange}
               className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
             />
             <div className="w-full md:flex space-y-1 md:space-y-0 md:space-x-2">
               <input
                 placeholder="District"
                 type="text"
+                id="pdistrict"
+                onChange={handleChange}
                 className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
               />
               <input
                 placeholder="State"
                 type="text"
+                id="pstate"
+                onChange={handleChange}
                 className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
               />
             </div>
@@ -196,11 +259,15 @@ const Body = () => {
               <input
                 placeholder="City"
                 type="text"
+                id="pcity"
+                onChange={handleChange}
                 className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
               />
               <input
                 placeholder="Pincode"
                 type="tel"
+                id="ppin"
+                onChange={handleChange}
                 className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
               />
             </div>
@@ -217,20 +284,28 @@ const Body = () => {
                   {/* )} */}
                 </div>
                 <input
-                  id="phone"
-                  onChange={checkPhone}
+                  id="phone1"
+                  onChange={handleChange,checkPhone}
                   maxLength={10}
                   type="text"
                   className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
                 />
               </div>
               <div className="md:w-1/2">
-                <label htmlFor="" className="ml-3 text-md">
-                  Contact No2*
-                </label>
+              <div className="w-full px-4 items-center  h-auto flex justify-between">
+                  <label htmlFor="" className=" text-md">
+                    Contact No2*
+                  </label>
+                  {/* {ContactNo1Err && ( */}
+                  <p className="w-auto font-comic text-md  font-bold italic text-torch-red-600 ">
+                    {Message}
+                  </p>
+                  {/* )} */}
+                </div>
                 <input
                   maxLength={10}
-                  onChange={checkPhone}
+                  id="phone2"
+                  onChange={handleChange,checkPhone}
                   type="text"
                   className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
                 />
@@ -246,11 +321,13 @@ const Body = () => {
               Name of Parent/Gaurdian*
             </label>
             <input
-              onChange={(e) => {
+              onChange={handleChange,(e) => {
                 setparentName(e.target.value);
               }}
               placeholder="Full Name"
               type="text"
+              id="parentName"
+              // onBlur={handleChange}
               className="w-full mb-3 h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
             <label htmlFor="" className="ml-3  text-md">
@@ -259,6 +336,8 @@ const Body = () => {
             <input
               placeholder="Parent's Occupation"
               type="text"
+              id="occupation"
+              onChange={handleChange}
               className="w-full mb-3 h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
           </div>
@@ -269,6 +348,8 @@ const Body = () => {
             <input
               placeholder="Not Mandatory"
               type="text"
+              id="sponser"
+              onChange={handleChange}
               className="w-full mb-3 h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
             <label htmlFor="" className="ml-3 text-md">
@@ -277,6 +358,8 @@ const Body = () => {
             <input
               placeholder="Not Mandatory"
               type="text"
+              id="relationWithSponser"
+              onChange={handleChange}
               className="w-full mb-3  h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
           </div>
@@ -287,6 +370,8 @@ const Body = () => {
             <input
               placeholder="xxxxxxxxxxxx"
               type="tel"
+              id="transactionId"
+              onChange={handleChange}
               className="w-full mb-3 h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
             <label htmlFor="" className="ml-3 text-md">
@@ -294,6 +379,8 @@ const Body = () => {
             </label>
             <input
               type="file"
+              id="transactionDoc"
+              onChange={handleChange}
               className="w-full mb-3 h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
           </div>
@@ -303,7 +390,13 @@ const Body = () => {
             <label htmlFor="" className="ml-3 text-md">
               Branch Preference*
             </label>
-            <select className="border-2 my-3 w-full h-10 border-black bg-white rounded-lg">
+            <select 
+              id="branch"
+              onChange={handleChange}
+              className="border-2 my-3 w-full h-10 border-black bg-white rounded-lg">
+              <option value="null">
+               
+              </option>
               <option value="Computer Science Engineering">
                 Computer Science Engineering
               </option>
@@ -345,20 +438,26 @@ const Body = () => {
           <p>
             Name of Parent/Gaurdian: <b>{parentName}</b>
             <br />
-            Date: <b>{dt.toLocaleDateString()}</b>
+            Date: <b>{dt.toLocaleDateString('en-IN')}</b>
           </p>
           <p className="text-center mt-3 font-roboto">
             Contact details: Mr.P.K.Binoy - 9446717178/9846280649
           </p>
           <br />
           <div className="w-auto h-auto space-x-2 flex items-center justify-center">
-            <input type="checkbox" id="check" onChange={enableSubmit} className="w-8 md:w-4 md:h-4 h-8" />
+            <input 
+            type="checkbox"  
+            className="w-8 md:w-4 md:h-4 h-8" />
             <p className=" ">
               I agree that I have reviewed the form, and is proceeding for final
               submit
             </p>
           </div>
-          <input id="submitButton" type="submit" value="Submit" className="bg-torch-red-600 text-white rounded-lg w-auto h-auto p-2" />
+          <button 
+          id="button"
+          className = "bg-torch-red-600 text-white rounded-lg w-auto h-auto p-2" >
+            submit
+          </button>
         </div>
       </form>
     </div>
