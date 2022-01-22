@@ -113,7 +113,7 @@ function RegisterForm() {
           case 200:
             console.log(registerInput)
             history.push("/login");
-            toast.success("Registration Success, Being redirected...");
+            toast.success("Registration Successful ");
             setLoading(false);
             break;
           case 204:

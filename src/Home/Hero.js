@@ -6,34 +6,34 @@ import reg from "../Icons/reg.svg";
 
 const Hero = () => {
   return (
-    <div className="flex w-full relative bg-gray-200 overflow-hidden h-98.5">
+    <div className="flex w-full relative bg-gray-100 overflow-hidden h-98.5">
         
         
         <div
           data-aos="fade-right"
           data-aos-duration="2000"
-          className="  w-52 h-52 flex items-center justify-center shadow-xl absolute top-12 right-97.5 bg-white"
+          className="  w-52 h-52 flex items-center justify-center shadow-2xl absolute top-12 right-97.5 bg-white"
         >
           <img src={reg} alt="" className="" />
         </div>
         <div
           data-aos-duration="2000"
           data-aos="fade-left"
-          className=" w-70 h-48 shadow-xl items-center justify-center flex absolute top-12 right-40 bg-white"
+          className=" w-70 h-48 shadow-2xl items-center justify-center flex absolute top-12 right-40 bg-white"
         >
           <img src={lock} alt="" className="" />
         </div>
         <div
           data-aos="fade-left"
           data-aos-duration="2000"
-          className=" w-52 h-72 flex items-center  justify-center shadow-xl absolute bottom-10 right-40 animate-fadeIn bg-white"
+          className=" w-52 h-72 flex items-center  justify-center shadow-2xl absolute bottom-10 right-40 animate-fadeIn bg-white"
         >
           <img src={rupee} alt="" className="" />
         </div>
         <div
           data-aos="fade-up"
           data-aos-duration="2000"
-          className=" w-70 h-70 flex  items-center justify-center shadow-xl absolute bottom-10 right-96 bg-white "
+          className=" w-70 h-70 flex  items-center justify-center shadow-2xl absolute bottom-10 right-96 bg-white "
         >
           <img src={info} alt="" className="" />
         </div>
@@ -41,7 +41,7 @@ const Hero = () => {
       <div
         data-aos="zoom-in" 
         data-aos-duration="2000"
-        className="w-99 ml-10 mt-12 tracking-tighter text-left shadow-xl space-y-6 px-36 py-10  h-97.75 bg-white"
+        className="w-99 ml-10 mt-12 tracking-tighter text-left shadow-2xl space-y-6 px-36 py-10  h-97.75 bg-white"
       >
         <div className="flex space-x-6 h-24 items-center  flex-row ">
           <svg

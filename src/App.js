@@ -1,5 +1,5 @@
 import Header from "./Home/Header";
-import { Switch, Route,Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import NriLogin from "./components/login/NriLogin";
 import Hero from "./Home/Hero";
 import Aos from "aos";
@@ -10,9 +10,11 @@ import RegisterPage from "./components/register/RegisterPage";
 // import ParentInfoPage from "./components/Details/ParentForm/ParentInfoPage";
 // import PersonalInfoPage from "./components/Details/PersonalForm/PersonalInfoPage";
 // import { ToastContainer, toast, Zoom, Bounce} from "react-toastify"
+import { Offline, Online } from "react-detect-offline";
 import "react-toastify/dist/ReactToastify.css";
 import NriForm from "./components/Details/NriForm";
 import Error from "./components/Details/Error";
+import OfflinePage from "./OfflinePage";
 
 function App() {
   useEffect(() => {
@@ -21,7 +23,8 @@ function App() {
   const access = localStorage.getItem("access_token");
   return (
     <>
-      {access ? (
+      <Online>
+        {/* {access ? (
         <Switch>
           <Route path="/" exact>
             <Header />
@@ -29,7 +32,7 @@ function App() {
             <About />
           </Route>
           <Route path="/form" component={NriForm} />
-          {/* <Route path="/404" component={Error} /> <Redirect to="/404" /> */}
+          <Route path="/404" component={Error} /> <Redirect to="/404" />
         </Switch>
       ) : (
         <Switch>
@@ -40,10 +43,24 @@ function App() {
           </Route>
           <Route path="/nri" component={RegisterPage} />
           <Route path="/login" component={NriLogin} />
-          {/* <Route path="/404" component={Error} /> <Redirect to="/404" /> */}
+          <Route path="/404" component={Error} /> <Redirect to="/404" />
         </Switch>
-      )}
+      )}  */}
+        <Switch>
+          <Route path="/" exact>
+            <Header />
+            <Hero />
+            <About />
+          </Route>
+          <Route path="/nri" component={RegisterPage} />
+          <Route path="/login" component={NriLogin} />
+          <Route path="/form" component={NriForm} />
+        </Switch>
+      </Online>
       {/* <NriForm /> */}
+      <Offline>
+        <OfflinePage />
+      </Offline>
     </>
   );
 }

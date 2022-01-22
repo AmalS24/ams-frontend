@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
+
 const Body = () => {
   const dt = new Date();
   const [parentName, setparentName] = useState("");
@@ -136,8 +137,8 @@ const Body = () => {
       }
     })
   }
-
   return (
+   
     <div className="w-full h-auto py-4 px-3 lg:px-30 xl:px-56">
       <form
       // onSubmit={handleSubmit}
@@ -279,7 +280,7 @@ const Body = () => {
               type="checkbox" 
               id="sameas"
               onChange={sameAs}
-              className="w-4 h-4" />
+              className="md:w-4 md:h-4" />
               <p className="">Use this as Permanent Address</p>
             </div>
           </div>
@@ -508,7 +509,7 @@ const Body = () => {
             id="check"
             type="checkbox"  
             onChange={enableButton}
-            className="w-8 md:w-4 md:h-4 h-8" />
+            className="md:w-4 md:h-4" />
             <p className=" ">
               I agree that I have reviewed the form, and is proceeding for final
               submit
