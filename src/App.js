@@ -17,24 +17,13 @@ import Error from "./components/Details/Error";
 import OfflinePage from "./OfflinePage";
 
 function App() {
+  const access = localStorage.getItem("access_token");
   useEffect(() => {
     Aos.init();
   }, []);
-  const access = localStorage.getItem("access_token");
   return (
     <>
       <Online>
-        {/* {access ? (
-        <Switch>
-          <Route path="/" exact>
-            <Header />
-            <Hero />
-            <About />
-          </Route>
-          <Route path="/form" component={NriForm} />
-          <Route path="/404" component={Error} /> <Redirect to="/404" />
-        </Switch>
-      ) : (
         <Switch>
           <Route path="/" exact>
             <Header />
@@ -43,18 +32,7 @@ function App() {
           </Route>
           <Route path="/nri" component={RegisterPage} />
           <Route path="/login" component={NriLogin} />
-          <Route path="/404" component={Error} /> <Redirect to="/404" />
-        </Switch>
-      )}  */}
-        <Switch>
-          <Route path="/" exact>
-            <Header />
-            <Hero />
-            <About />
-          </Route>
-          <Route path="/nri" component={RegisterPage} />
-          <Route path="/login" component={NriLogin} />
-          <Route path="/form" component={NriForm} />
+          {access ? <Route path="/form" component={NriForm} /> : <Route path="/form" component={Error} />}
         </Switch>
       </Online>
       {/* <NriForm /> */}

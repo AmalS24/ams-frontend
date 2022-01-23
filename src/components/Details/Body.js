@@ -107,6 +107,7 @@ const Body = () => {
   };
 
   const [submitForm,setSubmitForm] = useState(Form);
+  const [tab,setTab] = useState(true) 
 
   const handleChange= (e) =>{
     const {value,id}=e.target;
@@ -137,6 +138,16 @@ const Body = () => {
       }
     })
   }
+  const changeTab1=()=>{
+    setTab(true)
+    document.getElementById("tab1").className="bg-green-300 flex justify-center items-center rounded-t-xl w-full h-full";
+    document.getElementById("tab2").className="bg-green-200 flex justify-center items-center rounded-t-xl rounded-bl-xl w-full h-full"
+  }
+  const changeTab2=()=>{
+    setTab(false)
+    document.getElementById("tab2").className="bg-green-300 flex justify-center items-center rounded-t-xl w-full h-full";
+    document.getElementById("tab1").className="bg-green-200 flex justify-center items-center rounded-t-xl rounded-br-xl w-full h-full"
+  }
   return (
    
     <div className="w-full h-auto py-4 px-3 lg:px-30 xl:px-56">
@@ -144,69 +155,101 @@ const Body = () => {
       // onSubmit={handleSubmit}
         action=""
         onSubmit={formSubmit}
-        className="w-auto font-montserrat space-y-4 sm rounded-lg h-auto bg-gray-100 p-4"
-      ><h1 className="text-center text-2xl uppercase font-semibold	font-sans">Application Form</h1>
-        <div className="w-full h-auto  flex flex-col md:flex-row ">
-          <div className="md:w-1/3 h-auto px-3 py-4 flex flex-col space-y-2 ">
+        className="w-auto font-montserrat space-y-4 sm rounded-lg h-auto bg-gray-100 p-4">
+        <h1 className="text-center text-2xl uppercase font-semibold	font-sans">Application Form</h1>
+        <div className="flex w-full h-10">
+          <div className="bg-green-300 flex justify-center items-center rounded-t-xl w-full h-full">
+              <div 
+              id="tab1"
+              onClick={changeTab1}
+              className="bg-green-300  flex justify-center items-center rounded-t-xl w-full h-full">
+                  1.Details
+              </div>
+          </div>
+          <div className="bg-green-300 flex justify-center items-center rounded-t-xl w-full h-full">
+              <div 
+              id="tab2"
+              onClick={changeTab2}
+              className="bg-green-200 flex justify-center items-center rounded-t-xl rounded-bl-xl w-full h-full">
+                  2.Payment
+              </div>
+          </div>
+        </div>
+        {
+          tab?
+          (<div className="w-full h-full">
+            <div className="w-full h-auto  flex flex-col md:flex-row ">
+          <div className="md:w-auto h-auto px-3 py-4 flex flex-col space-y-2">
             {/*Name and DoB*/}
             <label htmlFor="" className="ml-3 text-md">
               Name*
             </label>
-            <input
-              type="text"
-              id="fname"
-              onChange={handleChange}
-              className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
-            />
-            <label htmlFor="" className="ml-3 text-md">
-              Date of Birth*
-            </label>
-            <input
-              type="date"
-              id="dob"
-              onChange={handleChange}
-              className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
-            />
+                      <div className="md:flex md:space-x-2 md:space-y-0 space-y-2">
+                      <input
+                        type="text"
+                        id="fname"
+                        placeholder="Firstname"
+                        onChange={handleChange}
+                        className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
+                      />
+                      <input
+                        type="text"
+                        id="fname"
+                        placeholder="Middlename"
+                        onChange={handleChange}
+                        className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
+                      />
+                      <input
+                        type="text"
+                        id="fname"
+                        placeholder="Lastname"
+                        onChange={handleChange}
+                        className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
+                      />
+                      </div>
+            <div className="md:flex md:space-x-2">
+            <div>
+                    <label htmlFor="" className="ml-3 text-md">
+                      Date of Birth*
+                    </label>
+                    <input
+                      type="date"
+                      id="dob"
+                      onChange={handleChange}
+                      className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
+                    />
+            </div>
+            <div>
+                      <label htmlFor="" className="ml-3 text-md">
+                        Photo*
+                      </label>
+                      <input
+                        id="photo"
+                        onChange={handleChange,handleImageChange}
+                        type="file"
+                        className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
+                      />
+                      {InvalidImgFormat && (
+                        <p className="ml-3 text-red-700 font-mono text-center text-md font-bold italic">
+                          Unsupported Format
+                        </p>
+                      )}
+            </div>
+            </div>
           </div>
-          <div className="md:w-1/3 h-auto  px-3 py-4 flex flex-col space-y-2">
-            <label htmlFor="" className="ml-3 text-md">
-              Photo*
-            </label>
-            <input
-              id="photo"
-              onChange={handleChange,handleImageChange}
-              type="file"
-              className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
-            />
-            {InvalidImgFormat && (
-              <p className="ml-3 text-red-700 font-mono text-center text-md font-bold italic">
-                Unsupported Format
-              </p>
-            )}
-          </div>
-          <div className="md:w-1/3 relative p-4 h-auto">
+          {/* <div className="md:w-1/3 h-auto  px-3 py-4 flex flex-col space-y-2">
+            
+          </div> */}
+          <div className="md:w-1/3 relative p-4 h-auto bg-gray-400">
             {ImagePreview && (
               <div
                 onClick={removeImage}
                 className="w-8 flex items-center justify-center  h-8 right-8 absolute  text-white rounded-full cursor-pointer bg-torch-red-600"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  class="bi bi-arrow-repeat"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                  <path
-                    fill-rule="evenodd"
-                    d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"
-                  />
-                </svg>
+                x
               </div>
             )}
-            <div className="w-1/2 flex items-center mx-auto justify-center shadow-3xl rounded-md h-auto p-3 bg-white">
+            <div className="w-auto flex items-center justify-center shadow-3xl rounded-md h-auto p-3 bg-white">
               {!ImagePreview || InvalidImgFormat ? (
                 <>
                   <p className="text-center h-full font-comic font-bold">
@@ -227,64 +270,8 @@ const Body = () => {
         </div>
         <div className="w-full h-auto flex flex-col md:flex-row ">
           {/* address */}
-          <div className="md:w-1/2 h-auto px-3 py-4 flex flex-col space-y-2 ">
-            {/* housename
-              city  district
-              state pincode
-              contact no1 contact no2 */}
-
-            <label htmlFor="" className="ml-3 text-md">
-              Contact Address*
-            </label>
-            <input
-              placeholder="House Name"
-              type="text"
-              id="chousename"
-              onChange={handleChange}
-              className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
-            />
-            <div className="w-full md:flex space-y-1 md:space-y-0 md:space-x-2">
-              <input
-                placeholder="District"
-                type="text"
-                id="cdistrict"
-                onChange={handleChange}
-                className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
-              />
-              <input
-                placeholder="State"
-                type="text"
-                id="cstate"
-                onChange={handleChange}
-                className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
-              />
-            </div>
-            <div className="w-full md:flex  space-y-1 md:space-y-0 md:space-x-2">
-              <input
-                placeholder="City"
-                type="text"
-                id="ccity"
-                onChange={handleChange}
-                className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
-              />
-              <input
-                placeholder="Pincode"
-                type="tel"
-                id="cpin"
-                onChange={handleChange}
-                className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
-              />
-            </div>
-            <div className="space-x-3 ml-3 flex items-center pr-3">
-              <input 
-              type="checkbox" 
-              id="sameas"
-              onChange={sameAs}
-              className="md:w-4 md:h-4" />
-              <p className="">Use this as Permanent Address</p>
-            </div>
-          </div>
-          <div className="md:w-1/2 h-auto px-3 py-4 flex flex-col space-y-2 ">
+          
+          <div className="md:w-full h-auto px-3 py-4 flex flex-col space-y-2 ">
             {/* Permannet Address */}
             <label htmlFor="" className="ml-3 text-md">
               Permanent Address*
@@ -374,7 +361,7 @@ const Body = () => {
 
         {/* ParentInfoPart */}
         <div className="w-full h-auto  flex flex-col  md:flex-row ">
-          <div className="md:w-1/3 w-full h-auto px-2 ">
+          <div className="md:w-1/2 w-full h-auto px-2 ">
             <label htmlFor="" className="ml-3  text-md">
               Name of Parent/Gaurdian*
             </label>
@@ -399,7 +386,7 @@ const Body = () => {
               className="w-full mb-3 h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
           </div>
-          <div className="md:w-1/3 w-full px-2 h-auto ">
+          <div className="md:w-1/2 w-full px-2 h-auto ">
             <label htmlFor="" className="ml-3 text-md">
               Name of NRI-Sponser
             </label>
@@ -411,7 +398,7 @@ const Body = () => {
               className="w-full mb-3 h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
             <label htmlFor="" className="ml-3 text-md">
-              Relation with Sponser
+              Relation with applicant
             </label>
             <input
               placeholder="Not Mandatory"
@@ -421,7 +408,20 @@ const Body = () => {
               className="w-full mb-3  h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
           </div>
-          <div className="md:w-1/3 w-full px-2 h-auto ">
+          
+        </div>
+        
+        <div className="flex justify-end ">
+          <button 
+          onClick={changeTab2}
+          className="w-auto mt-8 h-auto p-2 rounded-md bg-torch-red-600 text-white">
+            Save&Next
+          </button>
+        </div>
+          </div>)
+          :
+          (<div className="w-full h-full">
+            <div className="md:w-1/3 w-full px-2 h-auto ">
             <label htmlFor="" className="ml-3  text-md">
               Transaction ID/Reference No.*
             </label>
@@ -447,8 +447,8 @@ const Body = () => {
               </p>
             )}
           </div>
-        </div>
-        <div className="w-full h-auto py-4 flex flex-col  md:flex-row ">
+
+          <div className="w-full h-auto py-4 flex flex-col  md:flex-row ">
           <div className="md:w-1/2 h-auto px-3">
             <label htmlFor="" className="ml-3 text-md">
               Branch Preference*
@@ -482,7 +482,9 @@ const Body = () => {
             </p>
           </div>
         </div>
-        <div className="w-full h-auto p-8 bg-gray-300">
+        
+
+          <div className="w-full h-auto p-8 bg-gray-300">
           <p className="font-roboto text-center ">
             <u>UNDERTAKING</u>
             <br />
@@ -522,6 +524,8 @@ const Body = () => {
             submit
           </button>
         </div>
+          </div>)
+        }
       </form>
     </div>
   );
