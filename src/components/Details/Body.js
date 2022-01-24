@@ -40,18 +40,6 @@ const Body = () => {
     
   }
 
-  const sameAs =()=>{
-    const isChecked = document.getElementById("sameas").checked;
-    if(isChecked)
-    {
-        document.getElementById("phousename").value=submitForm.chousename;
-        document.getElementById("pcity").value=submitForm.ccity;
-        document.getElementById("pdistrict").value=submitForm.cdistrict;
-        document.getElementById("pstate").value=submitForm.cstate;
-        document.getElementById("ppin").value=submitForm.cpin;
-    }
-  }
-
   const handleImageChange = (e) => {
     const selected = e.target.files[0];
     const ALLOWED_TYPES = ["image/jpg", "image/jpeg", "image/png"];
@@ -118,12 +106,12 @@ const Body = () => {
   };
 
   const access = localStorage.getItem("access_token")
+  const api = "https://ams-backend-api.herokuapp.com/user/application/"
 
   const formSubmit =(e)=>{
     e.preventDefault();
     console.log(submitForm)
-    const api = "https://ams-backend-api.herokuapp.com/user/application/"
-    axios.patch(api+"GBT220007",submitForm,{
+    axios.patch(api+"NBT220000",submitForm,{
       headers: {
         Authorization: 'Bearer ' + access
       }
@@ -188,20 +176,23 @@ const Body = () => {
                       <input
                         type="text"
                         id="fname"
+                        value={submitForm.fname}
                         placeholder="Firstname"
                         onChange={handleChange}
                         className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
                       />
                       <input
                         type="text"
-                        id="fname"
+                        id="mname"
+                        value={submitForm.mname}
                         placeholder="Middlename"
                         onChange={handleChange}
                         className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
                       />
                       <input
                         type="text"
-                        id="fname"
+                        id="lname"
+                        value={submitForm.lname}
                         placeholder="Lastname"
                         onChange={handleChange}
                         className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
@@ -215,6 +206,7 @@ const Body = () => {
                     <input
                       type="date"
                       id="dob"
+                      value={submitForm.dob}
                       onChange={handleChange}
                       className="w-full h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
                     />
@@ -281,6 +273,7 @@ const Body = () => {
               placeholder="House Name"
               type="text"
               id="phousename"
+              value={submitForm.phousename}
               onChange={handleChange}
               className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
             />
@@ -289,6 +282,7 @@ const Body = () => {
                 placeholder="District"
                 type="text"
                 id="pdistrict"
+                value={submitForm.pdistrict}
                 onChange={handleChange}
                 className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
               />
@@ -296,6 +290,7 @@ const Body = () => {
                 placeholder="State"
                 type="text"
                 id="pstate"
+                value={submitForm.pstate}
                 onChange={handleChange}
                 className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
               />
@@ -305,6 +300,7 @@ const Body = () => {
                 placeholder="City"
                 type="text"
                 id="pcity"
+                value={submitForm.pcity}
                 onChange={handleChange}
                 className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
               />
@@ -312,6 +308,7 @@ const Body = () => {
                 placeholder="Pincode"
                 type="tel"
                 id="ppin"
+                value={submitForm.ppin}
                 onChange={handleChange}
                 className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
               />
@@ -330,7 +327,8 @@ const Body = () => {
                 </div>
                 <input
                   id="phone1"
-                  onChange={handleChange,checkPhone}
+                  value={submitForm.phone1}
+                  onChange={checkPhone,handleChange}
                   maxLength={10}
                   type="text"
                   className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
@@ -350,7 +348,8 @@ const Body = () => {
                 <input
                   maxLength={10}
                   id="phone2"
-                  onChange={handleChange,checkPhone}
+                  value={submitForm.phone2}
+                  onChange={checkPhone,handleChange}
                   type="text"
                   className="w-full h-10 rounded-lg px-4 text-lg bg-white border-2 border-black "
                 />
@@ -366,12 +365,13 @@ const Body = () => {
               Name of Parent/Gaurdian*
             </label>
             <input
-              onChange={handleChange,(e) => {
+              onChange={(e) => {
                 setparentName(e.target.value);
-              }}
+              },handleChange}
               placeholder="Full Name"
               type="text"
               id="parentName"
+              value={submitForm.parentName}
               // onBlur={handleChange}
               className="w-full mb-3 h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
@@ -382,6 +382,7 @@ const Body = () => {
               placeholder="Parent's Occupation"
               type="text"
               id="occupation"
+              value={submitForm.occupation}
               onChange={handleChange}
               className="w-full mb-3 h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
@@ -394,6 +395,7 @@ const Body = () => {
               placeholder="Not Mandatory"
               type="text"
               id="sponser"
+              value={submitForm.sponser}
               onChange={handleChange}
               className="w-full mb-3 h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
@@ -404,6 +406,7 @@ const Body = () => {
               placeholder="Not Mandatory"
               type="text"
               id="relationWithSponser"
+              value={submitForm.relationWithSponser}
               onChange={handleChange}
               className="w-full mb-3  h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
@@ -429,6 +432,7 @@ const Body = () => {
               placeholder="xxxxxxxxxxxx"
               type="tel"
               id="transactionId"
+              value={submitForm.transactionId}
               onChange={handleChange}
               className="w-full mb-3 h-10 rounded-lg px-4 text-lg focus:border-red-600 focus:outline-none bg-white border-2 border-black "
             />
@@ -455,6 +459,7 @@ const Body = () => {
             </label>
             <select 
               id="branch"
+              value={submitForm.branch}
               onChange={handleChange}
               className="border-2 my-3 w-full h-10 border-black bg-white rounded-lg">
               <option value="null">

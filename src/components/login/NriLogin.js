@@ -39,7 +39,7 @@ function NriLogin() {
             
             localStorage.setItem("access_token", response.data.token);
             history.push("/form");
-            window.location.reload();
+            // window.location.reload();
             // toast.success("login successful");
             setLoading(false);
             console.log(response,localStorage.getItem("access_token"),loading)

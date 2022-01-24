@@ -7,7 +7,7 @@ function TitleBar() {
   const logout = () => {
     localStorage.removeItem("access_token");
     history.push("/login");
-    window.location.reload();
+    // window.location.reload();
     toast.success("Logout Successful")
   };
   return (
