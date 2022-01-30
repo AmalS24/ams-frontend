@@ -1,8 +1,8 @@
 import axios from "axios";
 import React from "react";
-import { useState } from "react";
-import { toast } from "react-toastify";
-
+import { useState,useEffect } from "react";
+import Loader from "../register/Loader"
+import { ToastContainer, toast, Bounce, Zoom } from "react-toastify";
 
 const Body = () => {
   const dt = new Date();
@@ -11,6 +11,7 @@ const Body = () => {
   const [InvalidImgFormat, setInvalidImgFormat] = useState(false);
   const [InvalidFileFormat,  setInvalidFileFormat] = useState(false);
   const [Message, setMessage] = useState("");
+  const [loading,setLoading] = useState(false)
 
   const removeImage = () => {
     document.getElementById("photo").value = null;
@@ -66,18 +67,16 @@ const Body = () => {
     }
     setInvalidFileFormat(true);
   }
-  
+
+  const access = localStorage.getItem("access_token")
+  const api = "https://ams-backend-api.herokuapp.com/user/application"
+
   const Form = {
     fname:"",
     mname:"",
     lname:"",
     dob:"",
     photo:{},
-    chousename:"",
-    ccity:"",
-    cdistrict:"",
-    cstate:"",
-    cpin:"",
     phousename:"",
     pcity:"",
     pdistrict:"",
@@ -94,6 +93,19 @@ const Body = () => {
     branch:"",
   };
 
+  useEffect(() => {
+    //Runs only on the first render
+    axios.post(api,{token:access}).then(function (response) {
+      submitForm.fname = response.data.name
+      submitForm.dob = response.data.dob
+      submitForm.phone2 = response.data.phone
+
+      setTab(false)
+      setTab(true)
+      console.log(response)  
+      })
+  },[]);
+
   const [submitForm,setSubmitForm] = useState(Form);
   const [tab,setTab] = useState(true) 
 
@@ -105,21 +117,45 @@ const Body = () => {
     console.log(newForm);
   };
 
-  const access = localStorage.getItem("access_token")
-  const api = "https://ams-backend-api.herokuapp.com/user/application/"
-
   const formSubmit =(e)=>{
     e.preventDefault();
+    setLoading(true)
     console.log(submitForm)
-    axios.patch(api+"NBT220000",submitForm,{
+    axios.patch(api+"/"+"NBT220000",
+    {
+      firstName:submitForm.firstName,
+      middleName:submitForm.middleName,
+      lastName:submitForm.lastName,
+      dod:submitForm.dob,
+      addressL1p: submitForm.phousename,
+      districtp: submitForm.pdistrict,
+      cityp: submitForm.pcity,
+      statep: submitForm.pstate,
+      pincodep: Number(submitForm.ppin),
+      aPhone:submitForm.phone1,
+      phone:submitForm.phone2,
+      guardianName: submitForm.parentName,
+      fatherOccupation:submitForm.occupation,
+      guardianRelation: submitForm.relationWithSponser,
+      NRIname:submitForm.sponser,
+      transactionID:submitForm.transactionId,
+      bp1:submitForm.branch,
+    },
+    {
       headers: {
         Authorization: 'Bearer ' + access
       }
     })
     .then((Response) => {
+      setLoading(false)
+      if(Response.status == 200)
+        toast.success("application successful")
       console.log(Response)
     })
     .catch(({ Response }) => {
+      setLoading(false)
+      setTab(true)
+      toast.error("Something went wrong try again later")
       if(Response)
       {
         toast.error("Something went wrong ERR_CODE: "+Response.status)
@@ -136,11 +172,23 @@ const Body = () => {
     document.getElementById("tab2").className="bg-green-300 flex justify-center items-center rounded-t-xl w-full h-full";
     document.getElementById("tab1").className="bg-green-200 flex justify-center items-center rounded-t-xl rounded-br-xl w-full h-full"
   }
+
+if(loading)
+  return(<Loader/>)
+
   return (
-   
     <div className="w-full h-auto py-4 px-3 lg:px-30 xl:px-56">
+       <ToastContainer
+        draggable={false}
+        autoClose={8000}
+        transition={Zoom}
+        pauseOnHover={true}
+        limit={1}
+        bodyClassName="text-center text-black"
+        position="top-center"
+        toastClassName="sm:w-97"
+      />
       <form
-      // onSubmit={handleSubmit}
         action=""
         onSubmit={formSubmit}
         className="w-auto font-montserrat space-y-4 sm rounded-lg h-auto bg-gray-100 p-4">
@@ -465,17 +513,17 @@ const Body = () => {
               <option value="null">
                
               </option>
-              <option value="Computer Science Engineering">
+              <option value="CSE">
                 Computer Science Engineering
               </option>
-              <option value="Mechanical Engineering">
+              <option value="ME">
                 Mechanical Engineering
               </option>
-              <option value="Civil Engineering">Civil Engineering</option>
-              <option value="Electronics And Communication Engineering">
+              <option value="CE">Civil Engineering</option>
+              <option value="ECE">
                 Electronics And Communication Engineering
               </option>
-              <option value="Electrical And Electronics Engineering">
+              <option value="EEE">
                 Electrical And Electronics Engineering
               </option>
             </select>
@@ -533,7 +581,7 @@ const Body = () => {
         }
       </form>
     </div>
-  );
+     )
 };
 
 export default Body;

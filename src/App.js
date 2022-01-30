@@ -23,7 +23,7 @@ function App() {
   }, []);
   return (
     <>
-      <Online>
+      {/* <Online> */}
         <Switch>
           <Route path="/" exact>
             <Header />
@@ -34,11 +34,11 @@ function App() {
           <Route path="/login" component={NriLogin} />
           {access ? <Route path="/form" component={NriForm} /> : <Route path="/form" component={Error} />}
         </Switch>
-      </Online>
+      {/* </Online> */}
       {/* <NriForm /> */}
-      <Offline>
+      {/* <Offline>
         <OfflinePage />
-      </Offline>
+      </Offline> */}
     </>
   );
 }
